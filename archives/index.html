@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="zh-TW"><!-- Head tag --><head><meta charset="utf-8"><meta name="theme-color" content="#0077B5"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="google-site-verification" content="tfWfY4bkeILtxNyUg9UGfVkCNvKtAauF2r9WDQs8kBM"><meta property="fb:pages" content="219138595338413"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="嗨，我是林彥成，是個喜歡爬山的前端工程師，專注在 React.js 的相關開發，這個部落格會分享網站技術、職涯發展、個人成長和產業觀察相關文章。"><meta name="keyword" content="前端三分鐘, 前端, React.js, 林彥成, 網站技術, 職涯發展, 個人成長, 產業觀察"><meta property="og:image" content="/img/icon_wechat.png"><link rel="shortcut icon" href="/img/favicon.ico"><title>列表 | 前端三分鐘 | 一起用三分鐘分享技術與知識 | 林彥成</title><!-- 2020/10/28 GA4 Global site tag (gtag.js) - Google Analytics --><script defer src="https://www.googletagmanager.com/gtag/js?id=G-NB92PD4STP"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-NB92PD4STP")</script><link rel="canonical" href="https://linyencheng.github.io/archives/"><!-- Bootstrap Core CSS --><link rel="stylesheet" href="/css/bootstrap.min.css"><!-- Custom CSS --><link rel="stylesheet" href="/css/hux-blog.min.css"><!-- Pygments Highlight CSS --><link rel="stylesheet" href="/css/highlight.css"><!-- Custom Fonts --><!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css"> --><!-- <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> --><!-- <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'> --><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]--><!-- ga & ba script hoook --><!-- Google Tag Manager --><!-- Facebook Pixel 像素 --><!-- <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W5LMXCR');</script> --><!-- End Google Tag Manager --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/feed.xml" title="前端三分鐘" type="application/atom+xml"></head><!-- hack iOS CSS :active style --><body ontouchstart=""><!-- Google Tag Manager (noscript) --><!-- Facebook Pixel 像素 --><!-- <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W5LMXCR"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript> --><!-- End Google Tag Manager (noscript) --><!-- Navigation --><nav class="navbar navbar-default navbar-custom navbar-fixed-top"><div class="container-fluid"><!-- Brand and toggle get grouped for better mobile display --><div class="navbar-header page-scroll"><button type="button" class="navbar-toggle"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">前端三分鐘</a></div><!-- Collect the nav links, forms, and other content for toggling --><!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        --><div id="huxblog_navbar"><div class="navbar-collapse"><ul class="nav navbar-nav navbar-right"><li><a title="首頁" href="/">首頁</a></li><li><a href="/archives/">列表</a></li><li><a href="/about/">關於</a></li><li><a href="/categories/">文章分類</a></li><li><a href="/tags/">標籤</a></li></ul></div></div><!-- /.navbar-collapse --></div><!-- /.container --></nav><script>var $body=document.body,$toggle=document.querySelector(".navbar-toggle"),$navbar=document.querySelector("#huxblog_navbar"),$collapse=document.querySelector(".navbar-collapse");function handleMagic(e){0<$navbar.className.indexOf("in")?($navbar.className=" ",setTimeout(function(){$navbar.className.indexOf("in")<0&&($collapse.style.height="0px")},400)):($collapse.style.height="auto",$navbar.className+=" in")}$toggle.addEventListener("click",handleMagic)</script><!-- Main Content --><!-- Page Header --><header class="intro-header" style="background-image:url(/img/home-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="site-heading"><h1>列表</h1><!--<hr class="small">--> <span class="subheading">網站技術 | 職涯發展 | 個人成長 | 產業觀察 | 專案管理</span></div></div></div></div></header><!-- Main Content --><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><!-- 归档列表 --><!-- 归档列表 --><div class="one-tag-list"><span class="fa fa-calendar-times-o listing-seperator" id="2021"><span class="tag-text">2021</span></span><ul><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/03/12/react-coding-speed/" style="color:#0085a1"><span>提升你的 React 開發效率 : 透過三個目標重構元件撰寫方式 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-11 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/03/11/experience-sharing-web-page-render-performance/" style="color:#0085a1"><span>三步驟加速你的網站效能 : 善用開發者工具進行效能分析優化 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-09 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/03/09/experience-sharing-web-page-loading-performance/" style="color:#0085a1"><span>四種加快網站開啟速度的常見方法 : 延遲載入、程式拆分、打包檔分析、資源優化 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-28 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/02/28/react-in-enterprise-app/" style="color:#0085a1"><span>不在大型專案導入 React.js 的 5 個原因 : 關於跟著 React.js 一路成長的心得分享 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-27 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/01/27/thinking-what-questions-should-you-ask-the-interviewer/" style="color:#0085a1"><span>面試結束時可以問的四個問題 : 用結束時的提問來面試公司 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-26 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/01/26/thinking-retrospective-me/" style="color:#0085a1"><span>回顧成為前端工程師的這五年 : 嗨!!! 我是林彥成，前端工程師 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-16 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/01/16/marketing-google-tools/" style="color:#0085a1"><span>Google Trend 掌握趨勢關鍵字的力量 : 搭配趨勢來評估關鍵字成效 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-11 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2021/01/11/experience-sharing-agile-tour-2020/" style="color:#0085a1"><span>Agile Tour Taiwan 2020 心得分享 : 週期圖法、Cynefin Framework、遊戲化框架 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li></ul></div><div class="one-tag-list"><span class="fa fa-calendar-times-o listing-seperator" id="2020"><span class="tag-text">2020</span></span><ul><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-06 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/12/06/thinking-public-relations/" style="color:#0085a1"><span>後疫情時代五種企業具備的公關力 : 從台灣百工的內心話反思如何經營自身的公關力 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-03 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/12/03/experience-sharing-growth-hacker-seminar-2020/" style="color:#0085a1"><span>2020 成長駭客年會 : GDPR 與肺炎疫情後的行銷轉型與想法 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-26 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/11/26/career-remote-work-values/" style="color:#0085a1"><span>從辦公室到遠端，四個價值觀的轉換與改變 : 有個同學叫屁蒼 X 職場奇遇記 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/11/25/career-remote-work-life/" style="color:#0085a1"><span>怎麼兼職? 身兼三份工作的真實樣貌 : 有個同學叫屁蒼 X 職場奇遇記 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-17 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/11/17/career-remote-work-interview/" style="color:#0085a1"><span>22K 很少，那如果是三份 22k+ 的工作呢 : 有個同學叫屁蒼 X 職場奇遇記 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-07 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/11/07/marketing-2020-grow-with-google-tour/" style="color:#0085a1"><span>2020 Grow with Google Tour : 數位行銷基本功，打造數位能見度 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-03 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/11/03/marketing-google-analytics-4-quick-start/" style="color:#0085a1"><span>Google Analytics 4 Quick Start : 新版 GA 開箱體驗心得 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-28 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/10/28/thinking-team-building-by-math/" style="color:#0085a1"><span>圖論、線性代數、團隊關係 : 從數學的角度切入並觀察團隊關係 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-24 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/10/24/thinking-personal-brand/" style="color:#0085a1"><span>四個網路發展對個人品牌影響 : 淺談網路時代下的開源社群、知識變現、聯盟行銷 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-19 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/10/19/thinking-urda-app-user-experience/" style="color:#0085a1"><span>三個騎 UrDa 前就爛到不行的體驗 : 從前端工程師的角度淺談如何做出失敗的產品 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-06 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/10/06/thinking-product-marketing-malaya/" style="color:#0085a1"><span>淺談 Product Marketing : 以電商在馬來西亞市場為例 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-30 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/30/elastic-cloud-stack-101/" style="color:#0085a1"><span>Elastic Cloud Stack 101 : 從零開始入門 30 天心得分享 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-27 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/27/elastic-cloud-high-availability/" style="color:#0085a1"><span>Elastic Cloud Enterprise 維運與除錯 : 維運節點及高可用性的系統架構 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/25/elastic-cloud-snapshots/" style="color:#0085a1"><span>Elastic Cloud Snapshots : 資料備份與恢復 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-24 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/24/elastic-cloud-enterprise-deployments/" style="color:#0085a1"><span>Elastic Cloud Enterprise Deployment : 開箱部屬樣板體驗 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-23 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/23/elastic-cloud-enterprise-architecture/" style="color:#0085a1"><span>Elastic Cloud Enterprise Architecture : 系統平台管理與架構設定 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-22 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/22/elastic-anomaly-detection-for-cybersecurity/" style="color:#0085a1"><span>Elastic Anomaly Detection for Cybersecurity : DNS 常見攻擊與可能的偵測方法 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-21 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/21/elastic-machine-learning-fundamentals/" style="color:#0085a1"><span>Elastic Machine Learning 基礎介紹 : 機器學習的名詞、相關流程與案例介紹 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-18 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/18/elastic-siem-ui/" style="color:#0085a1"><span>Elastic SIEM 簡介 : SIEM UI 功能介紹，究竟能解決什麼問題 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-17 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/17/elastic-endpoint-security-application/" style="color:#0085a1"><span>Elastic Endgame 簡介 : 端點防護產品 Endgame 的體驗心得分享 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-16 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/16/elastic-security-quick-start/" style="color:#0085a1"><span>Elastic Security Quick Start : 透過 Kibana 介面加入並監控安全相關的事件數據 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-15 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/15/elastic-endpoint-security/" style="color:#0085a1"><span>Elastic Security 簡介 : 淺談 EDR、SIEM、Elastic Endpoint Security </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-14 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/14/elastic-secure-communications/" style="color:#0085a1"><span>Elastic Security 加密傳輸 : 透過啟用加密傳輸讓資料更安全 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-13 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/13/elastic-security-role-based-access-control/" style="color:#0085a1"><span>Elastic Security : 操作權限管理 (Role-Based Access Control) 簡介 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/12/elastic-apm-fundamentals/" style="color:#0085a1"><span>Elastic APM 基礎教學 : 運用 APM client 和 server 端的函式庫來做應用程式層級的監控 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-10 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/10/elastic-kibana-quick-start/" style="color:#0085a1"><span>Elastic Kibana 快速入門 : 資訊圖像化可以炫技到什麼程度 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-09 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/09/elastic-observability-logging-introduction/" style="color:#0085a1"><span>Elastic Logging X Filebeat 深入理解 : Filebeat 實際運用的細節、基礎概念及相關配置教學 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/08/elastic-workplace-search-quick-start/" style="color:#0085a1"><span>Elastic Workplace Search Quick Start : 用三分鐘的時間架設工作區搜尋引擎 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-06 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/06/elastic-app-search-quick-start/" style="color:#0085a1"><span>Elastic App Search Quick Start : 用三分鐘的時間架設搜尋引擎 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-05 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/05/elastic-observability-fundamentals-introduction/" style="color:#0085a1"><span>Elastic Observability 簡介 : 淺談四大功能 Logs、Metrics、Apm、Uptime </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-03 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/03/elastic-metrics-quick-start/" style="color:#0085a1"><span>Elastic Metric Quick Start (Metricbeat, Kibana, Elasticsearch) : 監控 Nginx 伺服器狀態 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-02 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/02/elastic-logging-quick-start/" style="color:#0085a1"><span>Elastic Filebeat Logging 基礎教學 : 傳送 Nginx Log 到 ES </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/09/01/elastic-cloud-stack-introduction/" style="color:#0085a1"><span>30 天入門 Elastic Cloud Stack : 相關服務簡介 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-17 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/08/17/thinking-resume/" style="color:#0085a1"><span>如何寫出驚喜滿滿 or 地雷滿滿的履歷 : 追不到夢想就創一個！矽谷阿雅讀書會超強分享！ </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-05 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/08/05/react-component-element-and-reconciliation/" style="color:#0085a1"><span>React 元件概念與效能調整 : 從 Element、Reconciliation 概念出發調整效能 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/07/08/thinking-refactor-and-code-quaility/" style="color:#0085a1"><span>程式碼品質與重構方法 : 範例與相關概念 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/06/08/tool-github-action/" style="color:#0085a1"><span>Github Action X React App : 將專案導入 Github Action 並自動定期更新專案 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/06/08/thinking-conversational-commerce/" style="color:#0085a1"><span>Shoplus 東南亞經驗分享 (Conversational Commerce) : 從台灣出發打造 15 萬賣家的東南亞社群電商服務成功經驗分享 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>05-27 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/05/27/css-atomic-css/" style="color:#0085a1"><span>Atomic CSS 優化樣式開發 : 運用特性簡化開發流程、減少維護成本 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>04-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/04/25/tool-semantic-version-release/" style="color:#0085a1"><span>自動產生 semantic Versioning 版號與資訊 : 使用 semantic-release 或 standard-version </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-22 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/03/22/tool-npm/" style="color:#0085a1"><span>npm 概念與用途 : 常用指令與版本號規則教學 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-05 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/02/05/js-virus-and-where-to-find-them/" style="color:#0085a1"><span>Leaflet 地圖實作教學 : 從0到1快速建立疫情地圖 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-02 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/02/02/react-component-class-based-vs-functional/" style="color:#0085a1"><span>React Class-based vs Functional Component : 從特性淺談兩種寫法之異同 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-17 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2020/01/17/career-interview-questions/" style="color:#0085a1"><span>前端面試該反問的 12 個問題 : 從過往遇到問題和解法反思未來的職涯疑問 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li></ul></div><div class="one-tag-list"><span class="fa fa-calendar-times-o listing-seperator" id="2019"><span class="tag-text">2019</span></span><ul><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-31 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/12/31/thinking-git-with-project/" style="color:#0085a1"><span>專案開發中的 Git 指南 : 淺談 Git 如何協助專案的協作與開發 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-22 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/12/22/react-component/" style="color:#0085a1"><span>React 元件開發指南 : 從特性與函式庫工具淺談元件開發 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-17 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/11/17/thinking-product-management/" style="color:#0085a1"><span>如何打造與管理產品 : 矽谷阿雅與 Marty Cagan 來台演講心得分享 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-15 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/10/15/tool-hexo-blog-seo/" style="color:#0085a1"><span>Github 免費架站 : Hexo X Google Search Console </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/10/01/js-memory-leak/" style="color:#0085a1"><span>JavaScript Memory Leak : 前端面試必問的記憶體洩漏 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/09/08/react-system-architacture/" style="color:#0085a1"><span>React.js 專案架構 : 解析常見的架構 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-07 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/09/07/tool-mongoose-mongo/" style="color:#0085a1"><span>Mongoose ODM 操作 Mongo DB : 常見專案架構設計 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-30 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/30/html-loading-script/" style="color:#0085a1"><span>Script 載入方式 (async, defer, lazyload) : 三種避免阻塞腳本的載入方式 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-29 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/29/react-css-in-js/" style="color:#0085a1"><span>CSS in JS (react.js) : 簡介與優缺點分析 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-15 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/15/tool-socialbakers/" style="color:#0085a1"><span>用 Socialbakers 了解其他粉專數據 : 社群經營分析工具開箱 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-13 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/13/thinking-social-media-inside/" style="color:#0085a1"><span>搜尋引擎與社群媒體 : 從請輸入檢索詞 WWW 淺談搜尋引擎與社群媒體對社會的影響 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/12/tool-circleci-hexo/" style="color:#0085a1"><span>CircleCI 教學 : 自動建置發佈 Github 專案 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/08/01/python-hypothesis-testing/" style="color:#0085a1"><span>Python Hypothesis Testing (假設檢定) : 快速入門假設檢定、資訊視覺化 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-24 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/07/24/tool-wordpress-avada-optimized/" style="color:#0085a1"><span>Avada 網站速度優化 : WordPress &amp; Avada 的效能設定 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-13 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/07/13/tool-nginx/" style="color:#0085a1"><span>四大步驟入門 Nginx 網站架設 : 常用的 Nginx Config 與相關指令教學 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-04 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/07/04/tool-realtime-web/" style="color:#0085a1"><span>網頁即時通訊實作 : Polling, Long-Polling, Server Sent Events, WebSocket </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/07/01/thinking-education/" style="color:#0085a1"><span>設計思考 X 教育科技 : 從 Persona 與設計思考的角度去進行系統設計 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/06/25/tool-vscode-extensions/" style="color:#0085a1"><span>Visual Studio Code Extensions : React 前端常用編輯器套件推薦 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-04 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/06/04/react-reduce-boilerplate/" style="color:#0085a1"><span>減少 React 專案的 Boilerplate : 從專案配置、API、Redux 來看優化的可能 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>05-18 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/05/18/thinking-project-schedule/" style="color:#0085a1"><span>軟體專案評估教學 : 軟體工程師評估專案時程和難度的方法 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>04-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/04/12/react-hooks/" style="color:#0085a1"><span>選擇 React Hook 的原因 : 從 useState、useEffect 理解 hooks 的優點與缺點 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-28 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/03/28/js-google-sheet-db/" style="color:#0085a1"><span>Google 試算表實作簡易資料庫 : Google Sheet, App script, Visualization API </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-27 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/02/27/react-create-script-2/" style="color:#0085a1"><span>React Create Script 2.0 : 減少維護環境配置 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-23 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/01/23/career-job/" style="color:#0085a1"><span>如何與獵頭談話? : 但願你因工作而閃亮讀書心得，反思前端工程師職涯規劃 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-22 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2019/01/22/js-cookie/" style="color:#0085a1"><span>為什麼需要 Cookie? : Cookies 的功能簡介與相關應用 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li></ul></div><div class="one-tag-list"><span class="fa fa-calendar-times-o listing-seperator" id="2018"><span class="tag-text">2018</span></span><ul><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-04 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/12/04/tool-google-developer/" style="color:#0085a1"><span>Chrome DevTools : 從搶票按鈕談開發者工具除錯技巧 (Debug) </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-15 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/11/15/thinking-security/" style="color:#0085a1"><span>網站資訊安全 : 前端工程師常見的資安問題 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/11/12/thinking-interview/" style="color:#0085a1"><span>前端面試心得 (2018/11) : KKstream, Oath, MIT jobs 快速面試 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-14 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/10/14/marketing-campaign/" style="color:#0085a1"><span>facebook pixel 與 google tag manager 的應用 : 淺談行銷與再行銷 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/10/08/thinking-message-delivery/" style="color:#0085a1"><span>簡報製作技巧 : 從訊息投放的角度來優化簡報 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/10/01/js-intro/" style="color:#0085a1"><span>網站導覽設計 (使用 Intro.js) : 輕鬆幫網站 UI 加上導覽 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-29 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/09/29/html-seo/" style="color:#0085a1"><span>如何做 SEO? : HTML語意化, Meta data , Microdata(結構化資料), 網站索引檔(sitemap.xml) </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-24 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/08/24/css-scss-tips/" style="color:#0085a1"><span>SCSS, CSS 教學 : 初學者常見的觀念與技巧 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-20 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/08/20/tool-server-performance/" style="color:#0085a1"><span>Node.js Server 效能優化 : 使用 nginx 以及 pm2 cluster </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-07 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/07/07/thinking-communication/" style="color:#0085a1"><span>專案協作 : 從心理層面與溝通成本來看專案開發及協作流程 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-03 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/06/03/marketing-talk/" style="color:#0085a1"><span>Market爆擊ing : 戰略X戰術X心理 =&gt; Marketing </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>05-09 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/05/09/marketing-chatbot/" style="color:#0085a1"><span>當 chatbot 遇上行銷 : 該如何讓行銷跟上聊天機器人的潮流? </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>05-07 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/05/07/thinking-web-of-things/" style="color:#0085a1"><span>Web of Things : 當前端遇上 IoT 會變成 WoT 嗎? </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>04-06 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/04/06/java-jersey/" style="color:#0085a1"><span>利用 Jersey 開發 Java RESTful API 教學 : Jersey 這套框架需要了解的六個地方 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>04-05 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/04/05/java-web/" style="color:#0085a1"><span>Java Web API (RESTful API) 教學 : 打通三個關節開發 API 後端服務 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>03-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/03/25/marketing-landingpage/" style="color:#0085a1"><span>Landing Page 的重要 : 當到達頁面遇上行銷 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-04 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/02/04/html-accessibility/" style="color:#0085a1"><span>什麼是無障礙網頁? : 用 React 撰寫符合 JSX a11y 的無障礙網頁 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-25 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/01/25/js-web-gis-infografic/" style="color:#0085a1"><span>地理資訊視覺化 : 網站技術與工具介紹 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2018/01/01/tool-jenkins/" style="color:#0085a1"><span>前端專案 X Jenkins : 將前端專案發佈與建置流程自動化 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li></ul></div><div class="one-tag-list"><span class="fa fa-calendar-times-o listing-seperator" id="2017"><span class="tag-text">2017</span></span><ul><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>12-20 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/12/20/css-button-tooltip/" style="color:#0085a1"><span>Pure CSS Tooltips : 使用 CSS 小技巧幫按鈕加上 tooltip </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-06 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/11/06/js-template/" style="color:#0085a1"><span>EJS 簡介 : 透過樣板加速開發 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>11-01 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/11/01/pwa-audit/" style="color:#0085a1"><span>用 Chrome Audit 改善效能 : 透過 Chrome Lighthouse 稽核並改善網站效能 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>10-12 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/10/12/tool-cloud-web-service/" style="color:#0085a1"><span>架站雲端服務簡介 : AWS lambda vs ec2 vs Azure Web App </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>09-21 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/09/21/react-intl/" style="color:#0085a1"><span>React 多國語言簡介(使用 react-intl) : 使用 Yahoo react-intl </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>08-31 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/08/31/react-server-render/" style="color:#0085a1"><span>React SSR 教學與問題整理 : 前端伺服器渲染觀念與常見問題 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>07-22 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/07/22/pwa-service-worker/" style="color:#0085a1"><span>Service Worker 介紹 : 實作快取及推播的一種解決方案 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>06-21 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/06/21/react-testing/" style="color:#0085a1"><span>初探 React 單元測試 : 前端測試踩坑入門 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>05-18 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/05/18/thinking-component-state-and-props/" style="color:#0085a1"><span>Component State and Props : SPA 的狀態與資料流 (MVVM vs FLUX) </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>04-20 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/04/20/js-http-client/" style="color:#0085a1"><span>Ajax 非同步請求整理 : 幾個非同步發 Ajax 的方法 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-21 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/02/21/tool-code-with-eslint/" style="color:#0085a1"><span>ESLint X Prettier : 透過工具幫助團隊控制程式碼風格與品質 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>02-21 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/02/21/html-multi-language/" style="color:#0085a1"><span>如何製作 RTL 網站 : 當網頁遇到由右到左的語言 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-27 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/01/27/tool-jsdoc/" style="color:#0085a1"><span>透過註解 與 JSDoc 產生開發文件 : 自動產生專案文件 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-08 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/01/08/js-module-loader/" style="color:#0085a1"><span>Webpack 簡介 : 前端建置流程自動化工具 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li><!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> --><li>01-07 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <a href="/2017/01/07/thinking-hello-2017/" style="color:#0085a1"><span>使用 Hexo 架設部落格 : 嗨!前端三分鐘 </span></a><!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> --></li></ul></div></div></div></div><!-- Footer --><!-- Footer --><footer><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a target="_blank" rel="noopener" href="https://linyencheng-tw.medium.com/"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-medium fa-stack-1x fa-inverse"></i></span></a></li><li><a title="Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/linyencheng.tw"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a></li><li><a title="Github" target="_blank" rel="noopener" href="https://github.com/LinYenCheng"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a title="Linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/in/LinYenCheng"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Copyright &copy; 前端三分鐘 2021<br>Theme by <a title="原作者" target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> <span style="display:inline-block;margin:0 5px">& </span>Ported by <a title="第二作者" target="_blank" rel="noopener" href="https://github.com/Kaijun/hexo-theme-huxblog">Kaijun</a></p></div></div></div></footer><!-- jQuery --><!-- 
+<script src="/js/jquery.min.js"></script>
+ --><!-- Bootstrap Core JavaScript --><!-- 
+<script src="/js/bootstrap.min.js"></script>
+ --><!-- Custom Theme JavaScript --><!-- 
+<script src="/js/hux-blog.min.js"></script>
+ --><!-- async load function --><script>function async(e,n){var t=document,a="script",r=t.createElement(a),a=t.getElementsByTagName(a)[0];r.src=e,n&&r.addEventListener("load",function(e){n(null,e)},!1),a.parentNode.insertBefore(r,a)}</script><script>async("https://linyencheng.github.io/js/jquery.min.js",function(){var i,e;i=$("#toc .toc-item:has(> .toc-child)"),e=i.children(".toc-link"),i.prepend("<i class='fa fa-caret-down'></i><i class='fa fa-caret-right'></i>"),$(".toc-item > .fa-caret-down"),(i=$(".toc-item > .fa-caret-right")).addClass("hide"),$("#toc .toc-item > i").click(function(){$(this).siblings(".toc-child").slideToggle(100),$(this).toggleClass("hide"),$(this).siblings("i").toggleClass("hide")}),$(".toc-item > .fa-caret-down"),i.addClass("hide"),function(){e.dblclick(function(){$(this).siblings(".toc-child").hide(100),$(this).siblings("i").toggleClass("hide")}),e.click(function(){var i=$(this).siblings(".toc-child");i.is(":hidden")&&(i.show(100),$(this).siblings("i").toggleClass("hide"))});var i,t,s,c;i=$(".toc-item > .fa-caret-right"),t=$(".toc-item > .fa-caret-down"),s=e.next(".toc-child"),c=$("#toc .toc-title"),e.length&&(c.addClass("clickable"),c.click(function(){s.is(":hidden")?(s.show(150),i.removeClass("hide"),t.addClass("hide")):(s.hide(100),i.addClass("hide"),t.removeClass("hide"))}))}(),async("https://linyencheng.github.io/js/bootstrap.min.js",function(){async("https://linyencheng.github.io/js/hux-blog.min.js",function(){var i="search.xml";0==i.length&&(i="search.xml"),searchFunc("/"+i,"local-search-input","local-search-result"),0!==$("#tag_cloud").length&&async("https://linyencheng.github.io/js/jquery.tagcloud.js",function(){$.fn.tagcloud.defaults={color:{start:"#bbbbee",end:"#0085a1"}},$("#tag_cloud a").tagcloud()})})})})</script><!--fastClick.js --><script>async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js",function(){var c=document.querySelector("nav");c&&FastClick.attach(c)})</script><!-- Google Analytics --><script>var _gaId="UA-106834789-1",_gaDomain="linyencheng.github.io";!function(a,e,n,g,t,c){a.GoogleAnalyticsObject=g,a.ga=a.ga||function(){(a.ga.q=a.ga.q||[]).push(arguments)},a.ga.l=+new Date,t=e.createElement(n),c=e.getElementsByTagName(n)[0],t.async=1,t.src="//www.google-analytics.com/analytics.js",c.parentNode.insertBefore(t,c)}(window,document,"script","ga"),ga("create",_gaId,_gaDomain),ga("send","pageview")</script><!-- Image to hack wechat --> <img alt="share" loading="lazy" src="https://linyencheng.github.io/img/icon_wechat.png" width="0" height="0"><!-- Migrate from head to bottom, no longer block render and still work --></body></html>

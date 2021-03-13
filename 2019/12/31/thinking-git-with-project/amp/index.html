@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+	<link rel="canonical" href="https://linyencheng.github.io/2019/12/31/thinking-git-with-project/" >
+	<link rel="shortcut icon" href="/img/favicon.ico">
+    <title>專案開發中的 Git 指南 - 前端三分鐘</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    
+    <meta property="og:title" content="專案開發中的 Git 指南">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://linyencheng.github.io/2019/12/31/thinking-git-with-project/">
+	
+		<meta property="og:image" content="/amp-dist/sample/icon.png">
+	
+	<meta property="og:site_name" content="前端三分鐘">
+	
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="前端三分鐘">
+	<meta name="twitter:url" content="https://linyencheng.github.io/2019/12/31/thinking-git-with-project/">
+	<meta name="twitter:title" content="專案開發中的 Git 指南 - 前端三分鐘">
+	
+    
+    	<meta name="twitter:image" content="/amp-dist/sample/icon.png">
+	
+	
+	
+    
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <!--
+  	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BlogPosting",
+			"headline": "專案開發中的 Git 指南",
+			
+			"mainEntityOfPage":{
+			    "@type":"WebPage",
+			    "@id":"https://linyencheng.github.io/2019/12/31/thinking-git-with-project/"
+			},
+			"datePublished": "2019-12-31T00:00:00.000Z",
+			"dateModified": "2021-03-13T15:41:26.902Z",
+			
+			"image": {
+				"@type": "ImageObject",
+				"url": "/amp-dist/sample/icon.png",
+				"width" : "1024",
+				"height" : "800"
+			},
+			
+			"author": {
+			    "@type": "Person",
+			    "name": "林彥成"
+			},
+			"publisher": {
+			    "@type": "Organization",
+			    "name": "前端三分鐘"
+			    
+			    ,
+			    "logo": {
+			      "@type": "ImageObject",
+			      "url": "https://linyencheng.github.io/amp-dist/sample/icon.png",
+			      "width": 600,
+			      "height": 60
+			    }
+			    
+			}
+		}
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<style amp-custom>
+		
+abbr,
+acronym,
+address,
+applet,
+big,
+blockquote,
+body,
+caption,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+ul,
+var {
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+acronym {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  color: #2d3d40;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  text-rendering: optimizelegibility;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+figure.highlight td,
+.post .entry-content figure.highlight th {
+  border: 0;
+  padding: 0;
+}
+caption,
+table,
+td,
+th {
+  vertical-align: middle;
+}
+caption,
+td,
+th,
+.table-align-left {
+  text-align: left;
+}
+del {
+  text-decoration: line-through;
+}
+html {
+  font-size: 14px;
+}
+:root sub,
+:root sup {
+  vertical-align: baseline;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+a {
+  color: #e91e63;
+  text-decoration: none;
+  -webkit-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  -ms-transition: 0.7s;
+  transition: 0.7s;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+a img {
+  border: none;
+}
+a:hover {
+  -webkit-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  transition: 0.2s;
+  color: #930e3b;
+}
+@media (min-width: 481px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+.clearfix:after {
+  clear: both;
+  visibility: hidden;
+  content: ".";
+  display: block;
+  height: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.circle {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.thumbImg-w {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.thumbImg {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.__web-inspector-hide-shortcut__ {
+  visibility: hidden ;
+}
+button {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  -webkit-border-image: initial;
+  -moz-border-image: initial;
+  -o-border-image: initial;
+  border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em 0em 0em 0em;
+  font: 11px system-ui;
+  -webkit-writing-mode: horizontal-tb;
+  -webkit-appearance: button;
+}
+.hamburger {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url('data:image/svg+xmlutf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#4A4A4A" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px 24px;
+  -moz-background-size: 30px 24px;
+  background-size: 30px 24px;
+  background-position: center center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+.nav ul:after {
+  clear: both;
+  visibility: hidden;
+}
+.nav,
+.nav-icon {
+  position: relative;
+}
+.nav ul {
+  display: block;
+}
+.nav ul li {
+  display: block;
+}
+.nav ul li a {
+  display: block;
+}
+.tab {
+  position: relative;
+  color: #424242;
+  padding: 6px;
+  margin: 0 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: 0.1s ease color;
+  -webkit-transition: 0.1s ease color;
+  -moz-transition: 0.1s ease color;
+  -o-transition: 0.1s ease color;
+  -ms-transition: 0.1s ease color;
+  transition: 0.1s ease color;
+}
+amp-sidebar {
+  width: 200px;
+}
+amp-sidebar ul {
+  padding: 10px 0;
+}
+amp-sidebar li a {
+  display: block;
+  padding: 10px 20px;
+}
+header {
+  height: 60px;
+  background-color: #222f31;
+  -webkit-box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+  box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+  -webkit-box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+}
+header .header-title a {
+  padding: 0 0 0 20px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+header .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+header .left-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  font-size: 20px;
+  margin-left: 0;
+  font-weight: 300;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+  width: auto;
+  font-size: 15px;
+}
+header .right {
+  font-size: 15px;
+}
+header .alt {
+  padding: 0;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -o-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.blog-title a {
+  position: relative;
+}
+button {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  -webkit-border-image: initial;
+  -moz-border-image: initial;
+  -o-border-image: initial;
+  border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em 0em 0em 0em;
+  font: 11px system-ui;
+  -webkit-writing-mode: horizontal-tb;
+  -webkit-appearance: button;
+}
+.__web-inspector-hide-shortcut__ {
+  visibility: hidden ;
+}
+.hamburger {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#FFF" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px 24px;
+  -moz-background-size: 30px 24px;
+  background-size: 30px 24px;
+  background-position: center center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+.tab {
+  position: relative;
+  color: #2d3d40;
+  padding: 6px;
+  margin: 0 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: 0.1s ease color;
+  -webkit-transition: 0.1s ease color;
+  -moz-transition: 0.1s ease color;
+  -o-transition: 0.1s ease color;
+  -ms-transition: 0.1s ease color;
+  transition: 0.1s ease color;
+}
+amp-sidebar {
+  width: 250px;
+  background-color: #182022;
+}
+amp-sidebar ul {
+  padding: 10px 0;
+}
+amp-sidebar li {
+  border-top: 1px solid #2f4043;
+}
+amp-sidebar li:last-child {
+  border-bottom: 1px solid #2f4043;
+}
+amp-sidebar li a {
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  padding: 10px 20px;
+}
+amp-sidebar li a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.categories-header {
+  background-color: #2d3d40;
+  padding: 0rem 0.8rem;
+}
+.categories-header a {
+  color: #fff;
+}
+.categories-header a:hover {
+  color: #fff;
+}
+.categories-header .breadcrumb ol li {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+.categories-header .breadcrumb ol li span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.categories-header .breadcrumb ol li:after {
+  content: "/";
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.4rem;
+}
+.categories-header .breadcrumb ol li:last-child:after {
+  content: "";
+  margin: 0;
+}
+.entry-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.entry-header .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.header-cap {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.title-cover {
+  background-color: #fff;
+  color: #2d3d40;
+  padding: 1.5rem 0.8rem 0 0.8rem;
+}
+.title-cover a {
+  font-size: 1.2rem;
+  color: #2d3d40;
+  text-align: left;
+  font-weight: bold;
+}
+.entry-title {
+  margin: 0;
+}
+.entry-meta-header {
+  font-size: 0.85rem;
+  text-align: center;
+}
+.entry-meta-header .date {
+  font-family: sans-serif;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #2d3d40;
+  text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #e91e63;
+}
+#container {
+  margin-left: auto;
+  margin-right: auto;
+}
+#main {
+  margin-bottom: 3em;
+  padding-left: 0;
+}
+.post {
+  margin-bottom: 3rem;
+  position: relative;
+}
+.entry-content {
+  margin: 0 0.6rem;
+  font-size: 1rem;
+}
+.entry-content h1 {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin: 1em 0 0.8em;
+}
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content h2 span,
+.entry-content h3 span,
+.entry-content h4 span,
+.entry-content h5 span,
+.entry-content h6 span {
+  color: #98b8be;
+  font-weight: bold;
+}
+.entry-content h2,
+.entry-content h2 span {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  text-align: center;
+}
+.entry-content h2 {
+  border-bottom: 2px solid #cce4e8;
+  margin: 4.5rem 0 0.5em;
+  padding: 0.8em 0;
+}
+.entry-content h3,
+.entry-content h3 span {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-align: center;
+}
+.entry-content h3 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h4,
+.entry-content h4 span {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.entry-content h4 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h5,
+.entry-content h5 span {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+}
+.entry-content h5 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h6,
+.entry-content h6 span {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  text-align: center;
+}
+.entry-content h6 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content p {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 2.2rem;
+  margin: 3rem 0.8rem;
+}
+.entry-content p a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline;
+  border-bottom: 1px dashed #f1729d;
+  padding-bottom: 0.3rem;
+}
+.entry-content p a:hover {
+  border-bottom: 1px dashed #9c0f3f;
+  padding-bottom: 0.4rem;
+}
+.entry-content em {
+  background-color: #f9f5d1;
+  color: #886d00;
+  font-style: normal;
+  margin: 0 2px;
+  padding: 0.4em;
+}
+.entry-content strong {
+  color: #871c1c;
+  font-style: normal;
+  margin: 0 2px;
+  padding: 0.4em;
+  background-color: #fadcdc;
+}
+.entry-content hr {
+  border: 0;
+  border-top: 3px solid #cce4e8;
+  margin: 3rem auto;
+  width: 20%;
+}
+.entry-content img,
+.entry-content video {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+}
+.entry-content iframe {
+  width: 100% ;
+}
+.entry-content blockquote {
+  margin: 3rem 0.8rem;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  background-color: none;
+  border-left: 3px solid #98b8be;
+  font-style: bold;
+}
+.entry-content blockquote p {
+  margin: 0.5rem 0;
+}
+.entry-content blockquote blockquote {
+  border-left: none;
+}
+.entry-content .table-wrapper {
+  margin: 3rem 0.8rem;
+}
+.entry-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: auto;
+  display: block;
+  font-size: 0.85rem;
+  margin: 0 auto;
+  width: auto;
+}
+.entry-content td,
+.entry-content th {
+  line-height: 1.8em;
+  padding: 0.8rem 0.8rem;
+  font-size: 0.85rem;
+}
+.entry-content td em,
+.entry-content th em,
+.entry-content td strong,
+.entry-content th strong,
+.entry-content td a,
+.entry-content th a {
+  font-size: 0.85rem;
+}
+.entry-content td {
+  border: 1px solid #c4c4c4;
+}
+.entry-content th {
+  background-color: #ecf5f7;
+  border: 1px solid #c4c4c4;
+}
+.entry-content .table-align-center {
+  text-align: center;
+}
+.entry-content .table-align-right {
+  text-align: right;
+}
+.entry-content ul,
+.entry-content ol,
+.entry-content dl {
+  margin: 3rem 0 3rem 1.6rem;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+.entry-content ul li,
+.entry-content ol li,
+.entry-content dl li {
+  line-height: 2rem;
+  position: relative;
+  padding: 0;
+}
+.entry-content ul li p,
+.entry-content ol li p,
+.entry-content dl li p {
+  line-height: 2rem;
+  margin: 0;
+}
+.entry-content ul li p:not(:first-child),
+.entry-content ol li p:not(:first-child),
+.entry-content dl li p:not(:first-child) {
+  color: #57767c;
+  margin: 0.5rem;
+}
+.entry-content ul li ul,
+.entry-content ol li ul,
+.entry-content dl li ul,
+.entry-content ul li ol,
+.entry-content ol li ol,
+.entry-content dl li ol,
+.entry-content ul li dl,
+.entry-content ol li dl,
+.entry-content dl li dl {
+  margin: 1rem;
+}
+.entry-content ul li {
+  margin: 0.4rem 0 0.4rem 0.8rem;
+}
+.entry-content ul li::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0.75rem;
+  left: -1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #cce4e8;
+  border-radius: 100%;
+}
+.entry-content ol {
+  counter-reset: number;
+}
+.entry-content ol li {
+  margin: 0.4rem 0 0.4rem 2rem;
+}
+.entry-content ol li p:first-child {
+  display: inline-block;
+  line-height: 1.6rem;
+  height: 1.6rem;
+}
+.entry-content ol li:before {
+  position: absolute;
+  display: inline-block;
+  float: left;
+  margin: 0 0.2rem 0 0;
+  padding: 0;
+  counter-increment: number;
+  content: counter(number);
+  left: -2.2rem;
+  top: 0.2rem;
+  background-color: #98b8be;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+}
+kbd {
+  font-family: sans-serif;
+  text-align: center;
+  display: inline-block;
+  color: #425a5e;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px #e8e8e8 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  box-shadow: 0 0 10px #e8e8e8 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  -webkit-box-shadow: 0 0 10px #e2e2e2 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: #fff;
+  border-left: 1px solid #fff;
+  border-radius: 3px;
+  border-right: 1px solid #e6e6e6;
+  border-top: 1px solid #fff;
+  font-size: 0.85rem;
+  line-height: 1rem;
+  margin: 5px;
+  padding: 6px 8px 3px;
+  text-shadow: 0 1px 0 #fff;
+  vertical-align: baseline;
+  
+}
+img.responsive-img {
+  height: auto;
+  max-width: 100%;
+}
+video.responsive-video {
+  height: auto;
+  max-width: 100%;
+}
+amp-instagram,
+amp-vimeo,
+amp-video,
+amp-youtube,
+amp-twitter,
+.soundcloud-wrapper,
+.amp-img-wrapper,
+.googleAdPost,
+.ad-footer {
+  margin: 3rem 0.8rem;
+}
+code,
+figure.highlight .code,
+pre {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+code,
+pre,
+samp {
+  font-family: Menlo, Consolas, Monaco, Consolas, monospace;
+}
+p code {
+  font-size: 1rem;
+}
+code,
+pre {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  background-color: #ecf5f7;
+  color: #007e96;
+}
+code {
+  margin: 0 3px;
+  padding: 0.4em;
+}
+samp {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+sub,
+sup {
+  font-size: 0.75rem;
+  line-height: 0;
+  position: relative;
+}
+sub {
+  bottom: -0.2em;
+}
+sup {
+  top: -0.5em;
+}
+pre {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  margin: 0 3px;
+  padding: 15px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  border: 0;
+  line-height: 1.3rem;
+  overflow-x: auto;
+}
+pre .addition,
+pre .css .tag,
+pre .keyword,
+pre .method,
+pre .nginx .title,
+pre .request,
+pre .status,
+pre .winutils {
+  color: #66d9ef;
+}
+pre .attr_selector,
+pre .cdata,
+pre .clojure .title,
+pre .diff .change,
+pre .important {
+  color: #9882eb;
+}
+pre .preprocessor {
+  color: #9882eb;
+}
+pre .preprocessor .keyword {
+  color: #9882eb;
+}
+pre .shebang,
+pre .special,
+pre .subst {
+  color: #9882eb;
+}
+pre .symbol {
+  color: #9882eb;
+}
+pre .symbol .string {
+  color: #9882eb;
+}
+pre .attribute,
+pre .class .title,
+pre .constant,
+pre .haskell .type,
+pre .lisp .body,
+pre .parent,
+pre .smalltalk .number,
+pre .variable {
+  color: #a6e22e;
+}
+pre .built_in,
+pre .chunk,
+pre .decorator,
+pre .id,
+pre .identifier,
+pre .literal,
+pre .localvars,
+pre .title,
+pre .vhdl,
+pre .deletion {
+  color: #f92672;
+}
+pre .command,
+pre .hexcolor,
+pre .number,
+pre .phpdoc,
+pre .regexp,
+pre .string,
+pre .tag .value,
+pre .tex .formula {
+  color: #e6db74;
+}
+pre .comment,
+pre .diff .header,
+pre .doctype,
+pre .javadoc,
+pre .lisp .string,
+pre .pi,
+pre .template_comment {
+  color: #75715e;
+  font-weight: normal;
+}
+.line {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
+  color: #f8f8f2;
+}
+.line span {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+.gist {
+  background: #fff;
+  border: 1px solid color-gutter;
+  color: #f8f8f2;
+  line-height: 1.6rem;
+  margin-top: 15px;
+  overflow: auto;
+  padding: 7px 15px;
+}
+.gist .gist-file {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+.gist .gist-file .gist-data {
+  background: 0 0;
+  border-bottom: none;
+}
+.gist .gist-file .gist-data pre {
+  font-family: Menlo, Consolas, Monaco, Consolas, monospace;
+  padding: 0 ;
+}
+.gist .gist-file .gist-meta {
+  background: 0 0;
+  color: #f8f8f2;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 0;
+}
+.gist .gist-file .gist-meta a {
+  color: #f8f8f2;
+}
+.gist .gist-file .gist-meta a:visited {
+  color: #f8f8f2;
+}
+figure.highlight {
+  font-size: 0.95rem;
+  margin: 3rem 0.8rem;
+  background: #263338;
+  border: 1px solid color-gutter;
+  line-height: 2rem;
+  overflow: auto;
+  position: relative;
+}
+figure.highlight .code {
+  padding: 0 1em 1em 1em;
+  color: #f8f8f2;
+}
+figure.highlight .gutter {
+  display: none;
+}
+figure.highlight figcaption {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e9e9d6;
+  background-color: #1e282c;
+  padding: 0.6em 1em;
+}
+figure.highlight figcaption a {
+  position: absolute;
+  right: 1rem;
+}
+figure.highlight figcaption:before {
+  content: "\f121";
+  font-family: "fontawesome";
+  text-align: center;
+  display: inline-block;
+  margin-right: 0.6em;
+}
+figure.highlight pre {
+  background: 0 0;
+  border: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+figure.highlight table {
+  border-spacing: 0;
+  margin: 0;
+}
+figure.highlight th {
+  border: 0;
+  font-weight: 400;
+  padding: 0;
+}
+figure.highlight td {
+  border: 0;
+  font-size: 1.1rem;
+  padding: 0;
+}
+.entry-content .toc {
+  background: #fff;
+  padding: 0.5rem;
+  margin: 3rem 0;
+  border: 1px solid #cce4e8;
+  border-radius: 2px;
+}
+.entry-content .toc ul {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #5d8b93;
+  border-radius: 2px;
+}
+.entry-content .toc ul:first-child {
+  border-top: none;
+}
+.entry-content .toc ul ul,
+.entry-content .toc ul ol {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+.entry-content .toc ul li {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #5d8b93;
+}
+.entry-content .toc ul li:first-child {
+  border-top: none;
+}
+.entry-content .toc ul li::after,
+.entry-content .toc ul li::before {
+  content: normal;
+}
+.entry-content .toc ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  padding: 1rem;
+  background-color: #3d5b61;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+.entry-content .toc ul li a:hover {
+  color: #fff;
+  background-color: #2c4145;
+}
+.entry-content .toc ul li a:before {
+  content: "\f02d";
+  font-family: "fontawesome";
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-right: 0.8rem;
+}
+.entry-content .toc ul li ul,
+.entry-content .toc ul li ol {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+.entry-content .toc ul li ul li a,
+.entry-content .toc ul li ol li a {
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  font-size: 0.9rem;
+  background-color: #416167;
+}
+.entry-content .toc ul li ul li a:before,
+.entry-content .toc ul li ol li a:before {
+  content: "\f0da";
+  font-family: "fontawesome";
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-right: 0.6rem;
+}
+.entry-content .toc ul li ul li ul li a,
+.entry-content .toc ul li ol li ul li a {
+  padding: 0.5rem 0.75rem 0.5rem 4rem;
+}
+.entry-content .toc ul li ul li ul li a:before,
+.entry-content .toc ul li ol li ul li a:before {
+  content: none;
+}
+.meta-content {
+  background-color: #fff;
+  margin: 1.5rem 0.8rem;
+  padding: 0;
+  border-top: 1px dotted #cce4e8;
+  letter-spacing: 0.05rem;
+}
+.meta-wrapper {
+  margin: 3rem 0.8rem;
+  padding: 0;
+  background-color: #fff;
+}
+h6.tag,
+h6.categories {
+  color: #2d3d40;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.article-tag-list {
+  padding: 0;
+}
+.article-tag,
+.article-tag-list,
+.article-categories,
+.article-categories-list {
+  padding: 0;
+  margin: 0;
+}
+.article-categories {
+  margin-bottom: 1.6em;
+}
+.article-tag-list li,
+.article-categories-list li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0.2rem 0.1rem;
+}
+.article-tag-list li a,
+.article-categories-list li a {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  margin: 0;
+  background-color: #ecf5f7;
+  color: #2d3d40;
+  border-radius: 2px;
+  display: block;
+}
+.article-tag-list li a:before,
+.article-categories-list li a:before {
+  content: "#";
+}
+.article-tag-list li a:hover,
+.article-categories-list li a:hover {
+  color: #fff;
+  background-color: #2d3d40;
+}
+.widget {
+  margin: 1.5rem 0.8rem;
+  padding: 0;
+}
+.widget-h {
+  text-align: center;
+  margin: 1.6rem 0;
+}
+.widget-h h6 {
+  color: #fff;
+  background-color: #2d3d40;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.posts-list li {
+  list-style: none;
+  margin: 0.8rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.posts-list li .posts-list-link {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.posts-list li .posts-list-link a {
+  color: #2d3d40;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.posts-list li .posts-list-link a:hover {
+  color: #e91e63;
+}
+.posts-list li .posts-list-meta {
+  font-size: 0.7rem;
+}
+.posts-list li .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.posts-list li amp-img {
+  border-radius: 2px;
+}
+#footer {
+  background-color: #2d3d40;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
+  margin: 3rem 0 0 0;
+  padding: 0;
+}
+.site-author-info {
+  margin: 0;
+  padding: 3rem 1.6rem;
+}
+.site-author-info h6 {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #222f31;
+  padding: 0.4rem 0.8rem;
+}
+.site-author-info-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.site-author-info-wrapper .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.authorCap-wrapper {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.authorCap {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.authorReading {
+  font-size: 0.7rem;
+}
+.article-title {
+  font-size: 1.5rem;
+}
+.site-author-desc {
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+  margin: 1.4rem 0;
+}
+.copyright-tool {
+  margin: 0;
+  padding: 0.5rem 0.6rem;
+  border-top: 1px solid #384b4f;
+}
+.copyright-notice p {
+  font-size: 0.6rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.2rem;
+  color: #8ba8ae;
+}
+.copyright-title {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.4rem 0 0.2rem 0;
+}
+.copyright-license {
+  margin: 0.2rem 0 0.4rem 0;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.copyright-license a {
+  color: #e6e6e6;
+  font-size: 0.7rem;
+}
+.copyright-license a:hover {
+  color: #b3b3b3;
+}
+.sns-link {
+  margin: 0;
+  text-align: center;
+}
+.sns-link a {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0.6rem;
+  margin: 0 0.1rem;
+  background-color: #222f31;
+  color: #fff;
+  border-radius: 4px;
+}
+.sns-link a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.footer-menu {
+  padding: 1.5rem 0.8rem;
+  border-top: 1px solid #384b4f;
+}
+.footer-menu ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-menu ul li a {
+  display: block;
+  padding: 0.6rem;
+  margin: 0.2rem 1.6rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #222f31;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+.footer-menu ul li a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.social-share {
+  margin: 1.5rem 0.8rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.social-share amp-social-share,
+.social-share .sbtn {
+  margin: 5px;
+}
+.sbtn {
+  padding: 0;
+  width: 4rem;
+  height: 3rem;
+  line-height: 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.sbtn:hover {
+  color: #fff;
+}
+.tw {
+  background-color: #1cafe8;
+}
+.tw:hover {
+  background-color: #0f6b8f;
+}
+.fb {
+  background-color: #4f677f;
+}
+.fb:hover {
+  background-color: #283440;
+}
+.ht {
+  background-color: #35acda;
+}
+.ht:hover {
+  background-color: #1a6e8f;
+}
+.gp {
+  background-color: #d56153;
+}
+.gp:hover {
+  background-color: #9c3326;
+}
+.tb {
+  background-color: #465f79;
+}
+.tb:hover {
+  background-color: #212c38;
+}
+.icon-hatena:before {
+  content: "B";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+#totop {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.6rem;
+  font-size: 1.2rem;
+  z-index: 995;
+}
+#totop a {
+  background: rgba(152, 184, 190, 0.6);
+  text-decoration: none;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 50%;
+}
+#totop a:before {
+  content: "\f062";
+  font-family: "fontawesome";
+  font-size: 1.2rem;
+}
+#totop a:hover {
+  text-decoration: none;
+  background: #5d8b93;
+  color: #fff;
+  line-height: 2.3em;
+}
+@media (min-width: 800px) {
+  .title-cover,
+  .entry-content,
+  .categories,
+  .meta-content,
+  .site-author-info {
+    width: 780px;
+    margin: 0 auto;
+  }
+  .nav-container {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  .site-author-info-wrapper {
+    display: block;
+  }
+  .gravatar-area {
+    text-align: center;
+  }
+  .gravatar-area amp-img {
+    display: inline-block;
+  }
+  .entry-content td,
+  .entry-content th {
+    line-height: 1.8em;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.5rem;
+  }
+  .entry-content td em,
+  .entry-content th em,
+  .entry-content td strong,
+  .entry-content th strong,
+  .entry-content td a,
+  .entry-content th a {
+    font-size: 0.5rem;
+  }
+}
+
+	</style>
+	
+  </head>
+  <body>
+  	
+  	
+  	<!-- google analytics -->
+  	
+  	<amp-analytics type="googleanalytics" id="google-analytics">
+		<script type="application/json">
+		{
+		  "vars": {
+		    "account": "UA-106834789-1"
+		  },
+		  "triggers": {
+		    "trackPageview": {
+		      "on": "visible",
+		      "request": "pageview"
+		    }
+		  }
+		}
+		</script>
+	</amp-analytics>
+	
+  	
+  	
+  	<!-- menu -->
+  	<header>
+  		<div class="nav-container">
+	  		<div class="left-nav">
+	  			<div class="header-title">
+	  				<a href="/">前端三分鐘</a>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+    </header>
+  	
+  	
+  	<!-- sidebar -->
+  	
+  	
+  	<!-- container -->
+  	<div id="container">
+	  	<div id="main">
+		    <article id="post-thinking-git-with-project" class="post">
+		    
+		   		<!-- categories and bread crumb -->
+		    	
+				<div class="categories-header">
+					<div class="categories">
+						<div class="breadcrumb inline-icon">
+							<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+							  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							    <a itemprop="item" href="/">
+							    	<span class="sns-icon home-icon"></span>
+							        <span itemprop="name"><span class="fa fa-fw fa-home"></span></span>
+							    </a>
+							    <meta itemprop="position" content="1" />
+							  </li>
+
+								
+						    		<li itemprop="itemListElement" itemscope
+									      itemtype="http://schema.org/ListItem">
+									    <a itemprop="item" href="/categories/#專案管理">
+									      
+									      	<span class="sns-icon folder-icon"></span>
+									      
+									      <span itemprop="name">專案管理</span>
+									    </a>
+									    <meta itemprop="position" content="2" />
+									</li>
+								
+							</ol>
+						</div>
+					</div>
+				</div>
+				
+		    
+		    	<!-- entry title -->
+				<div class="title-cover">
+					<div class="entry-header">
+						
+						
+						
+			          	<div class="header-thumb flx">
+			          		<div class="thumbImg-w circle">
+			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/icon.png">
+			          			</amp-img>
+			          		</div>
+			          	</div>
+			            
+			            
+			            <div class="header-cap flx">
+							
+							  <h1 class="article-title entry-title" itemprop="name">
+							    <a href="https://linyencheng.github.io/2019/12/31/thinking-git-with-project/" target="_blank" itemprop="url">專案開發中的 Git 指南: 淺談 Git 如何協助專案的協作與開發</a>
+							  </h1>
+							
+						</div>
+					</div>
+					
+					<!-- datePublished -->
+					<div class="entry-meta-header">
+						<span class="meta-elements date">
+							<span class="fa fa-fw fa-clock-o"></span>
+							<time datetime="2019-12-31" itemprop="datePublished">2019.12.31</time>
+						</span>
+					</div>
+				</div>
+				
+				
+				
+				<!-- entry content -->
+			    <div class="entry-content ecp">
+			    	<!-- social share button -->
+			    	
+			    	
+			    	
+                    <!-- google Adsense Matched content -->
+                    
+                    
+			    	<!-- content -->
+			  		<h2 id="Git-&#x7C21;&#x4ECB;"><a href="#Git-&#x7C21;&#x4ECB;" class="headerlink" title="Git &#x7C21;&#x4ECB;"></a>Git &#x7C21;&#x4ECB;</h2><p>Git &#x672C;&#x8EAB;&#x662F;&#x4E00;&#x500B;&#x5206;&#x6563;&#x5F0F; (&#x4E00;&#x500B;&#x9060;&#x7AEF;&#x548C;&#x5F88;&#x591A;&#x672C;&#x5730;&#x7AEF;) &#x7684;&#x7248;&#x672C;&#x63A7;&#x5236;&#x5DE5;&#x5177;&#xFF0C;&#x6703;&#x628A;&#x6BCF;&#x6B21; commit &#x7684;&#x7248;&#x672C;&#x52A0;&#x4E0A;&#x4E00;&#x500B;&#x6A19;&#x7C64;&#xFF0C;&#x6982;&#x5FF5;&#x4E0A;&#x6A19;&#x7C64;&#x53EF;&#x4EE5;&#x7576;&#x6210;&#x8ECA;&#x7968;&#xFF0C;&#x544A;&#x8A34;&#x6211;&#x5011;&#x90A3;&#x500B;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x6A94;&#x6848;&#x53CA;&#x72C0;&#x614B;&#xFF0C;&#x5BE6;&#x969B;&#x4E0A;&#x6BD4;&#x8F03;&#x50CF;&#x662F;&#x8CC7;&#x6599;&#x7D50;&#x69CB;&#x4E2D;&#x7684; linked list&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x6539;&#x8B8A;&#x6307;&#x6A19;&#x8B93;&#x6211;&#x5011;&#x56DE;&#x5230;&#x67D0;&#x500B;&#x72C0;&#x614B;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x7684;&#x5207;&#x5272;&#x548C;&#x79FB;&#x52D5;&#x4E0A;&#x9762;&#x7684;&#x7BC0;&#x9EDE;&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x524D;: &#x7528;&#x8CC7;&#x6599;&#x593E;&#x7248;&#x672C;&#x63A7;&#x5236;</li>
+<li>&#x4F7F;&#x7528;&#x5F8C;: &#x9664;&#x4E86;&#x7248;&#x672C;&#x8A0A;&#x606F;&#x5916;&#x66F4;&#x63D0;&#x4F9B;&#x4E86;&#x5207;&#x5272;&#x548C;&#x79FB;&#x52D5;&#x7B49;&#x9032;&#x968E;&#x529F;&#x80FD;</li>
+</ul>
+<h2 id="&#x5C08;&#x6848;&#x958B;&#x767C;"><a href="#&#x5C08;&#x6848;&#x958B;&#x767C;" class="headerlink" title="&#x5C08;&#x6848;&#x958B;&#x767C;"></a>&#x5C08;&#x6848;&#x958B;&#x767C;</h2><p>&#x5728;&#x500B;&#x4EBA;&#x958B;&#x767C;&#x4E0A;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x7528;&#x4F86;&#x53D6;&#x4EE3;&#x4E4B;&#x524D;&#x958B;&#x8CC7;&#x6599;&#x593E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x9084;&#x539F;&#x4E5F;&#x66F4;&#x70BA;&#x65B9;&#x4FBF;&#x3002;&#x500B;&#x4EBA;&#x958B;&#x767C;&#x4E0A;&#x958B;&#x5206;&#x652F;&#x7684;&#x60C5;&#x5883;&#x53EF;&#x80FD;&#x6BD4;&#x8F03;&#x5C11;&#xFF0C;&#x500B;&#x4EBA;&#x904E;&#x53BB;&#x7D93;&#x9A57;&#x662F;:</p>
+<ul>
+<li>&#x65B0;&#x529F;&#x80FD;&#x77ED;&#x66AB;&#x4EA4;&#x7D66;&#x5176;&#x4ED6;&#x4EBA;&#x958B;&#x767C;</li>
+<li>&#x5347;&#x7D1A;&#x51FD;&#x5F0F;&#x5EAB;&#x7684;&#x91CD;&#x69CB;</li>
+</ul>
+<p>&#x958B;&#x6E90;&#x5C08;&#x6848;&#x6216;&#x662F;&#x8DDF;&#x5718;&#x9AD4;&#x5171;&#x540C;&#x5354;&#x4F5C;&#x7A0B;&#x5F0F;&#x6642;&#xFF0C;&#x70BA;&#x4E86;&#x6E1B;&#x5C11;&#x885D;&#x7A81;&#x7684;&#x767C;&#x751F;&#x4E5F;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x90FD;&#x76E1;&#x53EF;&#x80FD;&#x4E0D;&#x53D7;&#x5F71;&#x97FF;&#x7684;&#x958B;&#x767C;&#xFF0C;&#x6211;&#x5011;&#x6703;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x90FD;&#x9075;&#x5B88;&#x4E00;&#x4E9B;&#x6D41;&#x7A0B;&#x548C;&#x539F;&#x5247;:</p>
+<ul>
+<li>Git/GitHub Flow: &#x6309;&#x7167;&#x5718;&#x968A;&#x7684;&#x898F;&#x5247;&#x8B93; commit &#x5011;&#x53BB;&#x5230;&#x8A72;&#x53BB;&#x7684;&#x5730;&#x65B9;</li>
+<li>Atomic Commit: &#x6E1B;&#x5C11;&#x6BCF;&#x500B; commit &#x8026;&#x5408;&#xFF0C;&#x672A;&#x4F86;&#x5728;&#x9084;&#x539F;&#x6216;&#x62C6;&#x6389;&#x6642;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x78BA;&#x8A8D;&#x592A;&#x591A;&#x4E8B;&#x60C5;</li>
+<li>Commit Message Convention: &#x65B9;&#x4FBF;&#x4E4B;&#x5F8C; release &#x7684;&#x7D71;&#x6574;</li>
+<li>Pull Request: &#x5718;&#x968A;&#x6210;&#x54E1;&#x7684; commit &#x90FD;&#x6703;&#x4EE5; PR &#x7576;&#x55AE;&#x4F4D;&#x9032;&#x5165;&#x9577;&#x671F;&#x5206;&#x652F;&#x4E2D;</li>
+</ul>
+<h2 id="Git-GitHub-Flow"><a href="#Git-GitHub-Flow" class="headerlink" title="Git/GitHub Flow"></a>Git/GitHub Flow</h2><p>&#x5C07;&#x7A0B;&#x5F0F;&#x78BC;&#x52A0;&#x5165;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7CFB;&#x7D71;&#x5F8C;&#xFF0C;&#x4E00;&#x822C;&#x4F86;&#x8AAA;&#x6211;&#x5011;&#x7576;&#x4E0B;&#x7684;&#x7A0B;&#x5F0F;&#x6703;&#x88AB;&#x653E;&#x5728;&#x4E3B;&#x8981;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x6211;&#x5011;&#x53C8;&#x53EF;&#x4EE5;&#x53EB;&#x505A; master&#xFF0C;&#x539F;&#x5247;&#x4E0A;&#x5C08;&#x6848;&#x672C;&#x8EAB;&#x7684;&#x5206;&#x652F;&#x662F;&#x4E0D;&#x6703;&#x4E5F;&#x4E0D;&#x53EF;&#x4EE5;&#x88AB;&#x5354;&#x4F5C;&#x8005;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x7684;&#xFF0C;Git Flow &#x5247;&#x9084;&#x5EFA;&#x8B70;&#x5C08;&#x6848;&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x6709;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x5982;&#x4E0B;:</p>
+<ul>
+<li>master: &#x9577;&#x671F;&#x5B58;&#x5728;&#x7684;&#x4E3B;&#x8981;&#x5206;&#x652F;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x6B63;&#x5F0F;&#x7DB2;&#x7AD9;</li>
+<li>develop: &#x9577;&#x671F;&#x5B58;&#x5728;&#x7684;&#x958B;&#x767C;&#x5206;&#x652F;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x6E2C;&#x8A66;&#x7AD9;&#x53F0;</li>
+<li>hotfix: &#x77ED;&#x671F;&#x5206;&#x652F;&#xFF0C;&#x89E3;&#x5B8C; bug &#x5408;&#x4F75;&#x5F8C;&#x53EF;&#x4EE5;&#x770B;&#x60C5;&#x6CC1;&#x79FB;&#x9664;</li>
+<li>release: &#x77ED;&#x671F;&#x5206;&#x652F;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x9EDE;&#x6642;&#x9593;&#x5408;&#x4F75;&#x5E7E;&#x500B; feature &#x624D;&#x8981;&#x4E00;&#x8D77; release</li>
+<li>feature: &#x77ED;&#x671F;&#x5206;&#x652F;&#xFF0C;&#x77ED;&#x671F;&#x958B;&#x767C;&#x7684;&#x5C0F;&#x529F;&#x80FD;</li>
+</ul>
+<p>&#x7576;&#x5718;&#x968A;&#x958B;&#x767C;&#x6642;&#xFF0C;&#x60C5;&#x5883;&#x5982;&#x679C;&#x662F;&#x5982;&#x679C;&#x662F;&#x65B0;&#x7684; feature&#xFF0C;&#x7136;&#x5F8C;&#x5927;&#x6982;&#x4E00;&#x5468;&#x5167;&#x6703;&#x5408;&#x4F75;&#x9032;&#x53BB; develop &#x6211;&#x5011;&#x5C31;&#x6703;:</p>
+<ul>
+<li>&#x5148;&#x8A55;&#x4F30;&#x6211;&#x5011;&#x7684;&#x6771;&#x897F;&#x5C6C;&#x65BC;&#x54EA;&#x500B;&#x985E;&#x5225; (feature)&#xFF0C;&#x4E4B;&#x5F8C;&#x8981;&#x9032;&#x5230;&#x54EA;&#x500B;&#x5206;&#x652F; (develop)</li>
+<li>&#x5F9E; develop &#x958B;&#x4E00;&#x500B;&#x5F71;&#x5206;&#x8EAB;&#x7684;&#x77ED;&#x671F;&#x5206;&#x652F;&#x53EB;&#x505A; feature</li>
+<li>&#x5718;&#x968A;&#x5C31;&#x6703;&#x4EE5; feature &#x70BA;&#x6E96;&#xFF0C;&#x4E26;&#x5728;&#x500B;&#x4EBA;&#x672C;&#x6A5F;&#x7AEF;&#x4E0A;&#x7684;&#x958B;&#x5206;&#x652F;&#x9032;&#x884C;&#x958B;&#x767C;</li>
+<li>&#x500B;&#x4EBA;&#x5206;&#x914D;&#x7684; feature &#x958B;&#x767C;&#x7D50;&#x675F;&#x5F8C;&#xFF0C;&#x6BCF;&#x500B; Pull Request &#x90FD;&#x6703;&#x5C0D; feature &#x9001;</li>
+<li>&#x7576;&#x7D93;&#x904E;&#x5718;&#x968A; review &#x4E4B;&#x5F8C;&#x5C31;&#x53EF;&#x4EE5;&#x88AB; merge &#x9032;&#x53BB; feature</li>
+<li>&#x6240;&#x6709;&#x7684; feature &#x5B8C;&#x6210;&#x4E26;&#x6E2C;&#x8A66;&#x5F8C;&#xFF0C;&#x518D;&#x4EE5; feature &#x5206;&#x652F;&#x5C0D; develop &#x767C; release &#x5230;&#x6E2C;&#x8A66;&#x7AD9;&#x7684; PR</li>
+<li>&#x6E2C;&#x8A66;&#x7121;&#x8AA4;&#x5F8C;&#x5C31;&#x6B63;&#x5F0F; release &#x5230;&#x6B63;&#x5F0F;&#x7AD9;</li>
+</ul>
+<h2 id="Atomic-Commit"><a href="#Atomic-Commit" class="headerlink" title="Atomic Commit"></a>Atomic Commit</h2><p>&#x539F;&#x5B50;&#x5316;&#x7684;&#x6982;&#x5FF5;&#x5176;&#x5BE6;&#x5728;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x90FD;&#x5F88;&#x9069;&#x7528;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x524D;&#x7AEF;&#x7DB2;&#x9801;&#x8A2D;&#x8A08; (Atomic Design) &#x4E0A;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x5011;&#x5148;&#x5B8C;&#x6210;&#x5143;&#x4EF6; (Atomic component)&#xFF0C;&#x624D;&#x628A;&#x5143;&#x4EF6;&#x7D44;&#x6210;&#x4E00;&#x500B;&#x529F;&#x80FD;&#xFF0C;&#x518D;&#x5C07;&#x529F;&#x80FD;&#x7D44;&#x6210;&#x4E00;&#x500B;&#x9801;&#x9762;&#x3002;</p>
+<p>&#x4E00;&#x500B;&#x597D;&#x7684; commit &#x7D00;&#x9304;&#x5C31;&#x662F;&#x5C07;&#x9019;&#x4E9B;&#x6771;&#x897F;&#x6309;&#x7167;&#x6B65;&#x9A5F;&#x5BE6;&#x4F5C;&#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x5728;&#x524D;&#x7AEF;&#x7684;&#x5C08;&#x6848;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x901A;&#x5E38;&#x5DF2;&#x7D93;&#x4F7F;&#x7528; component-based &#x7684;&#x6846;&#x67B6;&#x6216;&#x51FD;&#x5F0F;&#x5EAB;&#xFF0C;&#x6240;&#x4EE5;&#x5143;&#x4EF6;&#x6216;&#x662F;&#x9801;&#x9762;&#x7684; commit &#x53EF;&#x80FD;&#x5C31;&#x6703;&#x5305;&#x542B;&#x7D44;&#x6210;&#x7684;&#x904E;&#x7A0B;&#x3002;</p>
+<ul>
+<li>Layout</li>
+<li>theme or style</li>
+<li>render &#x908F;&#x8F2F;</li>
+<li>&#x8CC7;&#x6599;&#x4E32;&#x63A5;</li>
+</ul>
+<p>&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4F86;&#x8AAA;&#xFF0C;&#x5982;&#x679C;&#x672A;&#x4F86;&#x6211;&#x5011;&#x9700;&#x8981;&#x62BD;&#x63DB;&#x4E3B;&#x8996;&#x89BA;&#xFF0C;&#x6211;&#x5011;&#x662F;&#x4E0D;&#x662F;&#x5C31;&#x53EF;&#x4EE5;&#x627E;&#x5230; theme style &#x7684; commit &#x4F86;&#x9032;&#x884C;&#x8907;&#x7FD2;&#x4FEE;&#x6539;&#x5373;&#x53EF;?</p>
+<h2 id="Pull-Request"><a href="#Pull-Request" class="headerlink" title="Pull Request"></a>Pull Request</h2><p>&#x7576;&#x6211;&#x5011;&#x5B8C;&#x6210;&#x4E86;&#x9019;&#x6B21;&#x9700;&#x8981;&#x5BE6;&#x4F5C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x5011;&#x5C31;&#x6703;&#x7528;&#x73FE;&#x5728;&#x7684; branch (&#x6BD4;&#x8D77;&#x9060;&#x7AEF;&#x7684;&#x591A;&#x4E86;&#x65B0;&#x958B;&#x767C;&#x9019;&#x5E7E;&#x6B21;&#x7684; commit) &#x5C0D;&#x9060;&#x7AEF;&#x7684;&#x5206;&#x652F;&#x50CF;&#x662F; feature &#x767C;&#x4E00;&#x500B;&#x60F3;&#x8981;&#x5408;&#x4F75;&#x66F4;&#x52D5;&#x9032;&#x53BB;&#x7684; PR&#xFF0C;&#x4E26;&#x4E14;&#x900F;&#x904E; PR &#x7684;&#x8AAA;&#x660E;&#x544A;&#x8A34;&#x5927;&#x5BB6;&#x9019;&#x6B21;&#x7684;&#x66F4;&#x52D5;&#x5305;&#x542B;&#x4E86;&#x4EC0;&#x9EBC;&#x3002;</p>
+<p>&#x7576;&#x6211;&#x5011;&#x64B0;&#x5BEB; PR &#x7684;&#x6642;&#x5019;&#xFF0C;review &#x7A0B;&#x5F0F;&#x78BC;&#x7684;&#x4EBA;&#x53EF;&#x80FD;&#x662F;&#x65B0;&#x4EBA;&#x4E5F;&#x53EF;&#x80FD;&#x5F88;&#x4E45;&#x6C92;&#x770B;&#x9019;&#x90E8;&#x5206;&#xFF0C;&#x6240;&#x4EE5; PR &#x4E2D;&#x76E1;&#x53EF;&#x80FD;&#x53BB;&#x63D0;&#x4F9B;:</p>
+<ul>
+<li>&#x9810;&#x5099;&#x77E5;&#x8B58;</li>
+<li>&#x9700;&#x8981;&#x7279;&#x5225;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;</li>
+<li>&#x6709;&#x6C92;&#x6709;&#x672A;&#x4F86;&#x53EF;&#x6539;&#x5584;&#x7684; <code>// TODO:</code></li>
+<li>&#x6E2C;&#x8A66;&#x6B65;&#x9A5F;</li>
+</ul>
+<p>&#x6709;&#x6642;&#x5019;&#x5718;&#x968A;&#x6210;&#x54E1;&#x5176;&#x5BE6;&#x4E0D;&#x77E5;&#x9053;&#x4F60;&#x600E;&#x9EBC;&#x6703;&#x9078;&#x64C7;&#x9019;&#x500B;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#xFF0C;&#x6240;&#x4EE5;&#x6642;&#x9593;&#x53C8;&#x66F4;&#x5141;&#x8A31;&#x7684;&#x8A71;&#xFF0C;&#x53EF;&#x4EE5;&#x76E1;&#x53EF;&#x80FD;&#x63D0;&#x4F9B;&#x7576;&#x4E0B;&#x7684;&#x60F3;&#x6CD5;&#x548C;&#x898B;&#x89E3;&#x7D66;&#x5927;&#x5BB6;&#x77E5;&#x9053;&#x3002;&#x7562;&#x7ADF;&#x6709;&#x7684;&#x6642;&#x5019;&#x6211;&#x5011;&#x53EA;&#x6709;&#x7576;&#x4E0B;&#x7684;&#x6700;&#x4F73;&#x89E3;&#xFF0C;&#x6709;&#x7684;&#x6642;&#x5019;&#x6642;&#x9593;&#x53EA;&#x5920;&#x6211;&#x5011; make it work&#xFF0C;&#x9019;&#x6642;&#x5019;&#x5C31;&#x5F88;&#x9069;&#x5408;&#x7559;&#x500B; <code>// TODO:</code> &#xFF0C;&#x7B49;&#x5230;&#x672A;&#x4F86;&#x6709;&#x7A7A;&#x7684;&#x6642;&#x5019;&#x5927;&#x5BB6;&#x77E5;&#x9053;&#x53EF;&#x4EE5; make it right &#x751A;&#x81F3; make it fast&#xFF0C;&#x770B;&#x5B78;&#x5F1F;&#x767C;&#x6587;&#x6709;&#x611F;&#xFF0C;&#x72C0;&#x614B;&#x597D;&#x7684;&#x6642;&#x5019;&#x53EF;&#x4EE5;&#x5B78;&#x8457;&#x8FFD;&#x6C42;&#x5B8C;&#x7F8E;&#xFF0C;&#x81F3;&#x65BC;&#x72C0;&#x614B;&#x4E0D;&#x597D;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x5B8C;&#x6574;&#x5C31;&#x8B1D;&#x5929;&#x4E86; Orz</p>
+<blockquote>
+<p>&#x524D;&#x540C;&#x4E8B; J: &#x7576;&#x8003;&#x616E;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x60F3;&#x60F3;&#x6BCF;&#x500B;&#x89E3;&#x6CD5;&#x7684;&#x5229;&#x5F0A;&#xFF0C;&#x53EF;&#x4EE5;&#x5F9E;&#x66F4;&#x591A;&#x9762;&#x5411;&#x770B;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x512A;&#x7F3A;&#x9EDE;</p>
+</blockquote>
+<h2 id="&#x4E00;&#x500B;&#x597D;&#x7684;-PR"><a href="#&#x4E00;&#x500B;&#x597D;&#x7684;-PR" class="headerlink" title="&#x4E00;&#x500B;&#x597D;&#x7684; PR"></a>&#x4E00;&#x500B;&#x597D;&#x7684; PR</h2><ul>
+<li>&#x7406;&#x8AD6;&#x4E0A;&#x53EA;&#x80FD;&#x6709;&#x76F8;&#x95DC;&#x7684; commit</li>
+<li>&#x6BCF;&#x500B; commit &#x6700;&#x597D;&#x4E0D;&#x8981;&#x66F4;&#x52D5;&#x592A;&#x591A;&#x6A94;&#x6848;&#xFF0C;&#x6703;&#x96E3;&#x4EE5;&#x95B1;&#x8B80;</li>
+</ul>
+<blockquote>
+<p>&#x524D;&#x540C;&#x4E8B; W: &#x5C08;&#x6848;&#x5408;&#x4F5C;&#x4E0A;&#xFF0C;&#x76E1;&#x91CF;&#x4FDD;&#x6301;&#x591A;&#x60F3;&#x60F3;&#x600E;&#x9EBC;&#x8B93;&#x5718;&#x968A;&#x6BCF;&#x500B;&#x4EBA;&#x90FD;&#x8212;&#x670D;</p>
+</blockquote>
+<p>&#x7576;&#x6211;&#x5011;&#x64CD;&#x4F5C;&#x5931;&#x7576;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x6703;&#x767C;&#x73FE; PR &#x4E2D;&#x51FA;&#x73FE;&#x4E86;&#x5F88;&#x591A;&#x4E0D;&#x5FC5;&#x8981;&#x7684; commit&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x500B;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x70BA;&#x592A;&#x4E45;&#x6C92;&#x6709;&#x8DDF;&#x9060;&#x7AEF;&#x5206;&#x652F;&#x540C;&#x6B65;&#x7684;&#x95DC;&#x4FC2;&#xFF0C;&#x9019;&#x6642;&#x5019;:</p>
+<blockquote>
+<p>&#x540C;&#x4E8B;&#x53EF;&#x80FD; OS: &#x4E7E; ~&#x4F60;&#x90A3;&#x4EC0;&#x9EBC; PR&#xFF0C;&#x88E1;&#x9762;&#x4E00;&#x5806;&#x6771;&#x897F;&#xFF0C;&#x6211;&#x5DF2;&#x7D93;&#x5F88;&#x5FD9;&#x4E86;&#xFF0C;&#x9019;&#x4ED6;&#x5ABD;&#x4E00;&#x5806; commit &#x662F;&#x8981;&#x770B;&#x4E09;&#x5C0F; ??!</p>
+</blockquote>
+<p>&#x597D;&#x540C;&#x4E8B;&#x53EF;&#x80FD;&#x5C31;&#x6703;&#x63D0;&#x9192;&#x4F60;&#x8AAA;&#xFF0C;&#x6C92;&#x95DC;&#x4FC2;&#x4E0D;&#x8981;&#x7DCA;&#x5F35;&#xFF0C;&#x56E0;&#x70BA;&#x597D;&#x7684; commit &#x7D00;&#x9304;&#x662F;&#x53EF;&#x4EE5;&#x505A;&#x51FA;&#x4F86;&#x7684;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6771;&#x62FC;&#x897F;&#x6E4A;&#x6574;&#x7406;&#x597D;&#x5373;&#x53EF;&#xFF0C;&#x7576;&#x6211;&#x5011;&#x767C;&#x73FE;&#x73FE;&#x5728;&#x7248;&#x672C;&#x8DDF;&#x6E2C;&#x8A66;&#x6A5F;&#x6216;&#x662F;&#x6B63;&#x5F0F;&#x6A5F; (master) &#x5DEE;&#x7570;&#x904E;&#x5927;&#x6642;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x6709;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x3002;</p>
+<ul>
+<li>&#x91CD;&#x65B0;&#x5F9E; master &#x958B;&#x65B0;&#x5206;&#x652F;&#xFF0C;&#x4E00;&#x500B;&#x500B;&#x628A;&#x9700;&#x8981;&#x7684; commit &#x6293;&#x9032;&#x4F86; (cherry-pick)</li>
+<li>&#x4EE5; master &#x7576; base &#x91CD;&#x65B0;&#x5F80;&#x4E0B;&#x9577;&#x6211;&#x5011;&#x7684; commit&#xFF0C;&#x9019;&#x5C31;&#x662F; rebase &#x7684;&#x7528;&#x6CD5;</li>
+<li>&#x904E;&#x7A0B;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x900F;&#x904E; rebase &#x4E92;&#x52D5;&#x6A21;&#x5F0F;&#x62D4;&#x6389; (drop) &#x6216;&#x5408;&#x4F75;&#x4E00;&#x4E9B; (squash) &#x6211;&#x5011;&#x4E0D;&#x60F3;&#x8981;&#x7684; commit</li>
+</ul>
+<p>&#x628A;&#x73FE;&#x5728;&#x7684;&#x5206;&#x652F;&#x7D93;&#x904E;&#x6574;&#x7406;&#x4E4B;&#x5F8C;&#xFF0C;&#x91CD;&#x65B0;&#x767C;&#x4E00;&#x500B;&#x6216;&#x662F;&#x56DE;&#x53BB;&#x770B;&#x770B;&#x6211;&#x5011;&#x7684; PR &#x9019;&#x6642;&#x5019;&#x80AF;&#x5B9A;&#x5C31;&#x6703;&#x767C;&#x73FE;&#xFF0C;&#x771F;&#x7684;&#xFF0C;&#x6574;&#x9F4A;&#x4E86;&#x4E0D;&#x5C11;&#x3002;</p>
+<h2 id="Release"><a href="#Release" class="headerlink" title="Release"></a>Release</h2><p>&#x56DE;&#x60F3;&#x6211;&#x5011;&#x5347;&#x7D1A;&#x76F8;&#x95DC;&#x5957;&#x4EF6;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x90FD;&#x6703;&#x53BB;&#x770B;&#x5225;&#x4EBA;&#x7684; release note &#x6216;&#x662F; change log&#xFF0C;&#x6240;&#x4EE5;&#x7576;&#x6211;&#x5011;&#x5728;&#x5C08;&#x6848; release &#x7684;&#x6642;&#x5019; (&#x5408;&#x4F75;&#x5230; master &#x6642;)&#xFF0C;&#x5728; PR &#x4E2D;&#x4E5F;&#x8981;&#x76E1;&#x53EF;&#x80FD;&#x8AAA;&#x660E;&#x5373;&#x5C07; release &#x7684;&#x529F;&#x80FD;&#x4EE5;&#x53CA;&#x5F71;&#x97FF;&#x7684;&#x7BC4;&#x570D;&#xFF0C;&#x539F;&#x5247;&#x4E0A;&#x90FD;&#x8981;&#x9075;&#x5B88; <a href="https://semver.org/">semantic release</a>&#x3002;</p>
+<h2 id="Semantic-Release"><a href="#Semantic-Release" class="headerlink" title="Semantic Release"></a>Semantic Release</h2><p>&#x7248;&#x672C;&#x865F;&#x78BC;&#x901A;&#x5E38;&#x6703;&#x6709;&#x4E09;&#x500B;&#x6578;&#x5B57;&#xFF0C;&#x8209;&#x4F8B;&#x4F86;&#x8AAA; <code>v1.2.3</code> &#x5C31;&#x4EE3;&#x8868; <code>vMajor.Minor.Patch</code></p>
+<ul>
+<li>Major: &#x5BEB;&#x6CD5;&#x6216; API &#x53EF;&#x80FD;&#x4E0D;&#x76F8;&#x5BB9;&#x524D;&#x4E00;&#x500B;&#x7248;&#x672C;</li>
+<li>Minor: &#x52A0;&#x4E86;&#x65B0;&#x7684; feature &#x901A;&#x5E38;&#x4E0D;&#x5F71;&#x97FF;&#x524D;&#x4E00;&#x500B;&#x7248;&#x672C;</li>
+<li>Patch: &#x4FEE; bug &#x4E0D;&#x5F71;&#x97FF;&#x524D;&#x4E00;&#x500B;&#x7248;&#x672C;</li>
+</ul>
+<p>&#x7576;&#x6211;&#x5011;&#x7684; commit &#x90FD;&#x6709;&#x898F;&#x5247;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;<a href="https://github.com/semantic-release/semantic-release">&#x4F7F;&#x7528;&#x5DE5;&#x5177;</a>&#x5E6B;&#x6211;&#x5011;&#x8F15;&#x9B06;&#x505A;&#x597D;&#x9019;&#x4EF6;&#x4E8B;</p>
+<ul>
+<li>Patch Release &#x7528; fix &#x958B;&#x982D;: fix(pencil): &#x4EC0;&#x9EBC;&#x7ADF;&#x7136;&#x6709; typo</li>
+<li>Feature Release &#x7528; feat &#x958B;&#x982D;: feat(pencil): &#x52A0;&#x5165;&#x6A61;&#x76AE;&#x64E6;&#x8B8A;&#x6210;&#x64E6;&#x64E6;&#x7B46;</li>
+<li>Breaking Release &#x7528; perf &#x958B;&#x982D;: perf(pencil): 2B &#x5BEC;&#x5EA6;&#x8B8A;&#x5169;&#x500D;</li>
+</ul>
+
+			  		
+			  		<!-- google Adsense -->
+			  		
+					
+					
+					
+					
+			    	
+					
+					<!-- google Adsense Matched content -->
+			  		
+			  	</div>
+				
+		  	</article>
+		  	
+		  	
+		  	<!-- TAGS -->
+		  	
+		  	<div class="meta-content">
+				
+				<div class="widget">
+				  	<h6 class="tag"><span class="fa fa-fw fa-tag"></span>TAGS</h6>
+				  	<div class="article-tag">
+						<ul class="article-tag-list">
+							
+					    		<li class="article-tag-list-item">
+					    			<a class="article-tag-list-link" href="/tags/個人成長/">
+					    				個人成長
+					    			</a>
+					    		</li>
+							
+					    		<li class="article-tag-list-item">
+					    			<a class="article-tag-list-link" href="/tags/專案管理/">
+					    				專案管理
+					    			</a>
+					    		</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		  	
+		  	
+		  	<!-- Categories posts -->
+		  	
+		  	
+			  	
+		  	
+			  	
+				  	<div class="meta-content">
+					  <div class="widget">
+					  	<div class="widget-h">
+					  		<h6><span class="fa fa-fw fa-folder-open-o"></span>&nbsp;專案管理</h6>
+					    </div>
+					    <div class="widget-content">
+					    	<div class="posts-list">
+						      <ul>
+						      	
+						      	
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2019/12/31/thinking-git-with-project/">
+								          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2019/12/31/thinking-git-with-project/">專案開發中的 Git 指南</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2019.12.31
+						            	</div>
+						            </div>
+						          </li>
+						        
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2019/11/17/thinking-product-management/">
+								          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2019/11/17/thinking-product-management/">如何打造與管理產品</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2019.11.17
+						            	</div>
+						            </div>
+						          </li>
+						        
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2019/05/18/thinking-project-schedule/">
+								          			<amp-img class="thumbImg" layout="fixed" width="320" height="100" src="https://cdn-images-1.medium.com/max/2600/1*1ytrUVfjjOh7rJDorSj8eA.png">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2019/05/18/thinking-project-schedule/">軟體專案評估教學</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2019.05.18
+						            	</div>
+						            </div>
+						          </li>
+						        
+						      </ul>
+						    </div>
+					    </div>
+					  </div>
+					</div>
+				
+			
+		  	
+		  	
+		  	<!-- Detailed categories  posts -->
+		  	
+		  	
+		  	
+		  	<!-- Latests -->
+		  	
+		  	<div class="meta-content">
+			  	<div class="widget">
+			  		<div class="widget-h">
+			  			<h6><span class="fa fa-fw fa-file-text-o"></span>&nbsp;LATESTS</h6>
+			  		</div>
+				    <div class="widget-content">
+				    	<div class="posts-list">
+					      <ul>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/12/react-coding-speed/">
+						          				<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/12/react-coding-speed/">提升你的 React 開發效率</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.12
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/11/experience-sharing-web-page-render-performance/">
+						          				<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/11/experience-sharing-web-page-render-performance/">三步驟加速你的網站效能</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.11
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/09/experience-sharing-web-page-loading-performance/">
+						          				<amp-img class="thumbImg" layout="fixed" width="158" height="100" src="/2021/03/09/experience-sharing-web-page-loading-performance/experience-sharing-web-page-loading-performance.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/09/experience-sharing-web-page-loading-performance/">四種加快網站開啟速度的常見方法</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.09
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					      </ul>
+					    </div>
+				    </div>
+				</div>
+			  </div>
+			</div>
+			
+			
+		</div>
+		
+		
+		<footer id="footer">
+		
+			
+			
+			
+			
+			<div class="copyright-tool">
+				
+				
+				
+				<div class="copyright-title">
+					<span>
+					&copy; 2021&nbsp;前端三分鐘
+					</span>
+				</div>
+				
+				<div class="copyright-license">
+					<aside>
+						Powered by <a href="https://hexo.io/">Hexo</a>. <a href="https://github.com/tea3/hexo-generator-amp">AMP-Theme</a> designed by <a href="https://github.com/tea3/">tea</a>.
+					</aside>
+				</div>
+			</div>
+			
+		</footer>
+
+
+  	<div id="totop"><a href="#"></a></div>
+
+
+  </body>
+</html>

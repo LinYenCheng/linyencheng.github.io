@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+	<link rel="canonical" href="https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/" >
+	<link rel="shortcut icon" href="/img/favicon.ico">
+    <title>圖論、線性代數、團隊關係 - 前端三分鐘</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    
+    <meta property="og:title" content="圖論、線性代數、團隊關係">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/">
+	
+		<meta property="og:image" content="https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp">
+	
+	<meta property="og:site_name" content="前端三分鐘">
+	
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="前端三分鐘">
+	<meta name="twitter:url" content="https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/">
+	<meta name="twitter:title" content="圖論、線性代數、團隊關係 - 前端三分鐘">
+	
+    
+    	<meta name="twitter:image" content="https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp">
+	
+	
+	
+    
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <!--
+  	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    -->
+    
+    
+    
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BlogPosting",
+			"headline": "圖論、線性代數、團隊關係",
+			
+			"mainEntityOfPage":{
+			    "@type":"WebPage",
+			    "@id":"https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/"
+			},
+			"datePublished": "2020-10-28T00:00:00.000Z",
+			"dateModified": "2021-03-13T15:41:26.910Z",
+			
+			"image": {
+				"@type": "ImageObject",
+				"url": "https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp",
+				"width" : "720",
+				"height" : "881"
+			},
+			
+			"author": {
+			    "@type": "Person",
+			    "name": "林彥成"
+			},
+			"publisher": {
+			    "@type": "Organization",
+			    "name": "前端三分鐘"
+			    
+			    ,
+			    "logo": {
+			      "@type": "ImageObject",
+			      "url": "https://linyencheng.github.io/amp-dist/sample/icon.png",
+			      "width": 600,
+			      "height": 60
+			    }
+			    
+			}
+		}
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<style amp-custom>
+		
+abbr,
+acronym,
+address,
+applet,
+big,
+blockquote,
+body,
+caption,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+ul,
+var {
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+acronym {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  color: #2d3d40;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  text-rendering: optimizelegibility;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+figure.highlight td,
+.post .entry-content figure.highlight th {
+  border: 0;
+  padding: 0;
+}
+caption,
+table,
+td,
+th {
+  vertical-align: middle;
+}
+caption,
+td,
+th,
+.table-align-left {
+  text-align: left;
+}
+del {
+  text-decoration: line-through;
+}
+html {
+  font-size: 14px;
+}
+:root sub,
+:root sup {
+  vertical-align: baseline;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+a {
+  color: #e91e63;
+  text-decoration: none;
+  -webkit-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  -ms-transition: 0.7s;
+  transition: 0.7s;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+a img {
+  border: none;
+}
+a:hover {
+  -webkit-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  transition: 0.2s;
+  color: #930e3b;
+}
+@media (min-width: 481px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+.clearfix:after {
+  clear: both;
+  visibility: hidden;
+  content: ".";
+  display: block;
+  height: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.circle {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.thumbImg-w {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.thumbImg {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.__web-inspector-hide-shortcut__ {
+  visibility: hidden ;
+}
+button {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  -webkit-border-image: initial;
+  -moz-border-image: initial;
+  -o-border-image: initial;
+  border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em 0em 0em 0em;
+  font: 11px system-ui;
+  -webkit-writing-mode: horizontal-tb;
+  -webkit-appearance: button;
+}
+.hamburger {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url('data:image/svg+xmlutf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#4A4A4A" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px 24px;
+  -moz-background-size: 30px 24px;
+  background-size: 30px 24px;
+  background-position: center center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+.nav ul:after {
+  clear: both;
+  visibility: hidden;
+}
+.nav,
+.nav-icon {
+  position: relative;
+}
+.nav ul {
+  display: block;
+}
+.nav ul li {
+  display: block;
+}
+.nav ul li a {
+  display: block;
+}
+.tab {
+  position: relative;
+  color: #424242;
+  padding: 6px;
+  margin: 0 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: 0.1s ease color;
+  -webkit-transition: 0.1s ease color;
+  -moz-transition: 0.1s ease color;
+  -o-transition: 0.1s ease color;
+  -ms-transition: 0.1s ease color;
+  transition: 0.1s ease color;
+}
+amp-sidebar {
+  width: 200px;
+}
+amp-sidebar ul {
+  padding: 10px 0;
+}
+amp-sidebar li a {
+  display: block;
+  padding: 10px 20px;
+}
+header {
+  height: 60px;
+  background-color: #222f31;
+  -webkit-box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+  box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+  -webkit-box-shadow: 0 -1px 0 #3c5155 inset, 0 -3px 0 #1e292b inset;
+}
+header .header-title a {
+  padding: 0 0 0 20px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+header .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+header .left-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  font-size: 20px;
+  margin-left: 0;
+  font-weight: 300;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+  width: auto;
+  font-size: 15px;
+}
+header .right {
+  font-size: 15px;
+}
+header .alt {
+  padding: 0;
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -o-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.blog-title a {
+  position: relative;
+}
+button {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  -webkit-border-image: initial;
+  -moz-border-image: initial;
+  -o-border-image: initial;
+  border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em 0em 0em 0em;
+  font: 11px system-ui;
+  -webkit-writing-mode: horizontal-tb;
+  -webkit-appearance: button;
+}
+.__web-inspector-hide-shortcut__ {
+  visibility: hidden ;
+}
+.hamburger {
+  display: inline-block;
+  background-color: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 24 24"><path fill="#FFF" d="M0 12h18v-2H0v2M0 7h18V5H0v2M0 0v2h18V0H0"/></svg>');
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px 24px;
+  -moz-background-size: 30px 24px;
+  background-size: 30px 24px;
+  background-position: center center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
+}
+.tab {
+  position: relative;
+  color: #2d3d40;
+  padding: 6px;
+  margin: 0 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: 0.1s ease color;
+  -webkit-transition: 0.1s ease color;
+  -moz-transition: 0.1s ease color;
+  -o-transition: 0.1s ease color;
+  -ms-transition: 0.1s ease color;
+  transition: 0.1s ease color;
+}
+amp-sidebar {
+  width: 250px;
+  background-color: #182022;
+}
+amp-sidebar ul {
+  padding: 10px 0;
+}
+amp-sidebar li {
+  border-top: 1px solid #2f4043;
+}
+amp-sidebar li:last-child {
+  border-bottom: 1px solid #2f4043;
+}
+amp-sidebar li a {
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  padding: 10px 20px;
+}
+amp-sidebar li a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.categories-header {
+  background-color: #2d3d40;
+  padding: 0rem 0.8rem;
+}
+.categories-header a {
+  color: #fff;
+}
+.categories-header a:hover {
+  color: #fff;
+}
+.categories-header .breadcrumb ol li {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+.categories-header .breadcrumb ol li span {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.categories-header .breadcrumb ol li:after {
+  content: "/";
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.4rem;
+}
+.categories-header .breadcrumb ol li:last-child:after {
+  content: "";
+  margin: 0;
+}
+.entry-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.entry-header .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.header-cap {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.title-cover {
+  background-color: #fff;
+  color: #2d3d40;
+  padding: 1.5rem 0.8rem 0 0.8rem;
+}
+.title-cover a {
+  font-size: 1.2rem;
+  color: #2d3d40;
+  text-align: left;
+  font-weight: bold;
+}
+.entry-title {
+  margin: 0;
+}
+.entry-meta-header {
+  font-size: 0.85rem;
+  text-align: center;
+}
+.entry-meta-header .date {
+  font-family: sans-serif;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #2d3d40;
+  text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #e91e63;
+}
+#container {
+  margin-left: auto;
+  margin-right: auto;
+}
+#main {
+  margin-bottom: 3em;
+  padding-left: 0;
+}
+.post {
+  margin-bottom: 3rem;
+  position: relative;
+}
+.entry-content {
+  margin: 0 0.6rem;
+  font-size: 1rem;
+}
+.entry-content h1 {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  margin: 1em 0 0.8em;
+}
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content h2 span,
+.entry-content h3 span,
+.entry-content h4 span,
+.entry-content h5 span,
+.entry-content h6 span {
+  color: #98b8be;
+  font-weight: bold;
+}
+.entry-content h2,
+.entry-content h2 span {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  text-align: center;
+}
+.entry-content h2 {
+  border-bottom: 2px solid #cce4e8;
+  margin: 4.5rem 0 0.5em;
+  padding: 0.8em 0;
+}
+.entry-content h3,
+.entry-content h3 span {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-align: center;
+}
+.entry-content h3 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h4,
+.entry-content h4 span {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.entry-content h4 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h5,
+.entry-content h5 span {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+}
+.entry-content h5 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content h6,
+.entry-content h6 span {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  text-align: center;
+}
+.entry-content h6 {
+  margin: 3.6rem 0.8rem 3rem 0.8rem;
+  padding: 0;
+}
+.entry-content p {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 2.2rem;
+  margin: 3rem 0.8rem;
+}
+.entry-content p a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline;
+  border-bottom: 1px dashed #f1729d;
+  padding-bottom: 0.3rem;
+}
+.entry-content p a:hover {
+  border-bottom: 1px dashed #9c0f3f;
+  padding-bottom: 0.4rem;
+}
+.entry-content em {
+  background-color: #f9f5d1;
+  color: #886d00;
+  font-style: normal;
+  margin: 0 2px;
+  padding: 0.4em;
+}
+.entry-content strong {
+  color: #871c1c;
+  font-style: normal;
+  margin: 0 2px;
+  padding: 0.4em;
+  background-color: #fadcdc;
+}
+.entry-content hr {
+  border: 0;
+  border-top: 3px solid #cce4e8;
+  margin: 3rem auto;
+  width: 20%;
+}
+.entry-content img,
+.entry-content video {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+}
+.entry-content iframe {
+  width: 100% ;
+}
+.entry-content blockquote {
+  margin: 3rem 0.8rem;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  background-color: none;
+  border-left: 3px solid #98b8be;
+  font-style: bold;
+}
+.entry-content blockquote p {
+  margin: 0.5rem 0;
+}
+.entry-content blockquote blockquote {
+  border-left: none;
+}
+.entry-content .table-wrapper {
+  margin: 3rem 0.8rem;
+}
+.entry-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: auto;
+  display: block;
+  font-size: 0.85rem;
+  margin: 0 auto;
+  width: auto;
+}
+.entry-content td,
+.entry-content th {
+  line-height: 1.8em;
+  padding: 0.8rem 0.8rem;
+  font-size: 0.85rem;
+}
+.entry-content td em,
+.entry-content th em,
+.entry-content td strong,
+.entry-content th strong,
+.entry-content td a,
+.entry-content th a {
+  font-size: 0.85rem;
+}
+.entry-content td {
+  border: 1px solid #c4c4c4;
+}
+.entry-content th {
+  background-color: #ecf5f7;
+  border: 1px solid #c4c4c4;
+}
+.entry-content .table-align-center {
+  text-align: center;
+}
+.entry-content .table-align-right {
+  text-align: right;
+}
+.entry-content ul,
+.entry-content ol,
+.entry-content dl {
+  margin: 3rem 0 3rem 1.6rem;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+.entry-content ul li,
+.entry-content ol li,
+.entry-content dl li {
+  line-height: 2rem;
+  position: relative;
+  padding: 0;
+}
+.entry-content ul li p,
+.entry-content ol li p,
+.entry-content dl li p {
+  line-height: 2rem;
+  margin: 0;
+}
+.entry-content ul li p:not(:first-child),
+.entry-content ol li p:not(:first-child),
+.entry-content dl li p:not(:first-child) {
+  color: #57767c;
+  margin: 0.5rem;
+}
+.entry-content ul li ul,
+.entry-content ol li ul,
+.entry-content dl li ul,
+.entry-content ul li ol,
+.entry-content ol li ol,
+.entry-content dl li ol,
+.entry-content ul li dl,
+.entry-content ol li dl,
+.entry-content dl li dl {
+  margin: 1rem;
+}
+.entry-content ul li {
+  margin: 0.4rem 0 0.4rem 0.8rem;
+}
+.entry-content ul li::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 0.75rem;
+  left: -1rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #cce4e8;
+  border-radius: 100%;
+}
+.entry-content ol {
+  counter-reset: number;
+}
+.entry-content ol li {
+  margin: 0.4rem 0 0.4rem 2rem;
+}
+.entry-content ol li p:first-child {
+  display: inline-block;
+  line-height: 1.6rem;
+  height: 1.6rem;
+}
+.entry-content ol li:before {
+  position: absolute;
+  display: inline-block;
+  float: left;
+  margin: 0 0.2rem 0 0;
+  padding: 0;
+  counter-increment: number;
+  content: counter(number);
+  left: -2.2rem;
+  top: 0.2rem;
+  background-color: #98b8be;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+}
+kbd {
+  font-family: sans-serif;
+  text-align: center;
+  display: inline-block;
+  color: #425a5e;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px #e8e8e8 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  box-shadow: 0 0 10px #e8e8e8 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  -webkit-box-shadow: 0 0 10px #e2e2e2 inset, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9,
+    0 3px 3px #333;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: #fff;
+  border-left: 1px solid #fff;
+  border-radius: 3px;
+  border-right: 1px solid #e6e6e6;
+  border-top: 1px solid #fff;
+  font-size: 0.85rem;
+  line-height: 1rem;
+  margin: 5px;
+  padding: 6px 8px 3px;
+  text-shadow: 0 1px 0 #fff;
+  vertical-align: baseline;
+  
+}
+img.responsive-img {
+  height: auto;
+  max-width: 100%;
+}
+video.responsive-video {
+  height: auto;
+  max-width: 100%;
+}
+amp-instagram,
+amp-vimeo,
+amp-video,
+amp-youtube,
+amp-twitter,
+.soundcloud-wrapper,
+.amp-img-wrapper,
+.googleAdPost,
+.ad-footer {
+  margin: 3rem 0.8rem;
+}
+code,
+figure.highlight .code,
+pre {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+code,
+pre,
+samp {
+  font-family: Menlo, Consolas, Monaco, Consolas, monospace;
+}
+p code {
+  font-size: 1rem;
+}
+code,
+pre {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  background-color: #ecf5f7;
+  color: #007e96;
+}
+code {
+  margin: 0 3px;
+  padding: 0.4em;
+}
+samp {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+sub,
+sup {
+  font-size: 0.75rem;
+  line-height: 0;
+  position: relative;
+}
+sub {
+  bottom: -0.2em;
+}
+sup {
+  top: -0.5em;
+}
+pre {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  margin: 0 3px;
+  padding: 15px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  border: 0;
+  line-height: 1.3rem;
+  overflow-x: auto;
+}
+pre .addition,
+pre .css .tag,
+pre .keyword,
+pre .method,
+pre .nginx .title,
+pre .request,
+pre .status,
+pre .winutils {
+  color: #66d9ef;
+}
+pre .attr_selector,
+pre .cdata,
+pre .clojure .title,
+pre .diff .change,
+pre .important {
+  color: #9882eb;
+}
+pre .preprocessor {
+  color: #9882eb;
+}
+pre .preprocessor .keyword {
+  color: #9882eb;
+}
+pre .shebang,
+pre .special,
+pre .subst {
+  color: #9882eb;
+}
+pre .symbol {
+  color: #9882eb;
+}
+pre .symbol .string {
+  color: #9882eb;
+}
+pre .attribute,
+pre .class .title,
+pre .constant,
+pre .haskell .type,
+pre .lisp .body,
+pre .parent,
+pre .smalltalk .number,
+pre .variable {
+  color: #a6e22e;
+}
+pre .built_in,
+pre .chunk,
+pre .decorator,
+pre .id,
+pre .identifier,
+pre .literal,
+pre .localvars,
+pre .title,
+pre .vhdl,
+pre .deletion {
+  color: #f92672;
+}
+pre .command,
+pre .hexcolor,
+pre .number,
+pre .phpdoc,
+pre .regexp,
+pre .string,
+pre .tag .value,
+pre .tex .formula {
+  color: #e6db74;
+}
+pre .comment,
+pre .diff .header,
+pre .doctype,
+pre .javadoc,
+pre .lisp .string,
+pre .pi,
+pre .template_comment {
+  color: #75715e;
+  font-weight: normal;
+}
+.line {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
+  color: #f8f8f2;
+}
+.line span {
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+.gist {
+  background: #fff;
+  border: 1px solid color-gutter;
+  color: #f8f8f2;
+  line-height: 1.6rem;
+  margin-top: 15px;
+  overflow: auto;
+  padding: 7px 15px;
+}
+.gist .gist-file {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin: 0;
+}
+.gist .gist-file .gist-data {
+  background: 0 0;
+  border-bottom: none;
+}
+.gist .gist-file .gist-data pre {
+  font-family: Menlo, Consolas, Monaco, Consolas, monospace;
+  padding: 0 ;
+}
+.gist .gist-file .gist-meta {
+  background: 0 0;
+  color: #f8f8f2;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 0;
+}
+.gist .gist-file .gist-meta a {
+  color: #f8f8f2;
+}
+.gist .gist-file .gist-meta a:visited {
+  color: #f8f8f2;
+}
+figure.highlight {
+  font-size: 0.95rem;
+  margin: 3rem 0.8rem;
+  background: #263338;
+  border: 1px solid color-gutter;
+  line-height: 2rem;
+  overflow: auto;
+  position: relative;
+}
+figure.highlight .code {
+  padding: 0 1em 1em 1em;
+  color: #f8f8f2;
+}
+figure.highlight .gutter {
+  display: none;
+}
+figure.highlight figcaption {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #e9e9d6;
+  background-color: #1e282c;
+  padding: 0.6em 1em;
+}
+figure.highlight figcaption a {
+  position: absolute;
+  right: 1rem;
+}
+figure.highlight figcaption:before {
+  content: "\f121";
+  font-family: "fontawesome";
+  text-align: center;
+  display: inline-block;
+  margin-right: 0.6em;
+}
+figure.highlight pre {
+  background: 0 0;
+  border: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+figure.highlight table {
+  border-spacing: 0;
+  margin: 0;
+}
+figure.highlight th {
+  border: 0;
+  font-weight: 400;
+  padding: 0;
+}
+figure.highlight td {
+  border: 0;
+  font-size: 1.1rem;
+  padding: 0;
+}
+.entry-content .toc {
+  background: #fff;
+  padding: 0.5rem;
+  margin: 3rem 0;
+  border: 1px solid #cce4e8;
+  border-radius: 2px;
+}
+.entry-content .toc ul {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #5d8b93;
+  border-radius: 2px;
+}
+.entry-content .toc ul:first-child {
+  border-top: none;
+}
+.entry-content .toc ul ul,
+.entry-content .toc ul ol {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+.entry-content .toc ul li {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #5d8b93;
+}
+.entry-content .toc ul li:first-child {
+  border-top: none;
+}
+.entry-content .toc ul li::after,
+.entry-content .toc ul li::before {
+  content: normal;
+}
+.entry-content .toc ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  padding: 1rem;
+  background-color: #3d5b61;
+  color: #fff;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+.entry-content .toc ul li a:hover {
+  color: #fff;
+  background-color: #2c4145;
+}
+.entry-content .toc ul li a:before {
+  content: "\f02d";
+  font-family: "fontawesome";
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-right: 0.8rem;
+}
+.entry-content .toc ul li ul,
+.entry-content .toc ul li ol {
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+.entry-content .toc ul li ul li a,
+.entry-content .toc ul li ol li a {
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  font-size: 0.9rem;
+  background-color: #416167;
+}
+.entry-content .toc ul li ul li a:before,
+.entry-content .toc ul li ol li a:before {
+  content: "\f0da";
+  font-family: "fontawesome";
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-right: 0.6rem;
+}
+.entry-content .toc ul li ul li ul li a,
+.entry-content .toc ul li ol li ul li a {
+  padding: 0.5rem 0.75rem 0.5rem 4rem;
+}
+.entry-content .toc ul li ul li ul li a:before,
+.entry-content .toc ul li ol li ul li a:before {
+  content: none;
+}
+.meta-content {
+  background-color: #fff;
+  margin: 1.5rem 0.8rem;
+  padding: 0;
+  border-top: 1px dotted #cce4e8;
+  letter-spacing: 0.05rem;
+}
+.meta-wrapper {
+  margin: 3rem 0.8rem;
+  padding: 0;
+  background-color: #fff;
+}
+h6.tag,
+h6.categories {
+  color: #2d3d40;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.article-tag-list {
+  padding: 0;
+}
+.article-tag,
+.article-tag-list,
+.article-categories,
+.article-categories-list {
+  padding: 0;
+  margin: 0;
+}
+.article-categories {
+  margin-bottom: 1.6em;
+}
+.article-tag-list li,
+.article-categories-list li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0.2rem 0.1rem;
+}
+.article-tag-list li a,
+.article-categories-list li a {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  margin: 0;
+  background-color: #ecf5f7;
+  color: #2d3d40;
+  border-radius: 2px;
+  display: block;
+}
+.article-tag-list li a:before,
+.article-categories-list li a:before {
+  content: "#";
+}
+.article-tag-list li a:hover,
+.article-categories-list li a:hover {
+  color: #fff;
+  background-color: #2d3d40;
+}
+.widget {
+  margin: 1.5rem 0.8rem;
+  padding: 0;
+}
+.widget-h {
+  text-align: center;
+  margin: 1.6rem 0;
+}
+.widget-h h6 {
+  color: #fff;
+  background-color: #2d3d40;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.posts-list li {
+  list-style: none;
+  margin: 0.8rem 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.posts-list li .posts-list-link {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.posts-list li .posts-list-link a {
+  color: #2d3d40;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.posts-list li .posts-list-link a:hover {
+  color: #e91e63;
+}
+.posts-list li .posts-list-meta {
+  font-size: 0.7rem;
+}
+.posts-list li .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.posts-list li amp-img {
+  border-radius: 2px;
+}
+#footer {
+  background-color: #2d3d40;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
+  margin: 3rem 0 0 0;
+  padding: 0;
+}
+.site-author-info {
+  margin: 0;
+  padding: 3rem 1.6rem;
+}
+.site-author-info h6 {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #222f31;
+  padding: 0.4rem 0.8rem;
+}
+.site-author-info-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.site-author-info-wrapper .flx:first-child {
+  margin: 0 1rem 0 0;
+}
+.authorCap-wrapper {
+  -webkit-flex-grow: 3;
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -o-box-flex: 3;
+  -ms-box-flex: 3;
+  box-flex: 3;
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+.authorCap {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.authorReading {
+  font-size: 0.7rem;
+}
+.article-title {
+  font-size: 1.5rem;
+}
+.site-author-desc {
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+  margin: 1.4rem 0;
+}
+.copyright-tool {
+  margin: 0;
+  padding: 0.5rem 0.6rem;
+  border-top: 1px solid #384b4f;
+}
+.copyright-notice p {
+  font-size: 0.6rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.2rem;
+  color: #8ba8ae;
+}
+.copyright-title {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.4rem 0 0.2rem 0;
+}
+.copyright-license {
+  margin: 0.2rem 0 0.4rem 0;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.copyright-license a {
+  color: #e6e6e6;
+  font-size: 0.7rem;
+}
+.copyright-license a:hover {
+  color: #b3b3b3;
+}
+.sns-link {
+  margin: 0;
+  text-align: center;
+}
+.sns-link a {
+  display: inline-block;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0.6rem;
+  margin: 0 0.1rem;
+  background-color: #222f31;
+  color: #fff;
+  border-radius: 4px;
+}
+.sns-link a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.footer-menu {
+  padding: 1.5rem 0.8rem;
+  border-top: 1px solid #384b4f;
+}
+.footer-menu ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-menu ul li a {
+  display: block;
+  padding: 0.6rem;
+  margin: 0.2rem 1.6rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #222f31;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+.footer-menu ul li a:hover {
+  color: #ccc;
+  background-color: #030404;
+}
+.social-share {
+  margin: 1.5rem 0.8rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.social-share amp-social-share,
+.social-share .sbtn {
+  margin: 5px;
+}
+.sbtn {
+  padding: 0;
+  width: 4rem;
+  height: 3rem;
+  line-height: 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.sbtn:hover {
+  color: #fff;
+}
+.tw {
+  background-color: #1cafe8;
+}
+.tw:hover {
+  background-color: #0f6b8f;
+}
+.fb {
+  background-color: #4f677f;
+}
+.fb:hover {
+  background-color: #283440;
+}
+.ht {
+  background-color: #35acda;
+}
+.ht:hover {
+  background-color: #1a6e8f;
+}
+.gp {
+  background-color: #d56153;
+}
+.gp:hover {
+  background-color: #9c3326;
+}
+.tb {
+  background-color: #465f79;
+}
+.tb:hover {
+  background-color: #212c38;
+}
+.icon-hatena:before {
+  content: "B";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+#totop {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.6rem;
+  font-size: 1.2rem;
+  z-index: 995;
+}
+#totop a {
+  background: rgba(152, 184, 190, 0.6);
+  text-decoration: none;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 50%;
+}
+#totop a:before {
+  content: "\f062";
+  font-family: "fontawesome";
+  font-size: 1.2rem;
+}
+#totop a:hover {
+  text-decoration: none;
+  background: #5d8b93;
+  color: #fff;
+  line-height: 2.3em;
+}
+@media (min-width: 800px) {
+  .title-cover,
+  .entry-content,
+  .categories,
+  .meta-content,
+  .site-author-info {
+    width: 780px;
+    margin: 0 auto;
+  }
+  .nav-container {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 0px) and (max-width: 480px) {
+  .site-author-info-wrapper {
+    display: block;
+  }
+  .gravatar-area {
+    text-align: center;
+  }
+  .gravatar-area amp-img {
+    display: inline-block;
+  }
+  .entry-content td,
+  .entry-content th {
+    line-height: 1.8em;
+    padding: 0.6rem 0.6rem;
+    font-size: 0.5rem;
+  }
+  .entry-content td em,
+  .entry-content th em,
+  .entry-content td strong,
+  .entry-content th strong,
+  .entry-content td a,
+  .entry-content th a {
+    font-size: 0.5rem;
+  }
+}
+
+	</style>
+	
+  </head>
+  <body>
+  	
+  	
+  	<!-- google analytics -->
+  	
+  	<amp-analytics type="googleanalytics" id="google-analytics">
+		<script type="application/json">
+		{
+		  "vars": {
+		    "account": "UA-106834789-1"
+		  },
+		  "triggers": {
+		    "trackPageview": {
+		      "on": "visible",
+		      "request": "pageview"
+		    }
+		  }
+		}
+		</script>
+	</amp-analytics>
+	
+  	
+  	
+  	<!-- menu -->
+  	<header>
+  		<div class="nav-container">
+	  		<div class="left-nav">
+	  			<div class="header-title">
+	  				<a href="/">前端三分鐘</a>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+    </header>
+  	
+  	
+  	<!-- sidebar -->
+  	
+  	
+  	<!-- container -->
+  	<div id="container">
+	  	<div id="main">
+		    <article id="post-thinking-team-building-by-math" class="post">
+		    
+		   		<!-- categories and bread crumb -->
+		    	
+				<div class="categories-header">
+					<div class="categories">
+						<div class="breadcrumb inline-icon">
+							<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+							  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							    <a itemprop="item" href="/">
+							    	<span class="sns-icon home-icon"></span>
+							        <span itemprop="name"><span class="fa fa-fw fa-home"></span></span>
+							    </a>
+							    <meta itemprop="position" content="1" />
+							  </li>
+
+								
+						    		<li itemprop="itemListElement" itemscope
+									      itemtype="http://schema.org/ListItem">
+									    <a itemprop="item" href="/categories/#職涯發展">
+									      
+									      	<span class="sns-icon folder-icon"></span>
+									      
+									      <span itemprop="name">職涯發展</span>
+									    </a>
+									    <meta itemprop="position" content="2" />
+									</li>
+								
+							</ol>
+						</div>
+					</div>
+				</div>
+				
+		    
+		    	<!-- entry title -->
+				<div class="title-cover">
+					<div class="entry-header">
+						
+						
+						
+			          	<div class="header-thumb flx">
+			          		<div class="thumbImg-w circle">
+			          			<amp-img class="thumbImg" layout="fixed" width="100" height="122" src="https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp">
+			          			</amp-img>
+			          		</div>
+			          	</div>
+			            
+			            
+			            <div class="header-cap flx">
+							
+							  <h1 class="article-title entry-title" itemprop="name">
+							    <a href="https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/" target="_blank" itemprop="url">圖論、線性代數、團隊關係: 從數學的角度切入並觀察團隊關係</a>
+							  </h1>
+							
+						</div>
+					</div>
+					
+					<!-- datePublished -->
+					<div class="entry-meta-header">
+						<span class="meta-elements date">
+							<span class="fa fa-fw fa-clock-o"></span>
+							<time datetime="2020-10-28" itemprop="datePublished">2020.10.28</time>
+						</span>
+					</div>
+				</div>
+				
+				
+				
+				<!-- entry content -->
+			    <div class="entry-content ecp">
+			    	<!-- social share button -->
+			    	
+			    	
+			    	
+                    <!-- google Adsense Matched content -->
+                    
+                    
+			    	<!-- content -->
+			  		<p>&#x524D;&#x9663;&#x5B50;&#x5C0F;&#x7DE8;&#x53C3;&#x52A0;&#x8B80;&#x66F8;&#x6703;&#xFF0C;&#x4E0D;&#x5C0F;&#x5FC3;&#x770B;&#x5230;&#x4E86;&#x9023;&#x901A;&#x5716;&#x8DDF;&#x7279;&#x5FB5;&#x5411;&#x91CF;&#xFF0C;&#x99AC;&#x4E0A;&#x60F3;&#x8D77;&#x4E86;&#x5C0F;&#x6642;&#x5019;&#x5468;&#x8001;&#x4E0A;&#x7684;&#x6578;&#x5B78;&#xFF0C;&#x4F46;&#x537B;&#x56DE;&#x61B6;&#x4E0D;&#x4E86;&#x904E;&#x53BB;&#x7279;&#x5FB5;&#x503C;&#x3001;&#x7279;&#x5FB5;&#x5411;&#x91CF;&#x7684;&#x7269;&#x7406;&#x610F;&#x7FA9;&#xFF0C;&#x65BC;&#x662F;&#x4E4E;&#xFF0C;&#x9019;&#x7BC7;&#x5FC3;&#x5F97;&#x4E0D;&#x5C31;&#x4F86;&#x4E86;&#x55CE;!!!&#x9019;&#x7BC7;&#x6587;&#x7AE0;&#x6703;&#x5E36;&#x8457;&#x5927;&#x5BB6;&#x4E00;&#x8D77;&#x5F9E;&#x5716;&#x8AD6;&#x3001;&#x7DDA;&#x6027;&#x8F49;&#x63DB;&#x3001;&#x6536;&#x6582;&#x7CFB;&#x7D71;&#x7684;&#x89D2;&#x5EA6;&#x4F86;&#x770B;&#x5718;&#x968A;&#x95DC;&#x4FC2;&#x3002;</p>
+<h2 id="&#x6536;&#x6582;&#x7CFB;&#x7D71;"><a href="#&#x6536;&#x6582;&#x7CFB;&#x7D71;" class="headerlink" title="&#x6536;&#x6582;&#x7CFB;&#x7D71;"></a>&#x6536;&#x6582;&#x7CFB;&#x7D71;</h2><p>&#x5728;&#x516C;&#x53F8;&#x6216;&#x8077;&#x5834;&#x4E2D;&#xFF0C;&#x5DE5;&#x4F5C;&#x6280;&#x80FD;&#x7684;&#x4F9B;&#x7D66;&#x548C;&#x9700;&#x6C42;&#x5169;&#x500B;&#x8B8A;&#x6578;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x4E00;&#x500B;&#x7DDA;&#x6027;&#x4E14;&#x6536;&#x6582;&#x7684;&#x7CFB;&#x7D71;&#xFF0C;&#x524D;&#x5929;&#x665A;&#x4E0A;&#x554F;&#x4E86;&#x4E00;&#x4E0B;&#x5BB6;&#x5C0F;&#x5B69;&#xFF0C;&#x5B85;&#x689D;&#x8209;&#x4F8B;&#x901A;&#x5E38;&#x4E09;&#x7DAD;&#x4EE5;&#x4E0B;&#x7684;&#x95DC;&#x4FC2;&#x6703;&#x662F;&#x80FD;&#x5920;&#x6536;&#x6582;&#x7684;&#xFF0C;&#x4EE5;&#x8349;&#x539F;&#x4E0A;&#x7684;&#x7345;&#x5B50;&#x8DDF;&#x725B;&#x70BA;&#x4F8B;&#x4F86;&#x8AAA;&#x660E;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5047;&#x8A2D;&#x4E00;&#x500B; Control Volume &#x4E14;&#x5728;&#x56FA;&#x5B9A;&#x689D;&#x4EF6;&#x4E0B;&#x7684; Property &#x90FD;&#x662F;&#x7A69;&#x5B9A;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8349;&#x539F;&#x4E2D;&#x8349;&#x7684;&#x6EAB;&#x5EA6;&#x3001;&#x6FD5;&#x5EA6;&#x3001;&#x8349;&#x7684;&#x751F;&#x9577;&#x901F;&#x5EA6;&#x90FD;&#x662F;&#x7A69;&#x5B9A;&#x7684;&#xFF0C;&#x7345;&#x5B50;&#x8DDF;&#x725B;&#x662F;&#x5C6C;&#x65BC;&#x5403;&#x8207;&#x88AB;&#x5403;&#x7684;&#x95DC;&#x4FC2;&#xFF0C;&#x6700;&#x7D42;&#x7345;&#x5B50;&#x548C;&#x725B;&#x6703;&#x6536;&#x6582;&#x5728;&#x67D0;&#x7A2E;&#x5E73;&#x8861;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x56E0;&#x70BA;&#x7345;&#x5B50;&#x958B;&#x806F;&#x8ABC;&#x6D3E;&#x5C0D;&#x5C0E;&#x81F4;&#x4E0B;&#x6CE2;&#x51FA;&#x751F;&#x7684;&#x7345;&#x5B50;&#x8F03;&#x591A;&#xFF0C;&#x63A5;&#x4E0B;&#x4F86;&#x725B;&#x88AB;&#x5403;&#x7684;&#x91CF;&#x4E5F;&#x6703;&#x8B8A;&#x591A;&#xFF0C;&#x7576;&#x98DF;&#x7269;&#x8B8A;&#x5C11;&#x4E86;&#x7345;&#x5B50;&#x81EA;&#x7136;&#x6B7B;&#x4EA1;&#x7684;&#x6BD4;&#x4F8B;&#x5247;&#x6703;&#x63D0;&#x9AD8;&#xFF0C;&#x6BCF;&#x5929;&#x7684;&#x56DE;&#x5408;&#x5C31;&#x50CF;&#x662F;&#x500B;&#x8F49;&#x63DB;&#x77E9;&#x9663;&#xFF0C;&#x8B93;&#x6578;&#x91CF;&#x8B8A;&#x5316;&#x5F62;&#x6210;&#x67D0;&#x7A2E;&#x7121;&#x9650;&#x5FAA;&#x74B0;&#xFF0C;&#x7136;&#x800C;&#x7345;&#x5B50;&#x548C;&#x725B;&#x7684;&#x6578;&#x91CF;&#x53D6;&#x6C7A;&#x65BC;:</p>
+<ul>
+<li>&#x7345;&#x5B50;&#x7684;&#x63A0;&#x98DF;</li>
+<li>&#x7345;&#x5B50;&#x7684;&#x81EA;&#x7136;&#x6B7B;&#x4EA1;</li>
+<li>&#x725B;&#x7684;&#x81EA;&#x7136;&#x6B7B;&#x4EA1;</li>
+<li>&#x725B;&#x7684;&#x51FA;&#x751F;&#x901F;&#x5EA6;</li>
+</ul>
+<blockquote>
+<p>&#x4EC0;&#x9EBC;&#x662F; Property? &#x5728; Control Volume &#x4E2D;&#x9054;&#x5230; Homogeneous &#x60C5;&#x6CC1;&#x7684; Steady State</p>
+</blockquote>
+<p>&#x4F86;&#x770B;&#x770B;&#x70BA;&#x4EC0;&#x9EBC;&#x6709;&#x4E9B;&#x516C;&#x53F8;&#x5E38;&#x5E38;&#x64F4;&#x7DE8;&#x4E86;&#x4E4B;&#x5F8C;&#x53C8;&#x88C1;&#x54E1;&#xFF0C;&#x7576; Control Volume &#x4E2D;&#x7684; Property &#x90FD;&#x6C92;&#x6709;&#x9032;&#x884C;&#x6539;&#x8B8A;&#x6642;&#xFF0C;&#x50CF;&#x662F;&#x9AD8;&#x5C64;&#x7684;&#x50F9;&#x503C;&#x89C0;&#x3001;&#x516C;&#x53F8;&#x7684;&#x696D;&#x52D9;&#x91CF;&#x7B49;&#x7B49;&#x90FD;&#x6C92;&#x592A;&#x5927;&#x6539;&#x8B8A;&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#xFF0C;&#x5DE5;&#x4F5C;&#x6280;&#x80FD;&#x7684;&#x9700;&#x6C42;&#x8207;&#x4F9B;&#x7D66;&#x5C31;&#x6703;&#x50CF;&#x662F;&#x7345;&#x5B50;&#x548C;&#x725B;&#x4E00;&#x6A23;&#x3002;&#x4EE5;&#x4E00;&#x500B;&#x9019;&#x6A23;&#x7684;&#x7CFB;&#x7D71;&#x4F86;&#x8AAA;&#xFF0C;&#x7279;&#x5FB5;&#x503C;&#x5C31;&#x50CF;&#x662F; Control Volume &#x7684;&#x672C;&#x8CEA;&#x7D44;&#x6210;&#xFF0C;&#x6703;&#x5F71;&#x97FF;&#x6574;&#x500B;&#x7CFB;&#x7D71;&#x6536;&#x6582;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+<p>&#x540C;&#x7406;&#xFF0C;&#x70BA;&#x4EC0;&#x9EBC;&#x5718;&#x968A;&#x6210;&#x54E1;&#x8D8A;&#x591A;&#x6548;&#x7387;&#x53CD;&#x800C;&#x4E26;&#x4E0D;&#x4E00;&#x5B9A;&#x6703;&#x63D0;&#x5347;&#xFF0C;&#x96D6;&#x7136;&#x7E3D;&#x9AD4;&#x7375;&#x6355;&#x7684;&#x901F;&#x5EA6;&#x662F;&#x52A0;&#x5FEB;&#x7684;&#xFF0C;&#x4F46;&#x725B;&#x7684;&#x6578;&#x91CF;&#x6709;&#x6642;&#x5019;&#x4E26;&#x6C92;&#x6709;&#x96A8;&#x8457;&#x4E00;&#x8D77;&#x8B8A;&#x591A;&#xFF0C;&#x53CD;&#x800C;&#x9020;&#x6210;&#x4E86;&#x5718;&#x968A;&#x7684;&#x7E3D;&#x7375;&#x6355;&#x91CF;&#x7684;&#x4E0B;&#x964D;&#xFF0C;&#x9019;&#x53EF;&#x80FD;&#x4E5F;&#x662F;&#x70BA;&#x4EC0;&#x9EBC; Scrum Team &#x8981;&#x7DAD;&#x6301;&#x5728;&#x6BD4;&#x8F03;&#x5C0F;&#x7684;&#x7DE8;&#x5236;&#xFF0C;&#x9664;&#x4E86;&#x6E9D;&#x901A;&#x6210;&#x672C;&#x5916;&#xFF0C;&#x6216;&#x8A31;&#x662F;&#x70BA;&#x4E86;&#x8B93;&#x6536;&#x6582;&#x901F;&#x5EA6;&#x8B8A;&#x5FEB;&#x4E14;&#x66F4;&#x597D;&#x9810;&#x6E2C;&#x5427;?</p>
+<h2 id="&#x7DDA;&#x6027;&#x8F49;&#x63DB;"><a href="#&#x7DDA;&#x6027;&#x8F49;&#x63DB;" class="headerlink" title="&#x7DDA;&#x6027;&#x8F49;&#x63DB;"></a>&#x7DDA;&#x6027;&#x8F49;&#x63DB;</h2><p>&#x70BA;&#x4EC0;&#x9EBC;&#x8981;&#x9032;&#x884C;&#x8F49;&#x63DB;&#xFF0C;&#x901A;&#x5E38;&#x5C31;&#x662F;&#x5728;&#x539F;&#x4F86;&#x7684;&#x89C0;&#x5BDF;&#x7684;&#x6642;&#x9593;&#x6216;&#x7A7A;&#x9593;&#x4E0B;&#x4E26;&#x6C92;&#x6709;&#x90A3;&#x9EBC;&#x597D;&#x89C0;&#x5BDF;&#xFF0C;&#x50CF;&#x662F;&#x628A;&#x4E00;&#x822C;&#x77E9;&#x9663;&#x6216;&#x662F;&#x5C0D;&#x7A31;&#x77E9;&#x9663;&#x505A;&#x5C0D;&#x89D2;&#x5316;&#xFF0C;&#x6216;&#x662F;&#x628A;&#x4E09;&#x7DAD;&#x964D;&#x6210;&#x4E8C;&#x7DAD;&#xFF0C;&#x7C21;&#x55AE;&#x4F86;&#x8AAA;&#x68D2;&#x7403;&#x6295;&#x51FA;&#x5F8C;&#x7684;&#x8ECC;&#x8DE1;&#x96D6;&#x7136;&#x662F;&#x767C;&#x751F;&#x5728;&#x4E09;&#x7DAD;&#x4E16;&#x754C;&#xFF0C;&#x4F46;&#x5BE6;&#x969B;&#x4E0A;&#x53EF;&#x4EE5;&#x900F;&#x904E;&#x4E8C;&#x7DAD;&#x7684;&#x5E73;&#x9762;&#x9032;&#x884C;&#x63CF;&#x8FF0;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5927;&#x5BB6;&#x570B;&#x9AD8;&#x4E2D;&#x5FF5;&#x7684;&#x7269;&#x7406;&#x3002;</p>
+<p>&#x7DDA;&#x6027;&#x8F49;&#x63DB;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x7DDA;&#x6027;&#x7684;&#x7CFB;&#x7D71;&#x770B;&#x6210;&#x51FD;&#x6578;&#xFF0C;&#x63A2;&#x8A0E;&#x5728;&#x4E0D;&#x540C;&#x5411;&#x91CF;&#x7A7A;&#x9593;&#x88E1;&#x9762;&#x5411;&#x91CF;&#x7684;&#x5C0D;&#x61C9;&#x60C5;&#x5F62;&#xFF0C;&#x8F49;&#x63DB;&#x904E;&#x5F8C;&#x7A7A;&#x9593;&#x96D6;&#x7136;&#x626D;&#x66F2;&#x6539;&#x8B8A;&#x4E86;&#xFF0C;&#x5411;&#x91CF;&#x8207;&#x5411;&#x91CF;&#x4E4B;&#x9593;&#x7684;&#x95DC;&#x4FC2;&#x4E26;&#x6C92;&#x6709;&#x6539;&#x8B8A;&#xFF0C;&#x5E73;&#x884C;&#x7684;&#x9084;&#x662F;&#x5E73;&#x884C;&#xFF0C;&#x5782;&#x76F4;&#x7684;&#x9084;&#x662F;&#x5782;&#x76F4;&#x3002;&#x5C31;&#x50CF;&#x5728;&#x81EA;&#x52D5;&#x63A7;&#x5236;&#x7CFB;&#x7D71;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x4E5F;&#x5F88;&#x5E38;&#x628A;&#x6642;&#x57DF;&#x8F49;&#x63DB;&#x6210;&#x983B;&#x57DF;&#x4F86;&#x9032;&#x884C;&#x89C0;&#x5BDF;&#x3002;</p>
+<p>&#x7528;&#x6578;&#x5B78;&#x7684;&#x540D;&#x8A5E;&#x4F86;&#x770B;&#x5C31;&#x662F;&#x5728;&#x5411;&#x91CF;&#x7A7A;&#x9593;&#x4E2D;&#x900F;&#x904E;&#x8F49;&#x63DB;&#x77E9;&#x9663;&#xFF0C;&#x9032;&#x884C;&#x5411;&#x91CF;&#x3001;&#x5EA7;&#x6A19;&#x4E4B;&#x9593;&#x7684;&#x8F49;&#x63DB; <code>AX = b</code>&#xFF0C;A &#x662F;&#x8F49;&#x63DB;&#x77E9;&#x9663;&#xFF0C;&#x5E6B;&#x6211;&#x5011;&#x628A; X &#x8F49;&#x63DB;&#x6210; b&#xFF0C;&#x5176;&#x4E2D; X &#x662F;&#x5B9A;&#x7FA9;&#x57DF;&#xFF0C;b &#x662F;&#x7D93;&#x904E;&#x7DDA;&#x6027;&#x8F49;&#x63DB;&#x5F8C;&#x7684;&#x503C;&#x57DF;&#x3002;</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>A</th>
+<th>X</th>
+<th>b</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2,3,1 <br> 4,1,-3</td>
+<td>x<br>y<br>z<br></td>
+<td>7<br>9<br></td>
+</tr>
+</tbody></table></div>
+<p>&#x5176;&#x5BE6;&#x8F49;&#x63DB;&#x548C;&#x964D;&#x7DAD;&#x7684;&#x60F3;&#x6CD5;&#x6211;&#x89BA;&#x5F97;&#x883B;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x5728;&#x9047;&#x5230;&#x554F;&#x984C;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x5E38;&#x5E38;&#x5927;&#x5BB6;&#x90FD;&#x8AAA;<del>&#x5C0D;&#x4EBA;&#x4E0D;&#x5C0D;&#x4E8B;</del> (&#x66F4;&#x6B63;&#x662F;&#x5C0D;&#x4E8B;&#x4E0D;&#x5C0D;&#x4EBA;)&#xFF0C;&#x53CD;&#x6B63;&#x9047;&#x5230;&#x554F;&#x984C;&#x5C31;&#x5148;&#x63A8;&#x5378;&#x8CAC;&#x4EFB;&#x8AAA;&#x662F;&#x5176;&#x4ED6; Team &#x7684;&#x554F;&#x984C;&#x5C31;&#x5C0D;&#x4E86;&#xFF0C;&#x7136;&#x800C;&#x9019;&#x7A2E;&#x65B9;&#x5F0F;&#x5F88;&#x53EF;&#x80FD;&#x6703;&#x628A;&#x81EA;&#x5DF1;&#x990A;&#x6210;&#x5EE2;&#x7269;&#xFF0C;&#x4F46;&#x7121;&#x8166;&#x7684;&#x5E6B;&#x5FD9;&#x6551;&#x706B;&#x64E6;&#x5C41;&#x80A1;&#x4E5F;&#x53EF;&#x80FD;&#x8B8A;&#x6210;&#x80FD;&#x8005;&#x591A;&#x52DE; QQ</p>
+<p>&#x90A3;&#x516C;&#x53F8;&#x7684;&#x6587;&#x5316;&#x662F;&#x5426;&#x80FD;&#x63D0;&#x5021;&#x900F;&#x904E;&#x8F49;&#x63DB;&#x548C;&#x964D;&#x7DAD;&#x628A;&#x4EBA;&#x7684;&#x56E0;&#x7D20;&#x53BB;&#x6389;&#xFF0C;&#x53BB;&#x60F3;&#x4E00;&#x4E0B;&#x9019;&#x500B;&#x554F;&#x984C;&#x600E;&#x9EBC;&#x907F;&#x514D;&#x548C;&#x6539;&#x5584;&#x6216;&#x8A31;&#x5C0D;&#x5718;&#x968A;&#x624D;&#x662F;&#x6700;&#x91CD;&#x8981;&#x7684;&#x3002;&#x7576;&#x767C;&#x751F;&#x554F;&#x984C;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x5148;&#x4E0D;&#x8981;&#x60F3;&#x662F;&#x4EBA;&#x7684;&#x554F;&#x984C;&#xFF0C;&#x6240;&#x4EE5;&#x53BB;&#x6389;&#x9019;&#x500B;&#x7DAD;&#x5EA6;&#x4E4B;&#x5F8C;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x901A;&#x5E38;&#x5C31;&#x662F;&#x6D41;&#x7A0B;&#x9762;&#x3001;&#x6280;&#x8853;&#x9762;&#x7684;&#x9632;&#x5446;&#xFF0C;&#x6211;&#x500B;&#x4EBA;&#x662F;&#x8A8D;&#x70BA;&#x597D;&#x7684;&#x4E0A; Code &#x6D41;&#x7A0B;&#x4EE5;&#x53CA;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x7684;&#x81EA;&#x52D5;&#x5316;&#x5C0E;&#x5165;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x5927;&#x91CF;&#x964D;&#x4F4E;&#x51FA;&#x5305;&#x98A8;&#x96AA;&#x3002;</p>
+<p>&#x8A0E;&#x8AD6;&#x9700;&#x6C42;&#x7684;&#x6642;&#x5019;&#xFF0C;PM &#x6216;&#x662F;&#x8001;&#x95C6;&#x7684;&#x6982;&#x5FF5;&#x5F80;&#x5F80;&#x90FD;&#x662F;&#x591A;&#x7DAD;&#x5EA6;&#x7684;&#x4E00;&#x500B;&#x60F3;&#x50CF;&#x7D50;&#x679C;&#xFF0C;&#x8EAB;&#x70BA;<del>&#x4E0D;&#x60F3;&#x52A0;&#x73ED;&#x4E14;&#x52A0;&#x73ED;&#x4E0D;&#x80FD;&#x7684;</del>&#x5DE5;&#x7A0B;&#x5E2B;&#x5C31;&#x5FC5;&#x9808;&#x5354;&#x52A9;&#x628A;&#x7DAD;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x964D;&#x6210;&#x4E00;&#x500B;&#x6700;&#x5C0F;&#x53EF;&#x884C;&#x6027;&#x7684;&#x89E3;&#x6C7A;&#x65B9;&#x6848;&#xFF0C;&#x5728;&#x6700;&#x77ED;&#x7684;&#x6642;&#x9593;&#x505A;&#x6301;&#x7E8C;&#x7684;&#x4EA4;&#x4ED8;&#xFF0C;&#x8B93;&#x5C08;&#x6848;&#x7528;&#x6BCF;&#x5929;&#x5411;&#x7D42;&#x9EDE;&#x722C;&#x4E00;&#x9EDE;&#x7684;&#x65B9;&#x5F0F;&#x6162;&#x6162;&#x524D;&#x9032;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5149;&#x8A0E;&#x8AD6;&#x548C;&#x8A2D;&#x8A08;&#x5C31;&#x82B1;&#x4E86;&#x5169;&#x9031;&#x4EE5;&#x4E0A;&#x7136;&#x5F8C;&#x53EB;&#x5DE5;&#x7A0B;&#x5E2B;&#x8981;&#x5728;&#x4E09;&#x5468;&#x5167;&#x885D;&#x5B8C;&#x5168;&#x90E8;&#xFF0C;&#x9019;&#x7A2E;&#x6BD4;&#x4F8B;&#x8DDF;&#x5C08;&#x6848;&#x9032;&#x884C;&#x65B9;&#x5F0F;&#x660E;&#x986F;&#x6703;&#x589E;&#x52A0;&#x5DE5;&#x7A0B;&#x5E2B;&#x7684;&#x75B2;&#x7D2F;&#x611F;&#x548C;&#x51FA;&#x5305;&#x6A5F;&#x7387;&#x3002;</p>
+<h2 id="&#x7279;&#x5FB5;&#x503C;&#x8207;&#x7279;&#x5FB5;&#x5411;&#x91CF;"><a href="#&#x7279;&#x5FB5;&#x503C;&#x8207;&#x7279;&#x5FB5;&#x5411;&#x91CF;" class="headerlink" title="&#x7279;&#x5FB5;&#x503C;&#x8207;&#x7279;&#x5FB5;&#x5411;&#x91CF;"></a>&#x7279;&#x5FB5;&#x503C;&#x8207;&#x7279;&#x5FB5;&#x5411;&#x91CF;</h2><p>&#x7279;&#x5FB5;&#x5411;&#x91CF;&#x662F;&#x7D93;&#x904E;&#x7DDA;&#x6027;&#x8F49;&#x63DB; (&#x65CB;&#x8F49;&#x3001;&#x62C9;&#x4F38;) &#x800C;&#x4E0D;&#x6539;&#x8B8A;&#x65B9;&#x5411;&#x7684;&#x4E00;&#x500B;&#x5411;&#x91CF;&#xFF0C;&#x6EFF;&#x8DB3;&#x689D;&#x4EF6;&#x7684;&#x5411;&#x91CF;&#x53EF;&#x4EE5;&#x7528; <code>A(x) = &#x3BB;x</code> &#x4F86;&#x8868;&#x793A;&#x3002;</p>
+<blockquote>
+<p>&#x7279;&#x5FB5;&#x503C;&#x8207;&#x7279;&#x5FB5;&#x5411;&#x91CF; (<a href="https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp">&#x5716;&#x7247;&#x4F86;&#x6E90;</a>)<br></p><div class="amp-img-wrapper"><amp-img src="https://pic1.zhimg.com/v2-8ad6a95ca5093d9cea74ba2d3c9438a4_b.webp" width="720" height="881" layout="responsive"></amp-img></div>
+</blockquote>
+<p>&#x90A3; &#x3BB; &#x5C31;&#x6703;&#x51FA;&#x73FE;&#x4EE5;&#x4E0B;&#x4E09;&#x7A2E;&#x60C5;&#x5883;&#xFF0C;&#x7406;&#x5DE5;&#x79D1;&#x7684;&#x5927;&#x5927;&#x5011;&#x4E00;&#x5B9A;&#x4E0D;&#x53EA;&#x6709;&#x9EDE;&#x719F;&#x6089;&#xFF0C;&#x5728;&#x963B;&#x5C3C;&#x7CFB;&#x7D71;&#x4E2D;&#x5C31;&#x4EE3;&#x8868;&#x6B20;&#x963B;&#x5C3C;(Underdamping)&#x3001;&#x81E8;&#x754C;&#x963B;&#x5C3C;(Critically damped)&#x3001;&#x904E;&#x963B;&#x5C3C;(Overdamping)&#xFF0C;&#x4F46;&#x53EA;&#x662F;&#x8DDF;&#x4FC2;&#x6578;&#x76F8;&#x95DC;&#xFF0C;&#x6B63;&#x78BA;&#x7B97;&#x6CD5;&#x53EF;&#x80FD;&#x8981;<a href="https://zh.wikipedia.org/wiki/%E9%98%BB%E5%B0%BC">&#x53C3;&#x8003;&#x9019;&#x88E1;</a>XDDD</p>
+<ul>
+<li>&#x3BB; &lt; 1</li>
+<li>&#x3BB; = 1</li>
+<li>&#x3BB; &gt; 1</li>
+</ul>
+<blockquote>
+<p>&#x963B;&#x5C3C;&#x4FC2;&#x6578; (<a href="https://zh.wikipedia.org/zh-tw/%E9%98%BB%E5%B0%BC">&#x5716;&#x7247;&#x4F86;&#x6E90;</a>)<br></p><div class="amp-img-wrapper"><amp-img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Damping_types.PNG" width="275" height="201" layout="responsive"></amp-img></div>
+</blockquote>
+<p>&#x5C0F;&#x6642;&#x5019;&#x6211;&#x5011;&#x5B78;&#x904E;&#x7684;&#x64BF;&#x978B;&#x904B;&#x52D5; <code>f(x) = -kx</code> &#x5C31;&#x662F;&#x985E;&#x4F3C;&#x9019;&#x6A23;&#x7684;&#x516C;&#x5F0F;&#xFF0C;&#x5F9E;&#x7269;&#x7406;&#x5B78;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x52A0;&#x901F;&#x5EA6;&#x8DDF;&#x6642;&#x9593;&#x7684;&#x95DC;&#x4FC2;&#x662F;&#x8ECC;&#x8DE1;&#x65B9;&#x7A0B;&#x5F0F;&#x5FAE;&#x5206;&#x5169;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6210;&#x4EBA;&#x306E;&#x6578;&#x5B78;&#x53BB;&#x89E3;&#x51FA; <code>x(t)</code> &#x5C31;&#x6703;&#x767C;&#x73FE;&#x662F; <code>cos</code> &#x548C; <code>sin</code> &#x7684;&#x7D44;&#x5408;&#x51FD;&#x6578;&#x3002;</p>
+<p>Wiki: <a href="https://zh.wikipedia.org/zh-tw/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B">https://zh.wikipedia.org/zh-tw/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B</a></p>
+<p>&#x5BE6;&#x969B;&#x4E0A;&#x8209;&#x500B;&#x7D93;&#x5178;&#x4F8B;&#x5B50;&#x4F86;&#x770B;&#xFF0C;&#x88AB;&#x9707;&#x65B7;&#x7684;&#x6A4B;&#x6881;&#x5C31;&#x662F;&#x7CFB;&#x7D71;&#x4E2D;&#x7684;&#x5E7E;&#x500B;&#x90E8;&#x5206;&#x88AB;&#x9396;&#x6B7B;&#x7684;&#x963B;&#x5C3C;&#x7CFB;&#x7D71;&#x3002;</p>
+<amp-youtube data-videoid="j" width="1920" height="1080" layout="responsive"></amp-youtube>
+
+<p>&#x6703;&#x9020;&#x6210;&#x9707;&#x52D5;&#x7684;&#x539F;&#x56E0;&#x662F;&#x98A8;&#x529B;&#x5728;&#x539F;&#x4F86;&#x7A69;&#x5B9A;&#x7684;&#x6D41;&#x9AD4;&#x4E2D;&#xFF0C;&#x88AB;&#x653E;&#x4E86;&#x4E00;&#x500B;&#x969C;&#x7919;&#x7269;&#xFF0C;&#x5728;&#x6EFF;&#x8DB3;&#x67D0;&#x4E9B;&#x689D;&#x4EF6;&#x4E0B; (&#x5370;&#x8C61;&#x4E2D;&#x662F;&#x4E0D;&#x6ED1;&#x52D5;&#x689D;&#x4EF6;)&#xFF0C;&#x6D41;&#x9AD4;&#x6703;&#x51FA;&#x73FE;&#x908A;&#x754C;&#x5C64;&#x7684;&#x6D41;&#x52D5;&#x5206;&#x96E2;&#xFF0C;&#x63A5;&#x8457;&#x5206;&#x96E2;&#x7684;&#x6D41;&#x9AD4;&#x5C31;&#x6703;&#x51FA;&#x73FE;&#x9AD8;&#x4F4E;&#x58D3;&#x5DEE;&#xFF0C;&#x7522;&#x751F;&#x6E26;&#x65CB;&#xFF0C;&#x5728;&#x969C;&#x7919;&#x7269;&#x7684;&#x5169;&#x5074;&#x6703;&#x7522;&#x751F;&#x898F;&#x5F8B;&#x7684;&#x53CD;&#x5411;&#x6E26;&#x65CB;&#xFF0C;&#x5C31;&#x662F; K&#xE1;rm&#xE1;n vortex&#xFF0C;&#x5C31;&#x662F;&#x9019;&#x500B;&#x7A69;&#x5B9A;&#x983B;&#x7387;&#x7684;&#x58D3;&#x5DEE;&#x8B8A;&#x5316;&#x8B93;&#x6A4B;&#x5012;&#x584C; (&#x5F71;&#x7247; 50 &#x79D2;&#x5DE6;&#x53F3;)&#x3002;</p>
+<p>Wiki: <a href="https://zh.wikipedia.org/zh-tw/%E5%8D%A1%E9%97%A8%E6%B6%A1%E8%A1%97">https://zh.wikipedia.org/zh-tw/%E5%8D%A1%E9%97%A8%E6%B6%A1%E8%A1%97</a></p>
+<amp-youtube data-videoid="IDeGDFZSYo8" width="1920" height="1080" layout="responsive"></amp-youtube>
+
+<p>&#x5982;&#x679C;&#x5927;&#x5BB6;&#x597D;&#x5947;&#xFF0C;&#x53F0;&#x5357;&#x7F8E;&#x8853;&#x9928;&#x4E8C;&#x9928;&#x89C0;&#x666F;&#x53F0;&#x4E0A;&#x7684;&#x6B04;&#x6746;&#x90FD;&#x53EA;&#x6709;&#x505A;&#x55AE;&#x4E00;&#x7DAD;&#x5EA6;&#x7684;&#x652F;&#x6490;&#xFF0C;&#x5927;&#x5BB6;&#x4E0B;&#x6B21;&#x6709;&#x5230;&#x53F0;&#x5357;&#x73A9;&#x53EF;&#x4EE5;&#x7528;&#x5C0F;&#x5C0F;&#x529B;&#x91CF;&#x9084;&#x6709;&#x7279;&#x5B9A;&#x983B;&#x7387;&#x53BB;&#x8F15;&#x8F15;&#x7684;&#x63A8;&#xFF0C;&#x63A8;&#x4E45;&#x4E86;&#x5C31;&#x6703;&#x767C;&#x73FE;&#x6643;&#x52D5;&#x8D8A;&#x4F86;&#x8D8A;&#x5927;&#xFF0C;&#x7136;&#x5F8C;&#x5C31;&#x4E0D;&#x8981;&#x518D;&#x63A8;&#x4E86;&#x56E0;&#x70BA;&#x6703;&#x58DE;&#x6389; XDDD</p>
+<p>&#x5C31;&#x8DDF;&#x76EA;&#x97A6;&#x97C6;&#x7684;&#x9053;&#x7406;&#x4E00;&#x6A23;&#xFF0C;&#x627E;&#x51FA;&#x9069;&#x5408;&#x90A3;&#x500B;&#x4EBA;&#x9AD4;&#x91CD;&#x6643;&#x52D5;&#x7684;&#x57FA;&#x983B;&#xFF0C;&#x800C;&#x7279;&#x5FB5;&#x503C;&#x5728;&#x9019;&#x88E1;&#x5176;&#x5BE6;&#x5C31;&#x6703;&#x8DDF;&#x81EA;&#x7136;&#x632F;&#x52D5;&#x983B;&#x7387;&#x76F8;&#x95DC;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x90A3;&#x500B;&#x5C31;&#x662F;&#x57FA;&#x983B;&#xFF0C;&#x5728;&#x97F3;&#x6A02;&#x88E1;&#x9762;&#x6CDB;&#x97F3;&#x983B;&#x7387;&#x5C31;&#x6B63;&#x597D;&#x662F;&#x57FA;&#x983B;&#x7684;&#x6574;&#x6578;&#x500D;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x8B5C;&#x66F2;&#x6642;&#x6703;&#x7528;&#x983B;&#x7387;&#x4E0A;&#x7684;&#x6574;&#x6578;&#x6BD4;&#x4F86;&#x8B93;&#x6574;&#x9AD4;&#x97F3;&#x6A02;&#x548C;&#x8AE7;&#xFF0C;&#x53EF;&#x4EE5;&#x53C3;&#x8003;<a href="https://scitechvista.nat.gov.tw/c/s2lI.htm">&#x57FA;&#x983B;&#x8207;&#x6CDB;&#x97F3;</a>&#x3002;</p>
+<p>&#x5728;&#x5718;&#x968A;&#x95DC;&#x4FC2;&#x4E2D;&#xFF0C;&#x8981;&#x600E;&#x9EBC;&#x8B93;&#x958B;&#x6703;&#x6642;&#x4E0D;&#x8981;&#x4E00;&#x76F4;&#x767C;&#x6563;&#x4E5F;&#x4E0D;&#x8981;&#x592A;&#x5FEB;&#x7D50;&#x675F;&#x5462;? &#x6211;&#x5230;&#x6700;&#x8FD1;&#x5E7E;&#x5E74;&#x6F38;&#x6F38;&#x90FD;&#x5728;&#x63A8;&#x5EE3;&#x5927;&#x5BB6;&#x5728;&#x958B;&#x6703;&#x524D;&#x5148;&#x5BEB;&#x597D;&#x6703;&#x8B70;&#x8A18;&#x9304;&#xFF0C;&#x5728;&#x9084;&#x6C92;&#x958B;&#x59CB;&#x958B;&#x6703;&#x524D;&#x5C31;&#x76F4;&#x63A5;&#x5BEB;&#x4E0A;&#x60F3;&#x50CF;&#x4E2D;&#x7684;&#x7D50;&#x679C;&#x4E0A;&#x53BB;&#xFF0C;&#x6C92;&#x6709;&#x7D50;&#x679C;&#x5C31;&#x63D0;&#x51FA;&#x554F;&#x984C;&#x7684;&#x5206;&#x6790;&#x4EE5;&#x53CA;&#x9700;&#x8981;&#x7684;&#x5354;&#x52A9;&#xFF0C;&#x8ABF;&#x6574;&#x64B0;&#x5BEB;&#x6703;&#x8B70;&#x7D00;&#x9304;&#x6642;&#x9593;&#x5C31;&#x662F;&#x4E00;&#x500B;&#x8ABF;&#x6574;&#x53C3;&#x6578;&#x7684;&#x6982;&#x5FF5; XD</p>
+<h2 id="&#x5716;&#x8AD6;"><a href="#&#x5716;&#x8AD6;" class="headerlink" title="&#x5716;&#x8AD6;"></a>&#x5716;&#x8AD6;</h2><p>&#x5728; 50 &#x4EBA;&#x4EE5;&#x4E0B;&#x7684;&#x65B0;&#x5275;&#x516C;&#x53F8;&#x88E1;&#xFF0C;&#x6211;&#x7684;&#x7D93;&#x9A57;&#x662F;&#x6BCF;&#x500B;&#x4EBA;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x90FD;&#x975E;&#x5E38;&#x900F;&#x660E;&#xFF0C;&#x53EA;&#x8981;&#x4F60;&#x60F3;&#x770B;&#x7684;&#x8A71;&#x5E7E;&#x4E4E;&#x90FD;&#x77E5;&#x9053;&#x6BCF;&#x500B;&#x4EBA;&#x73FE;&#x5728;&#x5728;&#x505A;&#x4EC0;&#x9EBC;&#xFF0C;&#x5373;&#x4FBF;&#x60F3;&#x85CF;&#x4E5F;&#x85CF;&#x4E0D;&#x8D77;&#x4F86;&#xFF0C;&#x4F46;&#x5834;&#x666F;&#x53EA;&#x8981;&#x4E00;&#x8B8A;&#x6210; 50 &#x4EBA;&#x7684;&#x4E2D;&#x5C0F;&#x4F01;&#x696D;&#xFF0C;&#x8981;&#x4E86;&#x89E3;&#x5176;&#x4ED6;&#x90E8;&#x9580;&#x5F80;&#x5F80;&#x5C31;&#x8B8A;&#x6210;&#x9700;&#x8981;&#x4E3B;&#x7BA1;&#x4F86;&#x9032;&#x884C;&#x540C;&#x6B65;&#xFF0C;&#x7B49;&#x5230;&#x8B8A;&#x6210; 300 &#x4EBA;&#x4E0A;&#x6AC3;&#x516C;&#x53F8;&#x4E4B;&#x5F8C;&#xFF0C;&#x6211;&#x767C;&#x73FE;&#xFF0C;&#x7ADF;&#x7136;&#x8B8A;&#x6210;&#x9700;&#x8981;&#x9760;&#x5167;&#x90E8;&#x516B;&#x5366;&#x8DDF;&#x5C0F;&#x9053;&#x6D88;&#x606F;&#x4E86;&#x2026;</p>
+<blockquote>
+<p>&#x9019;&#x6642;&#x5019;&#x5C31;&#x6703;&#x8B93;&#x4EBA;&#x597D;&#x5947;&#xFF0C;&#x70BA;&#x4EC0;&#x9EBC;&#x516C;&#x53F8;&#x6703;&#x8D8A;&#x4F86;&#x8D8A;&#x8D70;&#x5411;&#x8CC7;&#x8A0A;&#x4E0D;&#x5C0D;&#x7A31;&#x9019;&#x689D;&#x8DEF;?</p>
+</blockquote>
+<p>&#x5176;&#x5BE6;&#x986F;&#x7136;&#x5C31;&#x662F;&#x6709;&#x4EBA;&#x5728;&#x6E9D;&#x901A;&#x7DB2;&#x8DEF;&#x88E1;&#x9762;&#x5728;&#x64CD;&#x4F5C;&#x9019;&#x6A23;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5728;&#x5716;&#x8AD6;&#x4E2D;&#x6709;&#x7A2E;&#x5716;&#x7684;&#x5B9A;&#x7FA9;&#x662F;&#x9023;&#x901A;&#x5716;&#xFF0C;&#x5B9A;&#x7FA9;&#x662F;&#x5C0D;&#x65BC;&#x6240;&#x6709;&#x9EDE;&#x5C0D;&#x4E4B;&#x9593;&#x90FD;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x689D;&#x8DEF;&#x5F91;&#x53EF;&#x4EE5;&#x76F8;&#x901A;&#x3002;&#x5728;&#x7D44;&#x7E54;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x8A0A;&#x606F;&#x7684;&#x6E9D;&#x901A;&#x7DB2;&#x8DEF;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x4E0A;&#x9650;&#x5236;&#x5C31;&#x6703;&#x8B8A;&#x6210;&#x6709;&#x5411;&#x5716;&#xFF0C;&#x8209;&#x4F8B;&#x4F86;&#x8AAA;&#x5C31;&#x50CF;&#x662F;&#x5546;&#x671D;&#x672B;&#x5E74;&#xFF0C;&#x7D02;&#x738B;&#x8033;&#x6735;&#x53EA;&#x6703;&#x900F;&#x904E;&#x59B2;&#x5DF1;&#x7684;&#x5634;&#x5DF4;&#x5438;&#x6536;&#x8A0A;&#x606F;&#xFF0C;&#x6700;&#x7D42;&#x7D50;&#x679C;&#x662F;&#x5FAE;&#x5B50;&#x53BB;&#x4E4B;&#xFF0C;&#x7B95;&#x5B50;&#x70BA;&#x4E4B;&#x5974;&#xFF0C;&#x6BD4;&#x5E72;&#x8AEB;&#x800C;&#x6B7B;&#x3002;</p>
+<p>&#x5728;&#x5716;&#x8AD6;&#x548C;&#x7DB2;&#x7D61;&#x5206;&#x6790;&#x4E2D;&#xFF0C;&#x4E2D;&#x5FC3;&#x6027; (Centrality) &#x662F;&#x5224;&#x65B7;&#x7DB2;&#x7D61;&#x4E2D;&#x7BC0;&#x9EDE;&#x91CD;&#x8981;&#x6027;&#x6216;&#x5F71;&#x97FF;&#x529B;&#x7684;&#x6307;&#x6A19;&#xFF0C;&#x7121;&#x80FD;&#x529B;&#x8005;&#x7D55;&#x5C0D;&#x8981;&#x52AA;&#x529B;&#x5728;&#x7D44;&#x7E54;&#x4E2D;&#x6210;&#x70BA;&#x9023;&#x901A;&#x5716;&#x7684;&#x4E2D;&#x5FC3;&#xFF0C;&#x96D6;&#x7136;&#x5BB9;&#x6613;&#x8B93;&#x8A0A;&#x606F;&#x7684;&#x6D41;&#x901A;&#x9047;&#x5230;&#x74F6;&#x9838;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x60F3;&#x8981;&#x641E;&#x653F;&#x6CBB;&#x7A69;&#x56FA;&#x81EA;&#x5DF1;&#x7684;&#x4F4D;&#x7F6E;&#x7D55;&#x5C0D;&#x662F;&#x4E0D;&#x4E8C;&#x9078;&#x64C7;&#x3002;</p>
+<p>&#x5728;&#x5EFA;&#x7ACB;&#x5718;&#x968A;&#x7684;&#x6642;&#x5019;&#xFF0C;&#x70BA;&#x4E86;&#x964D;&#x4F4E;&#x6E9D;&#x901A;&#x6210;&#x672C;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6A39;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8B93;&#x8A0A;&#x606F;&#x53EF;&#x4EE5;&#x7121;&#x75DB;&#x7684;&#x5728;&#x7BC0;&#x9EDE;&#x4E2D;&#x5EFA;&#x7ACB;&#x9023;&#x63A5;&#xFF0C;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6A39;&#x662F;&#x9023;&#x901A;&#x52A0;&#x6B0A;&#x7121;&#x5411;&#x5716;&#x4E2D;&#x4E00;&#x68F5;&#x6B0A;&#x503C;&#x6700;&#x5C0F;&#x7684;&#x751F;&#x6210;&#x6A39;&#xFF0C;&#x4E26;&#x544A;&#x8A34;&#x5718;&#x968A;&#x6210;&#x54E1;&#xFF0C;&#x600E;&#x9EBC;&#x7528;&#x6700;&#x77ED;&#x7684;&#x8DEF;&#x5F91;&#x901A;&#x77E5;&#x5230;&#x8A72;&#x901A;&#x77E5;&#x7684;&#x7BC0;&#x9EDE;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x900F;&#x904E; Trello&#x3001;Jira&#x3001;Slack &#x7684; <a href="https://standupalice.com/">Stand up Alice</a> &#x6211;&#x89BA;&#x5F97;&#x90FD;&#x662F;&#x4E0D;&#x932F;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x5982;&#x679C;&#x4E00;&#x500B;&#x6709;&#x5411;&#x5716;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x500B;&#x9802;&#x9EDE;&#x5C0D;&#x65BC;&#x5176;&#x4ED6;&#x7684;&#x6BCF;&#x500B;&#x7BC0;&#x9EDE;&#x90FD;&#x5B58;&#x5728;&#x8457;&#x4E00;&#x689D;&#x8DEF;&#x5F91;&#x80FD;&#x5920;&#x5230;&#x9054;&#xFF0C;&#x53EF;&#x4EE5;&#x7A31;&#x8A72;&#x6709;&#x5411;&#x5716;&#x5F37;&#x9023;&#x901A;&#xFF0C;&#x800C;&#x5F37;&#x9023;&#x901A;&#x5143;&#x4EF6;&#x7684;&#x6027;&#x8CEA;&#x662F;&#x53EF;&#x4EE5;&#x628A;&#x6574;&#x500B;&#x5F37;&#x9023;&#x901A;&#x5143;&#x4EF6;&#x8996;&#x4F5C;&#x4E00;&#x500B;&#x9EDE;&#xFF0C;&#x5982;&#x679C;&#x5C07;&#x6BCF;&#x4E00;&#x500B;&#x5F37;&#x9023;&#x901A;&#x5143;&#x4EF6;&#x7E2E;&#x6210;&#x4E00;&#x500B;&#x9EDE;&#xFF0C;&#x5247;&#x539F;&#x5716;&#x6703;&#x8B8A;&#x6210;&#x4E00;&#x5F35;&#x6709;&#x5411;&#x7121;&#x74B0;&#x5716;&#x3002;</p>
+<p>&#x5F37;&#x9023;&#x901A;&#x7684;&#x9019;&#x500B;&#x90E8;&#x5206;&#xFF0C;&#x500B;&#x4EBA;&#x89BA;&#x5F97;&#x9019;&#x500B;&#x8CC7;&#x8A0A;&#x9AD8;&#x901F;&#x6D41;&#x901A;&#x6709;&#x9EDE;&#x50CF;&#x662F;&#x7DB2;&#x8DEF;&#x696D;&#x4E2D;&#x7684; Scrum Team&#x3002;</p>
+<h2 id="&#x4E2D;&#x5FC3;&#x6027;"><a href="#&#x4E2D;&#x5FC3;&#x6027;" class="headerlink" title="&#x4E2D;&#x5FC3;&#x6027;"></a>&#x4E2D;&#x5FC3;&#x6027;</h2><ul>
+<li>Degree Centrality: &#x91CD;&#x8981;&#x7684;&#x7BC0;&#x9EDE;&#x5C31;&#x662F;&#x64C1;&#x6709;&#x8A31;&#x591A;&#x9023;&#x63A5;&#x7684;&#x7BC0;&#x9EDE;&#xFF0C;&#x9023;&#x63A5;&#x95DC;&#x4FC2;&#x8D8A;&#x591A;&#xFF0C;&#x5F71;&#x97FF;&#x529B;&#x5C31;&#x8D8A;&#x5F37;&#xFF0C;&#x52A9;&#x7406;&#x662F;&#x5927;&#x5BB6;&#x7684;&#xFF0C;&#x975E;&#x5E38;&#x91CD;&#x8981;</li>
+<li>Closeness Centrality: &#x63A5;&#x8FD1;&#x4E2D;&#x5FC3;&#x6027;&#xFF0C;&#x8A72;&#x7BC0;&#x9EDE;&#x8207;&#x5716;&#x4E2D;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7BC0;&#x9EDE;&#x4E4B;&#x9593;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F91;&#x9577;&#x5EA6;&#x4E4B;&#x548C;&#x7684;&#x5012;&#x6578;&#xFF0C;&#x6771;&#x5EE0;&#x7B2C;&#x4E00;&#x628A;&#x4EA4;&#x6905;</li>
+<li>Betweenness Centrality: &#x4E2D;&#x4ECB;&#x4E2D;&#x5FC3;&#x6027;&#xFF0C;&#x5716;&#x4E2D;&#x4EFB;&#x5169;&#x7BC0;&#x9EDE;&#x5747;&#x81F3;&#x5C11;&#x5B58;&#x5728;&#x4E00;&#x500B;&#x6700;&#x77ED;&#x8DEF;&#x5F91;&#xFF0C;&#x4E2D;&#x4ECB;&#x4E2D;&#x5FC3;&#x6027;&#x5373;&#x70BA;&#x9019;&#x4E9B;&#x6700;&#x77ED;&#x8DEF;&#x5F91;&#x7A7F;&#x904E;&#x8A72;&#x7BC0;&#x9EDE;&#x7684;&#x6B21;&#x6578;&#xFF0C;&#x597D;&#x4EBA;&#x4E00;&#x751F;&#x5E73;&#x5B89;&#xFF0C;&#x4E0A;&#x5EC1;&#x6240;&#x90FD;&#x6709;&#x885B;&#x751F;&#x7D19;&#xFF0C;&#x6709;&#x9EDE;&#x50CF;&#x662F;&#x8D85;&#x5F37; PM &#x6216;&#x662F; Scrum Master</li>
+<li>Eigenvector Centrality: &#x7279;&#x5FB5;&#x5411;&#x91CF;&#x4E2D;&#x5FC3;&#x6027;&#xFF0C;&#x662F;&#x6E2C;&#x91CF;&#x7BC0;&#x9EDE;&#x5C0D;&#x7DB2;&#x7D61;&#x5F71;&#x97FF;&#x7684;&#x4E00;&#x7A2E;&#x65B9;&#x5F0F;&#xFF0C;&#x5F97;&#x5206;&#x8F03;&#x9AD8;&#x610F;&#x5473;&#x8457;&#x8A72;&#x7BC0;&#x9EDE;&#x8207;&#x8A31;&#x591A;&#x81EA;&#x8EAB;&#x5F97;&#x5206;&#x8F03;&#x9AD8;&#x7684;&#x7BC0;&#x9EDE;&#x76F8;&#x9023;&#x63A5;&#xFF0C;&#x5A46;&#x5A46;&#x5ABD;&#x5ABD;&#x5011;&#x306E;&#x516B;&#x5366;&#x9818;&#x8896;</li>
+</ul>
+<h2 id="&#x7DB2;&#x8DEF;&#x6D41;"><a href="#&#x7DB2;&#x8DEF;&#x6D41;" class="headerlink" title="&#x7DB2;&#x8DEF;&#x6D41;"></a>&#x7DB2;&#x8DEF;&#x6D41;</h2><p>&#x5728; Network Flow and Maximum Flow Minimum Cut Theorem &#x88E1;&#x9762;&#xFF0C;&#x9084;&#x52A0;&#x4E0A;&#x4E86;&#x6D41;&#x91CF;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4E2D;&#x5FC3;&#x9019;&#x6642;&#x5019;&#x5C31;&#x4E0D;&#x4E00;&#x5B9A;&#x91CD;&#x8981;&#xFF0C;&#x56E0;&#x70BA;&#x6703;&#x5B58;&#x5728;&#x8CC7;&#x8A0A;&#x6D41;&#x91CF;&#x9650;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x60F3;&#x50CF;&#x6210;&#x52A9;&#x7406;&#x96D6;&#x7136;&#x662F;&#x5927;&#x5BB6;&#x7684;&#x6A1E;&#x7D10;&#x4E2D;&#x5FC3;&#xFF0C;&#x4F46;&#x6B0A;&#x8CAC;&#x4E0A;&#x50C5;&#x80FD;&#x8655;&#x7406;&#x5C0F;&#x554F;&#x984C;&#x3002;</p>
+<p>&#x5047;&#x8A2D;&#x6C34;&#x7BA1;&#x7CFB;&#x7D71;&#x6C34;&#x5F9E;&#x5165;&#x53E3;&#x6D41;&#x5165;&#xFF0C;&#x7D93;&#x904E;&#x4E92;&#x76F8;&#x9023;&#x7D50;&#x3001;&#x5B54;&#x5F91;&#x4E0D;&#x4E00;&#x7684;&#x6C34;&#x7BA1;&#x5F8C;&#x5F9E;&#x51FA;&#x6C34;&#x53E3;&#x6D41;&#x51FA;&#x3002;&#x4F46;&#x76EE;&#x6A19;&#x662F;&#x4E00;&#x6B21;&#x6D41;&#x5165;&#x6700;&#x5927;&#x91CF;&#x7684;&#x6C34;&#x3002;&#x82E5;&#x5148;&#x6D41;&#x904E;&#x4E00;&#x689D;&#x534A;&#x5F91;&#x53EA;&#x6709; 2 &#x516C;&#x5206;&#x7684;&#x6C34;&#x7BA1;&#xFF0C;&#x5247;&#x63A5;&#x5728;&#x5176;&#x5F8C;&#x7684;&#x6C34;&#x7BA1;&#x7684;&#x534A;&#x5F91;&#x5373;&#x4F7F;&#x518D;&#x5927;&#xFF0C;&#x6C34;&#x6D41;&#x91CF;&#x4ECD;&#x6703;&#x88AB;&#x534A;&#x5F91; 2 &#x516C;&#x5206;&#x7684;&#x6C34;&#x7BA1;&#x6240;&#x9650;&#x5236;&#xFF0C;&#x56E0;&#x6B64;&#x6574;&#x9AD4;&#x6D41;&#x91CF;&#x4E5F;&#x5C31;&#x53D7;&#x9650;&#x5236;&#x3002;</p>
+<p>&#x500B;&#x4EBA;&#x8A8D;&#x70BA;&#x5718;&#x968A;&#x4E2D;&#x8981;&#x627E;&#x5230;&#x8CC7;&#x8A0A;&#x6D41;&#x7684;&#x74F6;&#x9838;&#xFF0C;&#x901A;&#x5E38;&#x5C31;&#x662F;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x6A1E;&#x7D10;&#x4E2D;&#x5FC3;&#x662F;&#x4E0D;&#x662F;&#x5728;&#x641E;&#x8CC7;&#x8A0A;&#x4E0D;&#x5C0D;&#x7A31;&#xFF0C;&#x5982;&#x679C;&#x767C;&#x73FE;&#x662F;&#x6771;&#x5EE0;&#x7B2C;&#x4E00;&#x628A;&#x4EA4;&#x6905;&#xFF0C;&#x53EF;&#x80FD;&#x4E5F;&#x53EA;&#x80FD;&#x60F3;&#x8FA6;&#x6CD5;&#x53E6;&#x5916;&#x6253;&#x901A;&#x4E00;&#x689D;&#x8CC7;&#x8A0A;&#x7684;&#x9023;&#x901A;&#x7DB2;&#x8DEF; QQ</p>
+
+			  		
+			  		<!-- google Adsense -->
+			  		
+					
+					
+					
+					
+			    	
+					
+					<!-- google Adsense Matched content -->
+			  		
+			  	</div>
+				
+		  	</article>
+		  	
+		  	
+		  	<!-- TAGS -->
+		  	
+		  	<div class="meta-content">
+				
+				<div class="widget">
+				  	<h6 class="tag"><span class="fa fa-fw fa-tag"></span>TAGS</h6>
+				  	<div class="article-tag">
+						<ul class="article-tag-list">
+							
+					    		<li class="article-tag-list-item">
+					    			<a class="article-tag-list-link" href="/tags/職涯發展/">
+					    				職涯發展
+					    			</a>
+					    		</li>
+							
+					    		<li class="article-tag-list-item">
+					    			<a class="article-tag-list-link" href="/tags/個人成長/">
+					    				個人成長
+					    			</a>
+					    		</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		  	
+		  	
+		  	<!-- Categories posts -->
+		  	
+		  	
+			  	
+		  	
+			  	
+				  	<div class="meta-content">
+					  <div class="widget">
+					  	<div class="widget-h">
+					  		<h6><span class="fa fa-fw fa-folder-open-o"></span>&nbsp;職涯發展</h6>
+					    </div>
+					    <div class="widget-content">
+					    	<div class="posts-list">
+						      <ul>
+						      	
+						      	
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2021/01/11/experience-sharing-agile-tour-2020/">
+								          			<amp-img class="thumbImg" layout="fixed" width="177" height="100" src="/2021/01/11/experience-sharing-agile-tour-2020/CycleDiagram.JPG">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2021/01/11/experience-sharing-agile-tour-2020/">Agile Tour Taiwan 2020 心得分享</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2021.01.11
+						            	</div>
+						            </div>
+						          </li>
+						        
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2020/11/26/career-remote-work-values/">
+								          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2020/11/26/career-remote-work-values/">從辦公室到遠端，四個價值觀的轉換與改變</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2020.11.26
+						            	</div>
+						            </div>
+						          </li>
+						        
+						          <li>
+						          	
+						          	<div class="posts-list-thumb flx">
+							          	<div class="thumbImg-w">
+							          		<div class="thumbImg">
+							          			<a href="/2020/11/25/career-remote-work-life/">
+								          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+								          			</amp-img>
+								          		</a>
+							          		</div>
+							          	</div>
+							        </div>
+						          	<div class="posts-list-link flx">
+						            	<a href="/2020/11/25/career-remote-work-life/">怎麼兼職? 身兼三份工作的真實樣貌</a>
+						            	<div class="posts-list-meta">
+						            		<span class="fa fa-fw fa-clock-o"></span>
+						            		2020.11.25
+						            	</div>
+						            </div>
+						          </li>
+						        
+						      </ul>
+						    </div>
+					    </div>
+					  </div>
+					</div>
+				
+			
+		  	
+		  	
+		  	<!-- Detailed categories  posts -->
+		  	
+		  	
+		  	
+		  	<!-- Latests -->
+		  	
+		  	<div class="meta-content">
+			  	<div class="widget">
+			  		<div class="widget-h">
+			  			<h6><span class="fa fa-fw fa-file-text-o"></span>&nbsp;LATESTS</h6>
+			  		</div>
+				    <div class="widget-content">
+				    	<div class="posts-list">
+					      <ul>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/12/react-coding-speed/">
+						          				<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/12/react-coding-speed/">提升你的 React 開發效率</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.12
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/11/experience-sharing-web-page-render-performance/">
+						          				<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="https://linyencheng.github.io/amp-dist/sample/icon.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/11/experience-sharing-web-page-render-performance/">三步驟加速你的網站效能</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.11
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					          <li>
+					          	
+					            
+					            <div class="posts-list-thumb flx">
+						            <div class="thumbImg-w">
+						          		<div class="thumbImg">
+						          			<a href="/2021/03/09/experience-sharing-web-page-loading-performance/">
+						          				<amp-img class="thumbImg" layout="fixed" width="158" height="100" src="/2021/03/09/experience-sharing-web-page-loading-performance/experience-sharing-web-page-loading-performance.png">
+						          				</amp-img>
+						          			</a>
+						          		</div>
+						          	</div>
+						        </div>
+					          	<div class="posts-list-link flx">
+					            	<a href="/2021/03/09/experience-sharing-web-page-loading-performance/">四種加快網站開啟速度的常見方法</a>
+					            	<div class="posts-list-meta">
+					            		<span class="fa fa-fw fa-clock-o"></span>
+					            		2021.03.09
+					            	</div>
+					            </div>
+					            
+					          </li>
+					        
+					      </ul>
+					    </div>
+				    </div>
+				</div>
+			  </div>
+			</div>
+			
+			
+		</div>
+		
+		
+		<footer id="footer">
+		
+			
+			
+			
+			
+			<div class="copyright-tool">
+				
+				
+				
+				<div class="copyright-title">
+					<span>
+					&copy; 2021&nbsp;前端三分鐘
+					</span>
+				</div>
+				
+				<div class="copyright-license">
+					<aside>
+						Powered by <a href="https://hexo.io/">Hexo</a>. <a href="https://github.com/tea3/hexo-generator-amp">AMP-Theme</a> designed by <a href="https://github.com/tea3/">tea</a>.
+					</aside>
+				</div>
+			</div>
+			
+		</footer>
+
+
+  	<div id="totop"><a href="#"></a></div>
+
+
+  </body>
+</html>
