@@ -1,0 +1,317 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Progressive Web App 開箱解密</title>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
+        
+        <!-- theme -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            var theme ='black';
+            switch (theme){
+                case 'black':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/black.min.css';
+                    break;
+                case 'beige':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/beige.min.css';
+                    break;
+                case 'blood':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/blood.min.css';
+                    break;
+                case 'league':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/league.min.css';
+                    break;
+                case 'moon':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/moon.min.css';
+                    break;
+                case 'night':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/night.min.css';
+                    break;
+                case 'serif':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/serif.min.css';
+                    break;
+                case 'sky':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/sky.min.css';
+                    break;
+                case 'solarized':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/solarized.min.css';
+                    break;
+                case 'white':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/white.min.css';
+                    break;
+                default:
+            }
+            
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/lib/css/zenburn.min.css">
+        <link href="https://cdn.bootcss.com/reveal.js/3.4.1/css/print/paper.min.css" rel="stylesheet">
+        <!-- Printing and PDF exports -->
+        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                         data-separator="^\n"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:">
+                    <script type="text/template">Progressive Web App 開箱解密
+
+
+Progressive Web App (PWA) 有三個概念
+
+1. Progressive: 漸進增強
+2. Web: 使用當下最新潮的 Web API
+3. App: 建立跨平台 Web 應用程式
+
+使用當下最新潮的 Web API 用漸進增強的概念來建立跨平台 Web 應用程式。
+
+> 目的是讓體驗、效能接近原生 App
+
+接下來小編會帶著大家一起開箱一波 PWA，Progressive Web App (PWA) 是在 2015 年，由兩位大大弗朗西斯貝里曼 (設計師)、亞歷克斯羅素 (Chrome 工程師) 所提出的概念。
+
+那到底 PWA 在期待和表達些什麼，漸進式增強到底有多強?
+
+## 什麼是 Progressive Web App?
+
+Progressive Web App 透過瀏覽器技術組合讓 PWA 除了網頁優勢也能夠有 native apps 的優點。
+
+> **將網站優化成 PWA 只會讓網站更好更加分**
+
+- Native App:
+
+  - 整合硬體效能、離線資源提供流暢體驗
+  - 取得較不方便
+
+- 網頁:
+
+  - 相對原生 App 無法完整使用硬體功能，但能運作在較低端的設備上
+  - 唯一觸及全平台的管道且容易被搜尋和取得
+
+- Progressive Web App:
+  - 網頁容易被搜尋並能透過連結被安裝使用
+  - 運用最新的網頁技術更深度的整合硬體資源，功能只會越來越豐富
+
+那 Progressive Web App 可靠嗎?
+
+這個問題其實是問 Service Worker 在各瀏覽器上的運作穩定了嗎?
+
+隨著瀏覽器的技術進步，這個答案是肯定的。目前已經有蠻多採用 PWA 的大公司，也可以發現 PWA 會以 Lite 來做命名，來增加產品的觸及和普及。
+
+- IG Lite
+- Twitter Lite
+- Youtube TV
+- Telegram Z
+
+Chrome OS 執行 PWA
+https://www.ithome.com.tw/news/137000
+
+隨著 Google PWA 開發上進展 Chromebook 用戶也能在 Play Store 下載 Twitter 及 Youtube TV 的 PWA。
+
+目標是透過現代化瀏覽器讓 PWA 在任何平臺上都能順暢執行 (Windows、ChromeOS、macOS、iOS、Android)，去解決像是 Chrome OS 裝置跑 Android App 效能低落的問題。
+
+## Progressive Web App 在商業上的幫助
+
+PWA 在不改變使用者習慣的前提下，能夠直接優化商業型的網站
+
+1. 透過 Responsive Design 來優化不同裝置的體驗
+2. 提供主畫面上的 Icon 讓使用者不需透過瀏覽器執行 Web Apps
+
+在商業的應用上可以做到:
+
+- 增加觸及，Web 是唯一管道可以觸及全部平台
+- 比起網頁可以增加更多互動
+- 減少安裝的容量損耗
+- 對於較差的硬體能得到更好的效能
+- 提供 "Lite" 輕量化的體驗
+
+小編趁這次開箱也翻譯整理了[樂天 24 優化站台成 PWA 後所帶來的好處](https://linyencheng.github.io/2021/09/30/progressive-web-application/pwa-case-study-rakuten-24/?utm_source=link&utm_medium=article&utm_campaign=internal_link)給大家參考。
+
+## 怎麼實作一個 PWA?
+
+PWA 提供了一種新的設計哲學，包含像是一些特殊的實作模式、API、配置。
+
+- [推薦安裝提示](https://linyencheng.github.io/2021/09/03/progressive-web-application/pwa-add-to-home-screen-a2hs/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [Manifest: PWA 配置檔](https://linyencheng.github.io/2021/09/04/progressive-web-application/pwa-manifest/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [Service Worker 讓網頁支援離線快取及推播](https://linyencheng.github.io/2021/09/05/progressive-web-application/pwa-service-worker/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+
+因為這些實作，讓 App 能夠漸進式的增強，而一般使用者在正常使用上是分別不出來是不是 PWA。
+
+一個完整的 PWA 主要包含以下功能，而 Chrome 也提供了 [Lighthouse 來評估是否完整達到 PWA 的規範](https://linyencheng.github.io/2021/10/03/progressive-web-application/pwa-audit/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+
+- 可以離線運作 (Works Offline)
+  - [用戶端儲存快取與離線後備頁面](https://linyencheng.github.io/2021/09/16/progressive-web-application/pwa-web-storage/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [可以被安裝 (Installable)](https://linyencheng.github.io/2021/09/03/progressive-web-application/pwa-add-to-home-screen-a2hs/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [可以收推播 (Push Notifications)](https://linyencheng.github.io/2021/09/26/progressive-web-application/pwa-push-notificatoin-introduction/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+
+底下列出更完整 PWA 的原則:
+
+- Discoverable: 網頁本來就能夠被搜尋引擎爬取
+- Installable: 需要完成適當配置讓 App 能夠被安裝
+- Linkable: 可以透過連結分享
+- Re-engageable: 可以接收推播互動
+- Secure: 必須要透過 https 提供安全的保證
+- Network independent: 可以離線運作或用快取運行
+- Progressively enhanced: 漸進式的增強，瀏覽器越新支援的功能就越多
+- Responsively designed: 透過 RWD 的設計能夠讓更多裝置使用
+
+## PWA 漸進式增強
+
+PWA 其實不是新的觀念，經過 6 年的演變也真的跟名稱一樣一直都在進行漸進式的增強 (Progressive Enhancement)，舉例來說，近幾年 Chrome 也一直在不斷進步，最近連 NFC 也能透過網頁直接讀取。
+
+有個計劃是 Project Fugo，會將開發中與即將開發的先進技術記錄在這個專案進程中，這其中有個重點，就是有在這個專案中的功能，大家就先不要急著先自己實作。
+
+```js
+// 因為在不久的將來我們只需要
+if ("厲害的功能" in Window) {
+  // 來點厲害功能吧
+}
+```
+
+- [通知數字 (Badging API)](https://linyencheng.github.io/2021/09/10/progressive-web-application/pwa-badging-for-app-icon/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [位置存取 (Geo Location API)](https://linyencheng.github.io/2021/09/15/progressive-web-application/pwa-geo-location-api/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [NFC Reader](https://linyencheng.github.io/2021/09/19/progressive-web-application/pwa-web-nfc/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [喚醒鎖維持螢幕長亮](https://linyencheng.github.io/2021/09/20/progressive-web-application/pwa-wake-lock/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [分享內容 (Web Share API)](https://linyencheng.github.io/2021/09/21/progressive-web-application/pwa-web-share/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [存取通訊錄 (Contact Picker API)](https://linyencheng.github.io/2021/09/22/progressive-web-application/pwa-contact-picker/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [定期背景同步 (Periodic Background Sync API)](https://linyencheng.github.io/2021/09/23/progressive-web-application/pwa-background-sync/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [裝置閒置偵測 (Idle Detection API)](https://linyencheng.github.io/2021/09/24/progressive-web-application/pwa-idle-detection/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [顯示通知 (Notification API)](https://linyencheng.github.io/2021/09/25/progressive-web-application/pwa-notification/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+- [程式快速啟動選單 (App Shortcut)](https://linyencheng.github.io/2021/10/02/progressive-web-application/pwa-app-shortcuts/?utm_source=link&utm_medium=article&utm_campaign=internal_link)
+
+## PWA 有什麼好處，值得我們將站台升級嗎?
+
+- 即開即用: 安裝後能透過 Service Workers 快取資源，減少載入時間有機會做到即開即用
+- 更版升級快速: 可以做到只更新有改變的相關資源，比起 Native app 相對每次更新的修改都較小
+- 提升操作體驗: Icon、啟動畫面、全螢幕執行的操作體驗都更接近 Native App
+- 更好的互動: 透過接受推播能夠有更好的互動體驗
+
+## 將 PWA 上架到市集
+
+目前 Progressive Web App [能透過工具搭配幾乎零開發成本的打包](https://linyencheng.github.io/2021/10/04/progressive-web-application/pwa-publish-a-pwa-to-store/?utm_source=link&utm_medium=article&utm_campaign=internal_link)就能上架到以下市集:
+
+- Play Store (Chrome OS)
+- Micorsoft Store
+- Samsung Galaxy Store
+
+既然可以直接安裝為什麼要上架到市集?
+
+- 可以容易搜尋
+- 更高的熟悉與信任度
+- PWA 打包幾乎沒有成本
+
+## Progressive Web App 的未來
+
+小編其實從十年前就開始接觸 Web App，6 年前開始工作後也開始持續關注 PWA 的概念。
+
+這幾年下來，漸漸出現採用 HTML5 的技術電視平台、Firefox OS，不過發展到後期都算是失敗的作品。
+
+近兩年開始看到 Outlook、Telegram 的進步才又有了信心，去年微軟的 Edge 也正式加入 Google 陣營，可以說是為 PWA 的發展又推進了一步。
+
+隨著元件化、模組化的概念發展，小編認為未來前端會趨向不寫程式的狀況，只需要透過模組的組合還有元件的樣式調整就能夠組成前端的 Web App，PWA 也會隨著 Chrome 的進步而越來越強大。
+
+Progressive Web App 從名字可以看出有三個重點
+
+- Progressive: 漸進式增強
+- Web: 網路技術
+- App: 應用程式
+
+### Project Fugu
+
+底下這個網站記錄了 Chrome 團隊即將開發的新功能和潛在功能的完整列表，就讓我們繼續期待 PWA 接下來的發展吧!
+
+https://fugu-tracker.web.app/
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/lib/js/head.min.js"></script>
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/js/reveal.min.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                // 是否在右下角展示控制条
+                controls: true,
+                // 是否显示演示的进度条
+                progress: true,
+                // 是否显示当前幻灯片的页数编号，也可以使用代码 “slideNumber: 'c/t'” ，表示当前页/总页数。
+                slideNumber: false,
+                // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+                history: false,
+                // 是否启用键盘快捷键来导航
+                keyboard: true,
+                // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
+                overview: true,
+                // 是否将幻灯片垂直居中
+                center: true,
+                // 是否在触屏设备上启用触摸滑动切换
+                touch: true,
+                // 是否循环演示
+                loop: false,
+                // 是否将演示的方向变成 RTL，即从右往左
+                rtl: false,
+                // 是否每次演示的时候，随机幻灯片的顺序
+                shuffle: false,
+                // 全局开启和关闭碎片。
+                fragments: true,
+                // 标识演示文稿是否在嵌入模式中运行，即包含在屏幕的有限部分中的
+                embedded: false,
+                // 标识当问号键被点击的时候是否应该显示一个帮助的覆盖层
+                help: true,
+                // 标识演讲者备注标志是否让所有观看者可见
+                showNotes: false,
+                // 两个幻灯片之间自动切换的时间间隔（毫秒）
+                // 当设置成 0 的时候则禁止自动切换
+                // 该值可以被幻灯片上的 “data-autoslide” 属性覆盖
+                autoSlide: 0,
+                // 当遇到用户输入的时候停止自动切换
+                autoSlideStoppable: true,
+                // 当自动滑动时，使用此方法进行导航。
+                autoSlideMethod: Reveal.navigateNext,
+                // 是否启用通过鼠标滚轮来导航幻灯片
+                mouseWheel: false,
+                // 是否在移动设备上隐藏地址栏
+                hideAddressBar: true,
+                // 是否在一个弹出的 iframe 中打开幻灯片中的链接
+                previewLinks: false,
+                // 切换过渡效果
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+                // 过渡速度
+                transitionSpeed: 'default', // default/fast/slow
+                // 全屏幻灯片背景的过渡效果
+                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+                // 加载除当前可见的幻灯片之外的幻灯片数量
+                viewDistance: 3,
+                // 视差背景图片
+                parallaxBackgroundImage: '',
+                // e.g. 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
+                // 视差背景尺寸
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+                // 移动视差背景（水平和垂直）滑动变化的数量, 例如 100
+                // - 除了指定自动计算
+                // - 设置为 0 时，禁止沿轴运动
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
