@@ -1,0 +1,428 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>用 JavaScript 測試你的網站</title>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
+        
+        <!-- theme -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            var theme ='black';
+            switch (theme){
+                case 'black':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/black.min.css';
+                    break;
+                case 'beige':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/beige.min.css';
+                    break;
+                case 'blood':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/blood.min.css';
+                    break;
+                case 'league':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/league.min.css';
+                    break;
+                case 'moon':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/moon.min.css';
+                    break;
+                case 'night':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/night.min.css';
+                    break;
+                case 'serif':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/serif.min.css';
+                    break;
+                case 'sky':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/sky.min.css';
+                    break;
+                case 'solarized':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/solarized.min.css';
+                    break;
+                case 'white':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/white.min.css';
+                    break;
+                default:
+            }
+            
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/lib/css/zenburn.min.css">
+        <link href="https://cdn.bootcss.com/reveal.js/3.4.1/css/print/paper.min.css" rel="stylesheet">
+        <!-- Printing and PDF exports -->
+        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                         data-separator="^\n"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:">
+                    <script type="text/template">用 JavaScript 測試你的網站
+
+
+測試這件事情是為了一致性，為了不讓伴侶不信任，在男女之間交往一致性也是很重要的一環。
+
+在日常的對話和相處過程中，彼此都會透過些方法來確認， [John Rempel][john rempel] 等人提出信任包含可預測、可依賴和信念三個要素。
+
+- 可預測判斷的依據就是過去伴侶行為的一致性
+- 可依賴代表相信且願意依賴伴侶協助解決問題
+
+以程式測試來說，每次的測試會期待能得到相同結果，並且認為能夠依賴系統解決問題。
+
+舉個例子來說小編前公司是做看盤軟體，為了確保 Production 環境穩定，每天會在開盤前執行 E2E 測試確保網站運作正常，即便當錯誤發生也能即時寄信通知相關人員。
+
+[john rempel]: https://womany.net/read/article/18074
+
+## JavaScript 測試
+
+寫測試前要問三個問題
+
+1. 在什麼情境?
+2. 要測試什麼?
+3. 預期的結果?
+
+測試的步驟上大致會遵守 3A 原則
+
+1. Arrange: 準備物件、建立物件、物件設定 (fixture) -> 情境
+2. Act: 操作物件 -> 測試內容
+3. Assert: 驗證結果符合預期 -> 預期結果
+
+好的單元測試
+
+- 執行夠快
+- 會得到相同結果
+- 跟其他測試完全獨立
+- 理論上不需要 DB、網路，用 Mock Server 或是 Mock Object 模擬外部傳回資料
+
+測試是為了開發速度和產品品質，不要因為著急而跳過測試，沒有測試的話會花更多時間在上線前的來回，可能有些問題還沒修好就上線，引發更多新問題，但什麼都要測試嗎?
+
+- 追求 "測到關鍵邏輯"，關鍵的測試有測到更重要
+- 測試是為了速度與品質
+- 不好的 "快" 不是 "真的快"
+- 寫測試的時候應避免重複寫原來的程式邏輯
+
+建議做黑箱測試也就是測試流程與結果即可，在測試公開的介面或元件的過程中其實也會順便測試到內部邏輯，當撰寫 E2E 測試的時候也有單元測試覆蓋的概念，雖然 E2E 的運行成本較高，但針對可能會頻繁更改的內部實作做單元測試也有點浪費時間。
+
+另外 E2E 測試也可以當作一個文件，可以告訴不熟系統的人關鍵操作流程以及定義什麼是正常的操作，按照使用者故事跑過網站的關鍵流程，並且交由助理工程師來協助驗收。
+
+推薦工具:
+
+- BDD (行為驅動測試) 框架是 Cucumber 可以參考看看
+- StoryBook 提供一個元件操作介面來做元件測試
+
+> Comparing JavaScript Testing Frameworks
+> ![](https://blog.logrocket.com/wp-content/uploads/2021/02/Popularity-graph-of-Node-js-unit-testing-frameworks.png)
+
+## 單元測試
+
+當前端開發元件化以後，最基本的就是針對元件做單元測試，第一次寫測試的話可以先問自己幾個問題:
+
+- 單元測試該怎麼撰寫?
+- Jest 的腳色是什麼?
+- 什麼是 enzyme?
+- 什麼是 shallow & mount ?
+
+單元測試通常是一個**自動化**的測試，確保某一段程式碼 (單元) 有被正式執行，在測試時大多使用單元測試框架測試。
+
+- 會呼叫**被測試單元**的入口點
+- 檢查其中一個出口點，所以唯一出口較好測試
+
+單元測試在測什麼
+
+- 元件測試，import 後用 mount 然後 props 用假資料進行測試，模擬點擊 `jest.fn()`
+- function 測試，import 後用假資料測試
+- 非同步: `jest.fn()`
+- test fixture: 測試的時候特意準備的東西，讓測試可以順利跑完所需要，有些人會叫做 test context
+- 包含測試
+- 出口測試
+  - CUT: Code under test
+  - SUT: system under test
+
+依照使用的框架或函式庫不同會有不同的測試工具，像 react 的話 facebook 官方就有 [Jest][jest]。
+
+Jest 對於單元測試來說非常方便而且也包含了覆蓋率的計算，最後會直接出一個報表給你，文章中也有推薦 enzyme，是 airbnb 開發的工具，據 react 官方說法是讓測試更簡單。
+
+enzyme 只是讓我們更方便測試 react 用的外掛，主要是因為 react 有用到 virtual dom ，那測試又會需要去 render，所以 enzyme 就封裝了 [react 原生的測試][react-test]讓寫法更直覺。
+
+- shallow: 只 render 第一層
+- mount: full render，包含元件週期
+- render
+- simulate: 模擬 event
+- setProps: 設定 props
+- setState: 設定 state
+- prop(key): retrieves prop value corresponding to the provided key
+- state(key): retrieves state corresponding to the provided key
+
+[react-test]: https://facebook.github.io/react/docs/test-utils.html
+[jest]: http://facebook.github.io/jest/
+
+### 單元測試該怎麼撰寫
+
+寫法上會用到以下三個基本關鍵字 describe , it , expect，這是撰寫單元測試的語法架構，寫完這三項就是基本的測試了。
+
+- describe: 主要是拿來整理 it 用(在這邊又可以用 test 代替），相關的 it 就可以包在 describe 裡面作更進一步的分類整理。
+- it: 是最小的測試單位，所以每一項測試都要寫在某個 it function 裡。it 第一個參數是測試名稱，其實就是給你註解到底這個測試要幹嘛，然後搭配 before、beforeEach、after、afterEach 做進階操作
+- expect: 按照名字來看就是你預期他到底怎樣，搭配 it 這個測試項目，看跑出來的結果是不是跟 expect 中的一樣，這就是基本的測試了
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import sum from "./sum";
+
+describe("測試群組一", () => {
+  it("sums numbers", () => {
+    expect(sum(1, 2)).toEqual(3);
+    expect(sum(2, 2)).toEqual(4);
+  });
+
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(<App />, div);
+  });
+});
+```
+
+## E2E 測試
+
+Cypress 提供針對測試的配置、撰寫、執行、除錯完整的 end-to-end test 的解決方案，比較特別的是 Cypress 也像 Redux 的專案一樣提供了時空旅行的功能，並且提供了方便的介面讓我們更容易去針對測試進行除錯。
+
+這次就用貓貓點擊大賽參戰的範例來帶大家超快速入門，來看看怎麼讓機器來取代 Popcat 的人工點擊!!!
+
+原始碼: https://github.dev/LinYenCheng/popcat-cypress
+
+Cypress 在使用上其實也很簡單，只要透過簡單的安裝設定就能夠直接執行並撰寫測試了，不一定要測試自己開發的網站，針對網路上的任何站台都能夠執行測試腳本。
+
+### Cypress 安裝設定
+
+如果是 npm 的專案
+
+`npm install cypress --save-dev`
+
+首先要設定 npm script
+
+```json
+{
+  "name": "popcat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test-one": "cypress run --spec **/popcat.spec.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+安裝完完並設定之後，雖然專案資料夾都是全空的，但其實就可以執行了，這時候 Cypress 會偵測到我們是第一次執行，會自動將相關配置及範例加入。
+
+> 第一次執行 `cypress open` 
+> ![firstTime](firstTimeUseCypress.png)
+
+接著 Cypress 會自動加入相關預設的資料夾配置如下
+
+- fixtures: 存放假資料或是常數值
+- integration: 測試撰寫的地方
+- plugins: 沒有想要修改預設功能一般不會用到
+- support
+  - commands: 擴充共用的函式可以統一放在這邊
+
+> 第一次啟動後的畫面
+> ![sampleTest](cypressTestExamples.png)
+
+此外其實若想修改預設配置，也可以透過設定 `cypress.json` 來達到相關效果，底下是基本的範例可以看出我們能多設定像是重試次數、影片錄製等等參數，設定檔相關說明可以參考[設定檔的參考文件][cypress-config]。
+
+```json
+{
+  "viewportWidth": 411,
+  "viewportHeight": 731,
+  "defaultCommandTimeout": 8000,
+  "requestTimeout": 8000,
+  "retries": 8,
+  "video": true,
+  "videoUploadOnPasses": false,
+  "chromeWebSecurity": false,
+  "reporter": "junit",
+  "ignoreTestFiles": "**/examples/*.js",
+  "reporterOptions": {
+    "mochaFile": "results/TEST-[hash].xml"
+  }
+}
+```
+
+[cypress-config]: https://docs.cypress.io/guides/references/configuration
+
+### Cypress 測試撰寫
+
+Popcat 貓貓點擊大賽參戰確認!!! 一個最簡單的測試腳本如下:
+
+```js
+context("popcat.spec", () => {
+  beforeEach(() => {
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      return false;
+    });
+    cy.visit("https://popcat.click/");
+  });
+
+  describe("貓貓點擊大賽", () => {
+    it("點 1000 下", () => {
+      Array(1000)
+        .fill("val")
+        .forEach((elm, index) => {
+          cy.wait(100 * ((index % 5) + 1));
+          cy.get(".cat-img").click();
+        });
+    });
+  });
+});
+```
+
+- Cypress visit(): `cy.visit()` 模擬瀏覽器開啟網站
+- Cypress wait(): `cy.wait()` 模擬等待
+- Cypress get(): `cy.get()` 類似 jQuery 的選擇器，可以協助我們找出網頁元素
+
+學前端這麼多年，第一次覺得派上用場 😅 在台灣，每秒鐘都有上萬隻貓正在張開嘴巴。
+
+> ![popcat70k](popcat70k.JPG)
+
+1. 分析 DOM
+
+這個部分其實就會使用到 Chrome 的開發者元件，透過檢視，我們可以發現主要的網站很單純沒有太多設計，我們就只要針對 `.cat-img` 這個 class 進行模擬點擊就可以了，甚至是沒有針對直接對整個網頁觸發鍵盤事件也會有效果。
+
+2. 觸發事件
+
+參戰最簡單的方法其實就是透過 console 來執行，不過這次是想透過測試工具 XD 至於[如何使用 Chrome 開發者工具][chrome-developer-tool]歡迎參考之前寫過的文章，相信可以快速入門的。
+
+```js
+var event = new KeyboardEvent("keydown", {
+  key: "t",
+  ctrlKey: true,
+});
+
+setInterval(function () {
+  document.dispatchEvent(event);
+}, 500);
+```
+
+[chrome-developer-tool]: https://linyencheng.github.io/2018/12/04/tool-google-developer/?utm_source=link&utm_medium=article&utm_campaign=internal_link
+
+3. 觀察 API
+
+可以發現是 API 主要步驟有兩個
+
+- 透過 reload 來換 token
+- 累積次數一陣子後透過 POP 這個 API 集中將累積次數 (pop_count) 送到後端
+
+> 相關 API
+> ![chromeDevToolNetworkTab](chromeDevToolNetworkTab.JPG)
+
+如果短時間打太頻繁其實也是會被阻擋:
+
+> 提醒大家運動家精神 XD
+> ![TooManyRequest](429.JPG)
+
+重複的執行也是會得到 403 的錯誤，這時候需要把整個測試關掉重開。
+
+> ![403](403.JPG)
+
+### Cypress in Linux with Xvfb
+
+CI/CD 在 Linux 環境上執行 Cypress 時會需要先安裝 Xvfb 但在執行上有時候會遇到問題，可以透過以下指令排解。
+
+- ps -ef | grep Xvfb
+- ps -ef | grep Xvfb | grep -v grep | awk '{print $2}' | xargs kill -9
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/lib/js/head.min.js"></script>
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/js/reveal.min.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                // 是否在右下角展示控制条
+                controls: true,
+                // 是否显示演示的进度条
+                progress: true,
+                // 是否显示当前幻灯片的页数编号，也可以使用代码 “slideNumber: 'c/t'” ，表示当前页/总页数。
+                slideNumber: false,
+                // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+                history: false,
+                // 是否启用键盘快捷键来导航
+                keyboard: true,
+                // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
+                overview: true,
+                // 是否将幻灯片垂直居中
+                center: true,
+                // 是否在触屏设备上启用触摸滑动切换
+                touch: true,
+                // 是否循环演示
+                loop: false,
+                // 是否将演示的方向变成 RTL，即从右往左
+                rtl: false,
+                // 是否每次演示的时候，随机幻灯片的顺序
+                shuffle: false,
+                // 全局开启和关闭碎片。
+                fragments: true,
+                // 标识演示文稿是否在嵌入模式中运行，即包含在屏幕的有限部分中的
+                embedded: false,
+                // 标识当问号键被点击的时候是否应该显示一个帮助的覆盖层
+                help: true,
+                // 标识演讲者备注标志是否让所有观看者可见
+                showNotes: false,
+                // 两个幻灯片之间自动切换的时间间隔（毫秒）
+                // 当设置成 0 的时候则禁止自动切换
+                // 该值可以被幻灯片上的 “data-autoslide” 属性覆盖
+                autoSlide: 0,
+                // 当遇到用户输入的时候停止自动切换
+                autoSlideStoppable: true,
+                // 当自动滑动时，使用此方法进行导航。
+                autoSlideMethod: Reveal.navigateNext,
+                // 是否启用通过鼠标滚轮来导航幻灯片
+                mouseWheel: false,
+                // 是否在移动设备上隐藏地址栏
+                hideAddressBar: true,
+                // 是否在一个弹出的 iframe 中打开幻灯片中的链接
+                previewLinks: false,
+                // 切换过渡效果
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+                // 过渡速度
+                transitionSpeed: 'default', // default/fast/slow
+                // 全屏幻灯片背景的过渡效果
+                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+                // 加载除当前可见的幻灯片之外的幻灯片数量
+                viewDistance: 3,
+                // 视差背景图片
+                parallaxBackgroundImage: '',
+                // e.g. 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
+                // 视差背景尺寸
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+                // 移动视差背景（水平和垂直）滑动变化的数量, 例如 100
+                // - 除了指定自动计算
+                // - 设置为 0 时，禁止沿轴运动
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>

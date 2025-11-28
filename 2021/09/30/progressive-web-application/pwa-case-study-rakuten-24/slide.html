@@ -1,0 +1,223 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Progressive Web App 個案分析</title>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
+        
+        <!-- theme -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            var theme ='black';
+            switch (theme){
+                case 'black':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/black.min.css';
+                    break;
+                case 'beige':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/beige.min.css';
+                    break;
+                case 'blood':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/blood.min.css';
+                    break;
+                case 'league':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/league.min.css';
+                    break;
+                case 'moon':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/moon.min.css';
+                    break;
+                case 'night':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/night.min.css';
+                    break;
+                case 'serif':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/serif.min.css';
+                    break;
+                case 'sky':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/sky.min.css';
+                    break;
+                case 'solarized':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/solarized.min.css';
+                    break;
+                case 'white':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/white.min.css';
+                    break;
+                default:
+            }
+            
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/lib/css/zenburn.min.css">
+        <link href="https://cdn.bootcss.com/reveal.js/3.4.1/css/print/paper.min.css" rel="stylesheet">
+        <!-- Printing and PDF exports -->
+        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                         data-separator="^\n"
+                         data-separator-vertical="^\n\n"
+                         data-separator-notes="^Note:">
+                    <script type="text/template">Progressive Web App 個案分析
+
+
+小編在讀 PWA 相關技術文章的時候，剛好讀到了樂天 24 這篇導入 PWA 的個案分析。
+
+樂天 24 是樂天集團底下的一個電商平台，主要銷售日常快速消費品，也就是常見的 FMCG 產業，這類型的產品不外乎變化步調快速、品牌競爭挑戰性高。
+
+沒想到導入之後樂天增加 450% 的用戶留存，效果竟然如此之好 Orz 所以就決定來翻譯一波，大家一起來看看樂天 24 是怎麼導入 PWA 的吧!
+
+這篇文章翻譯自以下網站:
+
+https://web.dev/rakuten-24/
+
+## PWA 的機會（Opportunity）
+
+- 因為是新服務，所以不一定需要去投資和維護多平台 App，PWA 就成為了可能的解決方案
+- 樂天算是很大的電商平台，所以樂天 24 被認為應該能有更高的用戶留存
+
+## PWA 技術導入
+
+為了抓住前面提到的兩個機會，所以樂天 24 就開始導入的 PWA 的相關技術，主要是兩個方面
+
+- 可被安裝，當 Web App 能被安裝後，對電商網站來說可能比較顯著的好處是:
+  - 增加網站流量
+  - 增加用戶留存
+  - 增加客單價
+  - 增加轉換
+- 離線快取
+
+### 可以安裝的樂天 24
+
+作為一個品牌電商網站，會想要更彈性的去控制[推薦安裝提示](/2021/09/04/pwa-promoting-installation/?utm_source=link&utm_medium=article&utm_campaign=internal_link)，所以樂天 24 的團隊選擇自行實作 `beforeinstallprompt` 的相關事件，正因如此也有辦法知道用戶目前是使用 Android 或 iOS 的平台，可以更進一步的提供相關且更好的體驗給用戶。
+
+有興趣的大大可以連到以下站台看看精美的說明:
+https://24.rakuten.co.jp/addto/
+
+> 客製的安裝提示和相關說明 (圖片來源: https://web.dev/rakuten-24/)
+> ![推薦安裝](https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/APDhzk6SjyxQTgxVidFR.png?auto=format&w=1098)
+
+### PWA 離線快取
+
+樂天 24 的團隊主要是使用 Workbox 來操作 service workers，目的是確保用戶在網路不好甚至是斷線狀況也能夠也基本的操作體驗。
+
+- 對於網站相關的資源像是 JS 或是 CSS 主要採取 `cache-first` 的策略
+- 對於不常更動的圖片則是使用 `stale-while-revalidate`，表示用戶可以接受過期回應，但同時在背景檢查最新版本
+
+Workbox 提供的 API 遠遠好過自己維護相關腳本，此外透過 `workbox-webpack-plugin` 這套外掛也能夠確保跨瀏覽器的基本支援。
+
+[Workbox](https://developers.google.com/web/tools/workbox) 是由 google 開發維護，是一套用來強化 service worker 的工具包，方便我們更快實作出 production-ready 的 Service Worker，幾種常見的快取都已經提供相關範例，其實我們只需要照抄即可。
+
+- Cache Google Fonts
+- Cache JavaScript and CSS
+- Cache Images
+- Precache your Files
+- Offline Google Analytics
+
+## PWA 經營成果
+
+在導入 PWA 後觀察一個月，比較基準為有安裝 PWA 以及沒安裝 PWA 的用戶。
+
+- 相對使用瀏覽器，每個使用者平均增加 310% 的瀏覽頻率
+- 相對之前行動版網站，增加了 450% 的用戶留存
+- 150% 的客單價提升
+- 200% 的轉換率提高
+
+> 經營成果 (圖片來源: https://web.dev/rakuten-24/)
+> ![PWA經營成果](https://web-dev.imgix.net/image/tcFciHGuF3MxnTr1y5ue01OGLBn2/l49plmwrrFO3V953MQZD.png?auto=format&w=1098)
+
+對於品牌經營來說，透過可被安裝的 PWA 能夠
+
+- 提升品牌意識: 用戶能夠透過主畫面的 Icon 去存取樂天 24 的服務
+- 效率和成本降低: 樂天 24 不需要再去負擔維護雙平台 App 的成本
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/lib/js/head.min.js"></script>
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/js/reveal.min.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                // 是否在右下角展示控制条
+                controls: true,
+                // 是否显示演示的进度条
+                progress: true,
+                // 是否显示当前幻灯片的页数编号，也可以使用代码 “slideNumber: 'c/t'” ，表示当前页/总页数。
+                slideNumber: false,
+                // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+                history: false,
+                // 是否启用键盘快捷键来导航
+                keyboard: true,
+                // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
+                overview: true,
+                // 是否将幻灯片垂直居中
+                center: true,
+                // 是否在触屏设备上启用触摸滑动切换
+                touch: true,
+                // 是否循环演示
+                loop: false,
+                // 是否将演示的方向变成 RTL，即从右往左
+                rtl: false,
+                // 是否每次演示的时候，随机幻灯片的顺序
+                shuffle: false,
+                // 全局开启和关闭碎片。
+                fragments: true,
+                // 标识演示文稿是否在嵌入模式中运行，即包含在屏幕的有限部分中的
+                embedded: false,
+                // 标识当问号键被点击的时候是否应该显示一个帮助的覆盖层
+                help: true,
+                // 标识演讲者备注标志是否让所有观看者可见
+                showNotes: false,
+                // 两个幻灯片之间自动切换的时间间隔（毫秒）
+                // 当设置成 0 的时候则禁止自动切换
+                // 该值可以被幻灯片上的 “data-autoslide” 属性覆盖
+                autoSlide: 0,
+                // 当遇到用户输入的时候停止自动切换
+                autoSlideStoppable: true,
+                // 当自动滑动时，使用此方法进行导航。
+                autoSlideMethod: Reveal.navigateNext,
+                // 是否启用通过鼠标滚轮来导航幻灯片
+                mouseWheel: false,
+                // 是否在移动设备上隐藏地址栏
+                hideAddressBar: true,
+                // 是否在一个弹出的 iframe 中打开幻灯片中的链接
+                previewLinks: false,
+                // 切换过渡效果
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+                // 过渡速度
+                transitionSpeed: 'default', // default/fast/slow
+                // 全屏幻灯片背景的过渡效果
+                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+                // 加载除当前可见的幻灯片之外的幻灯片数量
+                viewDistance: 3,
+                // 视差背景图片
+                parallaxBackgroundImage: '',
+                // e.g. 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
+                // 视差背景尺寸
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+                // 移动视差背景（水平和垂直）滑动变化的数量, 例如 100
+                // - 除了指定自动计算
+                // - 设置为 0 时，禁止沿轴运动
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
+                    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>

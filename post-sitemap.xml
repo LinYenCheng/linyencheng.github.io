@@ -1,0 +1,1644 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://linyencheng.github.io/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/11/21/windows11/windows11-focus/</loc>
+        <lastmod>2025-11-28T13:25:33.500Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/11/19/windows11/windows11-phone-link/</loc>
+        <lastmod>2025-11-28T13:25:33.500Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/11/27/windows11/windows11-power-automate/</loc>
+        <lastmod>2025-11-28T13:25:33.500Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/11/25/windows11/windows11-quick-assist/</loc>
+        <lastmod>2025-11-28T13:25:33.500Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/09/07/tool-mongoose-mongo/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/12/25/tool-nginx-management/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/07/13/tool-nginx/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/05/30/tool-vite-system-env/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/12/08/windows11/how-to-retain-old-app-versions-or-interface-settings-in-windows-11/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/12/05/windows11/ways-to-windows11/</loc>
+        <lastmod>2025-11-28T13:25:33.499Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/05/07/thinking-web-of-things/</loc>
+        <lastmod>2025-11-28T13:25:33.498Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/07/07/tool-linux-server-faq/</loc>
+        <lastmod>2025-11-28T13:25:33.498Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/10/28/thinking-team-building-by-math/</loc>
+        <lastmod>2025-11-28T13:25:33.495Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/10/19/thinking-urda-app-user-experience/</loc>
+        <lastmod>2025-11-28T13:25:33.495Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/11/15/thinking-security/</loc>
+        <lastmod>2025-11-28T13:25:33.494Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/08/13/thinking-social-media-inside/</loc>
+        <lastmod>2025-11-28T13:25:33.494Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/01/26/thinking-retrospective-me/</loc>
+        <lastmod>2025-11-28T13:25:33.492Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/10/08/thinking-message-delivery/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/10/24/thinking-personal-brand/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/10/06/thinking-product-marketing-malaya/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/12/06/thinking-public-relations/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/07/08/thinking-refactor-and-code-quaility/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/08/17/thinking-resume/</loc>
+        <lastmod>2025-11-28T13:25:33.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/06/08/thinking-conversational-commerce/</loc>
+        <lastmod>2025-11-28T13:25:33.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/04/30/thinking-domain-driven-design/</loc>
+        <lastmod>2025-11-28T13:25:33.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2017/01/07/thinking-hello-2017/</loc>
+        <lastmod>2025-11-28T13:25:33.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/11/12/thinking-interview/</loc>
+        <lastmod>2025-11-28T13:25:33.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/05/22/thinking-communicate-clearly/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2017/05/18/thinking-component-state-and-props/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/29/simplify-your-life/modular-storage-solutions/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/19/simplify-your-life/object-management-nine-knives-or-a-swiss-army-knife/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/20/simplify-your-life/organization-of-objects-and-files/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/18/simplify-your-life/reduce-items-of-the-same-type/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/17/simplify-your-life/refactoring-with-pruning/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/25/simplify-your-life/single-responsibility-principle/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/04/simplify-your-life/system-analytics/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/03/simplify-your-life/systems-and-environments-altered-by-three-meals-a-day/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/12/simplify-your-life/thinking-communication/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/08/simplify-your-life/thinking-developer-experience/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/15/simplify-your-life/thinking-product-management/</loc>
+        <lastmod>2025-11-28T13:25:33.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/13/simplify-your-life/how-to-speed-up-coding/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/10/simplify-your-life/how-to-write-documentation/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/05/simplify-your-life/interface-segregation-principle/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/01/simplify-your-life/inversion-of-control/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/16/simplify-your-life/keep-both-code-and-life-simple-when-possible/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/24/simplify-your-life/layered-application/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/07/simplify-your-life/least-knowledge-principle/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/06/simplify-your-life/liskov-substitution-principle/</loc>
+        <lastmod>2025-11-28T13:25:33.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/13/relationships-between-frontend-and-backend/tool-wordpress/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/02/simplify-your-life/api-first-with-domain-model/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/14/simplify-your-life/career-growth-mindset/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/11/simplify-your-life/career-meeting/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/21/simplify-your-life/choose-with-requirement/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/22/simplify-your-life/code-smells/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/26/simplify-your-life/constraints-of-time/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/27/simplify-your-life/cost-of-software-development/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/30/simplify-your-life/dependency-inversion-principle/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/28/simplify-your-life/extreme-organization-and-high-scalability/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/09/23/simplify-your-life/desires-and-ecessities-the-wisdom-of-choices-in-coding/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/10/09/simplify-your-life/how-to-ask-questions/</loc>
+        <lastmod>2025-11-28T13:25:33.487Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/30/relationships-between-frontend-and-backend/project-folder-structure/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/03/relationships-between-frontend-and-backend/project-infrastructure-mono-repo/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/29/relationships-between-frontend-and-backend/tool-git-with-project/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/14/relationships-between-frontend-and-backend/tool-hexo-blog/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/27/relationships-between-frontend-and-backend/tool-npm/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/28/relationships-between-frontend-and-backend/tool-semantic-version-and-release/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/26/relationships-between-frontend-and-backend/tool-vscode-extensions-with-eslint-and-prettier/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/12/relationships-between-frontend-and-backend/tool-web-developer-debug/</loc>
+        <lastmod>2025-11-28T13:25:33.485Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/23/relationships-between-frontend-and-backend/js-realtime-communication/</loc>
+        <lastmod>2025-11-28T13:25:33.483Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/13/relationships-between-frontend-and-backend/js-web-testing/</loc>
+        <lastmod>2025-11-28T13:25:33.483Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/02/relationships-between-frontend-and-backend/html-rendering-with-react-csr-and-ssr/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/09/relationships-between-frontend-and-backend/js-client-side-tools/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/24/relationships-between-frontend-and-backend/js-cookies/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/22/relationships-between-frontend-and-backend/js-http-client-with-ajax/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/08/relationships-between-frontend-and-backend/js-library-and-framework/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/05/relationships-between-frontend-and-backend/js-module-loader/</loc>
+        <lastmod>2025-11-28T13:25:33.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/16/relationships-between-frontend-and-backend/backend-api-design/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/17/relationships-between-frontend-and-backend/backend-api-implement/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/15/relationships-between-frontend-and-backend/backend-restful-api/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/11/relationships-between-frontend-and-backend/css-bad-practices/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/07/relationships-between-frontend-and-backend/css-design-pattern-with-bem-smacss-oocss-atomic-css/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/09/relationships-between-frontend-and-backend/css-framework/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/10/relationships-between-frontend-and-backend/css-in-js-with-reactjs/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/06/relationships-between-frontend-and-backend/css-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/08/relationships-between-frontend-and-backend/css-pre-post-processors/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/10/10/relationships-between-frontend-and-backend/devops-ci-cd-jenkins-circleci-and-github-action/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/04/relationships-between-frontend-and-backend/html-build-a-site/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/05/relationships-between-frontend-and-backend/html-html5-and-template/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/09/12/relationships-between-frontend-and-backend/html-link-free/</loc>
+        <lastmod>2025-11-28T13:25:33.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/02/02/react-component-class-based-vs-functional/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/04/06/react-10-years-developer-experience/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/02/28/react-in-enterprise-app/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/05/07/react-interview-questions/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2017/09/21/react-intl/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/01/25/react/react-component-pattern-and-development-guide/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/08/17/react/react-hooks/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/10/02/react/react-store-zustand/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/12/14/react/react-v19-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.480Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/05/python-crawler/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/08/python-fast-api/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/08/01/python-hypothesis-testing/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/04/progressive-web-application/pwa-publish-a-pwa-to-store/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/26/progressive-web-application/pwa-push-notificatoin-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/05/progressive-web-application/pwa-service-worker/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/20/progressive-web-application/pwa-wake-lock/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/19/progressive-web-application/pwa-web-nfc/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/21/progressive-web-application/pwa-web-share/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/16/progressive-web-application/pwa-web-storage/</loc>
+        <lastmod>2025-11-28T13:25:33.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/25/progressive-web-application/pwa-notification/</loc>
+        <lastmod>2025-11-28T13:25:33.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/01/progressive-web-application/pwa-platform-look-and-feel/</loc>
+        <lastmod>2025-11-28T13:25:33.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/02/progressive-web-application/pwa-progressive-web-app-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.478Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/03/progressive-web-application/pwa-add-to-home-screen-a2hs/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/06/progressive-web-application/pwa-app-shell-model/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/02/progressive-web-application/pwa-app-shortcuts/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/10/03/progressive-web-application/pwa-audit/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/23/progressive-web-application/pwa-background-sync/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/10/progressive-web-application/pwa-badging-for-app-icon/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/30/progressive-web-application/pwa-case-study-rakuten-24/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/22/progressive-web-application/pwa-contact-picker/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/18/progressive-web-application/pwa-file-system-access/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/15/progressive-web-application/pwa-geo-location-api/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/24/progressive-web-application/pwa-idle-detection/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/04/progressive-web-application/pwa-manifest/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/09/29/progressive-web-application/pwa-notification-behavior-patterns/</loc>
+        <lastmod>2025-11-28T13:25:33.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/01/monkeys-on-the-mountain/from-starting-to-giving-up-from-doing-to-talking/</loc>
+        <lastmod>2025-11-28T13:25:33.474Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/02/monkeys-on-the-mountain/try-to-find-banana-or-still-waiting-there/</loc>
+        <lastmod>2025-11-28T13:25:33.474Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/03/25/marketing-landingpage/</loc>
+        <lastmod>2025-11-28T13:25:33.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/05/07/marketing-seo-blog/</loc>
+        <lastmod>2025-11-28T13:25:33.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/01/16/marketing-google-tools/</loc>
+        <lastmod>2025-11-28T13:25:33.471Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/11/07/marketing-2020-grow-with-google-tour/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/11/03/marketing-google-analytics-4-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/10/27/life-thinking-algorithm/binary-search-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/05/life-thinking-algorithm/dfs-vs-bfs-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/05/28/life-thinking-algorithm/dynamic-programming-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/10/06/life-thinking-algorithm/greedy-algorithm-for-your-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/05/28/life-thinking-algorithm/knapsack-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/05/28/life-thinking-algorithm/shortest-path-in-your-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/08/life-thinking-algorithm/priority-queue-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/08/kimetsu-no-yaiba/rengoku-kyoujurou-life-lessons/</loc>
+        <lastmod>2025-11-28T13:25:33.468Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/19/kimetsu-no-yaiba/ubuyashiki-kagaya-lead-org/</loc>
+        <lastmod>2025-11-28T13:25:33.468Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/08/life-thinking-algorithm/backtracking-in-life/</loc>
+        <lastmod>2025-11-28T13:25:33.468Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/09/kimetsu-no-yaiba/rengoku-kyoujurou-be-true-be-you/</loc>
+        <lastmod>2025-11-28T13:25:33.467Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/10/kimetsu-no-yaiba/agatsuma-zenitsu-learn-one-thing/</loc>
+        <lastmod>2025-11-28T13:25:33.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/02/kimetsu-no-yaiba/emotion-management/</loc>
+        <lastmod>2025-11-28T13:25:33.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/08/10/kimetsu-no-yaiba/kibutsuji-muzan-boss/</loc>
+        <lastmod>2025-11-28T13:25:33.466Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/01/25/js-web-gis-infografic/</loc>
+        <lastmod>2025-11-28T13:25:33.465Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/05/30/js-pattern/js-structure-pattern-for-project/</loc>
+        <lastmod>2025-11-28T13:25:33.465Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/04/06/java-jersey/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/04/05/java-web/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/03/28/js-google-sheet-db/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/12/11/js-leetcode-1864-Minimum-Number-of-Swaps-to-Make-the-Binary-String-Alternating/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2019/10/01/js-memory-leak/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/10/13/javascript/javascript-module-management-tool/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/10/03/javascript/javascript-module/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/06/30/js-pattern/js-behavioral-pattern/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/02/25/js-pattern/js-creational-pattern/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/04/02/js-pattern/js-structure-pattern-for-code/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/03/29/js-pattern/js-structure-pattern-for-programming-syntax/</loc>
+        <lastmod>2025-11-28T13:25:33.464Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2018/02/04/html-accessibility/</loc>
+        <lastmod>2025-11-28T13:25:33.463Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/01/28/google-adsense-tax-residency-certificate-for-singapore/</loc>
+        <lastmod>2025-11-28T13:25:33.460Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/03/11/experience-sharing-web-page-render-performance/</loc>
+        <lastmod>2025-11-28T13:25:33.459Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/07/31/experience-sharing-devops/</loc>
+        <lastmod>2025-11-28T13:25:33.458Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/12/03/experience-sharing-growth-hacker-seminar-2020/</loc>
+        <lastmod>2025-11-28T13:25:33.458Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/03/09/experience-sharing-web-page-loading-performance/</loc>
+        <lastmod>2025-11-28T13:25:33.458Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/01/11/experience-sharing-agile-tour-2020/</loc>
+        <lastmod>2025-11-28T13:25:33.456Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/08/elastic-workplace-search-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.455Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/13/elastic-security-role-based-access-control/</loc>
+        <lastmod>2025-11-28T13:25:33.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/18/elastic-siem-ui/</loc>
+        <lastmod>2025-11-28T13:25:33.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/05/elastic-observability-fundamentals-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/09/elastic-observability-logging-introduction/</loc>
+        <lastmod>2025-11-28T13:25:33.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/14/elastic-secure-communications/</loc>
+        <lastmod>2025-11-28T13:25:33.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/16/elastic-security-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/03/elastic-metrics-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.449Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/21/elastic-machine-learning-fundamentals/</loc>
+        <lastmod>2025-11-28T13:25:33.445Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/02/elastic-logging-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.443Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/15/elastic-endpoint-security/</loc>
+        <lastmod>2025-11-28T13:25:33.438Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/10/elastic-kibana-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.438Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/30/elastic-cloud-stack-101/</loc>
+        <lastmod>2025-11-28T13:25:33.436Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/17/elastic-endpoint-security-application/</loc>
+        <lastmod>2025-11-28T13:25:33.436Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/25/elastic-cloud-snapshots/</loc>
+        <lastmod>2025-11-28T13:25:33.434Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/27/elastic-cloud-high-availability/</loc>
+        <lastmod>2025-11-28T13:25:33.428Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/24/elastic-cloud-enterprise-deployments/</loc>
+        <lastmod>2025-11-28T13:25:33.420Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/23/elastic-cloud-enterprise-architecture/</loc>
+        <lastmod>2025-11-28T13:25:33.417Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/06/elastic-app-search-quick-start/</loc>
+        <lastmod>2025-11-28T13:25:33.414Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/12/elastic-apm-fundamentals/</loc>
+        <lastmod>2025-11-28T13:25:33.412Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/09/22/elastic-anomaly-detection-for-cybersecurity/</loc>
+        <lastmod>2025-11-28T13:25:33.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/08/07/devops-cloud-native/</loc>
+        <lastmod>2025-11-28T13:25:33.408Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/05/30/devops-gitlab-ci-and-gitlab-runner/</loc>
+        <lastmod>2025-11-28T13:25:33.408Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2024/02/02/cumulative-layout-shift/</loc>
+        <lastmod>2025-11-28T13:25:33.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/06/22/cloud-platform/2025-aws-taiwan-summit/</loc>
+        <lastmod>2025-11-28T13:25:33.400Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2017/06/22/cloud-platform/cloud-web-service/</loc>
+        <lastmod>2025-11-28T13:25:33.400Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/06/29/cloud-platform/gcp-cloud-study-jam-2021/</loc>
+        <lastmod>2025-11-28T13:25:33.400Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/01/01/career/career-life-meaning-after-30/</loc>
+        <lastmod>2025-11-28T13:25:33.399Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/12/29/career/career-value-negotiation/</loc>
+        <lastmod>2025-11-28T13:25:33.399Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2025/01/21/career/experience-sharing-tsmc-job/</loc>
+        <lastmod>2025-11-28T13:25:33.399Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2023/01/26/career/what-questions-should-you-ask-the-interviewer/</loc>
+        <lastmod>2025-11-28T13:25:33.399Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/11/16/career-interview-with-international-company/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2022/02/17/career-negotiate-your-salary/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/11/17/career-remote-work-interview/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/11/25/career-remote-work-life/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/11/26/career-remote-work-values/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/12/01/career-resign-and-job-handover/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2020/12/29/career/career-business-think/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://linyencheng.github.io/2021/01/24/career/career-how-to-be-a-project-manager/</loc>
+        <lastmod>2025-11-28T13:25:33.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
