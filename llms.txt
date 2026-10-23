@@ -1,0 +1,49 @@
+# Hexo Blog Content Directory
+
+A technical blog focused on modern software engineering, AI-driven SEO, and the intersection of technology and life philosophy.
+
+## Content Themes
+
+### 1. AI & LLM SEO Optimization (AIO)
+- Strategies for the 2026 AI search era (SearchGPT, Perplexity).
+- Implementation of `llms.txt` and RAG-friendly content structures.
+- Automation of SEO workflows using GitHub Actions and local scripts.
+
+### 2. Engineering Career & Thinking Models
+- Strategic career development: Negotiation, remote work, and international interviews.
+- Life-Thinking Algorithms: Applying DP, Greedy, and BFS/DFS to life decisions.
+- Workplace parables (Monkeys on the Mountain) and leadership lessons from pop culture (Demon Slayer series).
+
+### 3. Deep Frontend Engineering
+- Modern React ecosystem: Hooks, v19 features, Zustand, and Atomic Design.
+- Comprehensive Progressive Web App (PWA) implementation guides.
+- Web performance optimization: CLS, rendering efficiency, and bundle analysis.
+- Full-stack relationships: Browser storage, Cookies, and API implementation.
+
+### 4. DevOps, SRE & Cloud Architecture
+- Enterprise Elastic Stack (ECE): SIEM, Observability, APM, and ML fundamentals.
+- CI/CD automation: GitLab Runner, Jenkins, and GitHub Actions.
+- Cloud platforms: AWS and GCP region-specific advantages and service comparisons.
+
+### 5. Software Craftsmanship (Simplify Your Life)
+- SOLID principles, DDD (Domain-Driven Design), and Clean Architecture.
+- Balancing technical debt: Refactoring, YAGNI, and KISS principles.
+- Software development cost analysis and technical选型 (selection) strategies.
+
+### 6. Digital Marketing & Growth
+- Data-driven growth: GA4, SEO Blog strategies, and Landing Page optimization.
+- AdSense management and Singapore tax residency certificate processes.
+
+## Content Format Standards (AIO Friendly)
+
+- **Direct Answers:** Core questions are answered within the first 150 words.
+- **RAG-Ready:** Clear H2/H3 hierarchies with definitional writing styles.
+- **FAQ Sections:** Structured Q&A at the end of technical articles to boost LLM mention share.
+- **Actionable Guides:** Step-by-step breakdowns with real-world code snippets and scripts.
+
+## Author Expertise
+
+- **10+ Years Frontend Engineering:** Specialist in React, PWA, and Web Performance.
+- **3+ Years DevOps Engineering:** Focused on Elastic Stack and CI/CD automation.
+- **2+ Years Backend Engineering:** Experience with Node.js, Java (Jersey/Spring), and Python (FastAPI).
+- **SEO & Growth Strategist:** Bridging the gap between engineering and marketing.
